@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>sys_user_has_role</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Target Matching Scripts</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	
+	//only if the user has OnPage user role will they be associated to a record
+	if(gs.hasRole('x_gfnll_onpage.user')) {
+		var user = current.user;
+		var onPageUser = new GlideRecord('x_gfnll_onpage_target');
+		onPageUser.addQuery('email', user.email); //gets target email from current users emil
+		onPageUser.addQuery('onpage_name', user.user_name);
+		onPageUser.query();
+		
+		//this associates the queried onPage user with the current user
+		if(onPageUser.next()) {
+			var u = new GlideRecord('sys_user');
+			u.get(user);
+			u.email = onPageUser.email;
+			u.user_name = onPageUser.onpage_name;
+			u.first_name = onPageUser.first_name;
+			u.last_name = onPageUser.last_name;
+			u.update();
+		} //the else will create a new target record with fields from the user table
+		else{
+			var target = new GlideRecord('x_gfnll_onpage_target');
+			target.initialize();
+			target.setValue('email',user.email);
+			target.setValue('onpage_name',user.user_name);
+			target.setValue('first_name',user.first_name);
+			target.setValue('last_name',user.last_name);
+			target.insert();
+		}
+	}
+	//if user does not have OnPage user role but a target exists associated to current user
+	else if(!gs.hasRole('x_gfnll_onpage.user')){
+		var noRoleUser = current.user;
+		var existingTarget = new GlideRecord('x_gfnll_onpage_target');
+		existingTarget.addQuery('email', noRoleUser.email); //grab the target record that is associated to user with noRole
+		existingTarget.addQuery('onpage_name', noRoleUser.user_name);
+		existingTarget.query();
+		
+		//disassociate existing target record from SN record since role is removed
+		if(existingTarget.next()) {
+			existingTarget.setValue('email', '');
+			existingTarget.setValue('onpage_name', '');
+			existingTarget.setValue('first_name', '');
+			existingTarget.setValue('last_name', '');
+			existingTarget.update();
+		}
+	}
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>lorena.villanueva</sys_created_by>
+        <sys_created_on>2018-08-31 20:16:51</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>17bff585db182f00ee685e25ca961975</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Target Matching Scripts</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_script_17bff585db182f00ee685e25ca961975</sys_update_name>
+        <sys_updated_by>lorena.villanueva</sys_updated_by>
+        <sys_updated_on>2018-09-04 17:54:56</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=17bff585db182f00ee685e25ca961975"/>
+</record_update>

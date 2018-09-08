@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_gfnll_onpage.workflow</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>workflow</name>
+        <script><![CDATA[var workflow = Class.create();
+workflow.prototype = {
+	initialize: function() {
+		//LOGGING/////////
+		this.logType = "outbound";
+		this.logTable = 'x_gfnll_onpage_event';
+		this.log = new x_gfnll_onpage.log();
+		this.error = function(message,id){
+			this.log.error(message,this.logType,this.logTable,id);
+		};
+		this.info = function(message,id){
+			this.log.info(message,this.logType,this.logTable,id);
+		};
+	},
+	createNotification: function(event){
+		this.info("Create Notification starting",event);
+		var processed = false;
+		
+		//get event values
+		var grEvent = new GlideRecord('x_gfnll_onpage_event');
+		grEvent.get(event);
+		var table = grEvent.getValue('table'),
+		docID = grEvent.getValue('document_id');
+		var sub = new GlideRecord('x_gfnll_onpage_onpage_subscription');
+		sub.addQuery('table', table);
+		sub.query();
+		while(sub.next()) {
+			this.info("Checking subscription "+sub.getValue('name'),event);
+			var template = sub.getValue('template'),
+			conditions = sub.getValue('conditions_builder'),
+			subRecip = sub.getValue('recipients'),
+			recips = subRecip.split(",");
+			
+			//check each subscription to see if the criteria match
+			var rec = new GlideRecord(table);
+			rec.addQuery('sys_id', docID);
+			rec.addEncodedQuery(conditions);
+			rec.query();
+			var count = rec.getRowCount();
+			this.info("Matching subscriptions: "+count,event);
+			
+			if(rec.hasNext()) {
+				this.info("Subscription found. Recipients are: "+recips.toString(),event);
+				processed = true;
+				//get template
+				var tempGR = new GlideRecord('x_gfnll_onpage_onpage_template');
+				tempGR.get(template);
+				var priority = tempGR.getValue('priority'),
+				options = tempGR.getValue('reply_options'),
+				trValue = tempGR.getValue('recipients'),
+				tempRecip = trValue.split(",");
+				//concat recipients list
+				for(var i=0;i<tempRecip.length;i++){
+					if(recips.indexOf(tempRecip[i])==-1){
+						recips.push(tempRecip[i]);
+					}
+				}
+				this.info("Recipient sys IDs: "+recips.toString(),event);
+				
+				//get opid for each recipient
+				var recipients = [];
+				for(var j=0;j<recips.length;j++){
+					var id = recips[j];
+					var grT = new GlideRecord('x_gfnll_onpage_target');
+					grT.get(id);
+					recipients.push(grT.getValue("opid"));
+				}
+				this.info("Recipients OPIDs: "+recipients.toString(),event);
+				
+				//get response options
+				var replies = [];
+				var grRply = new GlideRecord('x_gfnll_onpage_onpage_reply');
+				grRply.addQuery('parent',options);
+				grRply.orderBy('order');
+				grRply.query();
+				var countRply = grRply.getRowCount();
+				this.info("Reply count: "+countRply,event);
+				while(grRply.next()){
+					//for(var k=0;k<countRply;k++){
+						var option = grRply.getValue('option_name');
+						if(replies.indexOf(option)==-1){
+							replies.push(option);
+						}
+				}
+				this.info("Reply options are: "+replies.toString(),event);
+
+				//get values for new notification
+				var nshortd = tempGR.getValue('subject'),
+					nbody = tempGR.getValue('body'),
+					nrecips = recipients.toString(),
+					nreplies = replies.toString(),
+					ntable = table,
+					ndoc = docID,
+					npri = priority,
+					nstatus = "send-ready";
+				nshortd = this.findMatch(nshortd,ntable,docID);
+				nbody = this.findMatch(nbody,ntable,docID);
+				nbody = encodeURI(nbody);
+
+				//generate notification record
+				var notification = new GlideRecord('x_gfnll_onpage_notification');
+				notification.initialize();
+				notification.setValue('short_description',nshortd);
+				notification.setValue('body',nbody);
+				notification.setValue('recipients',nrecips);
+				notification.setValue('reply_options',nreplies);
+				notification.setValue('table',ntable);
+				notification.setValue('document_id',ndoc);
+				notification.setValue('priority',npri);
+				notification.setValue('status',nstatus);
+				notification.setValue('parent',event);
+				notification.insert();
+				this.info("Notification inserted: "+notification.getUniqueValue(),event);
+
+			}
+			else{
+				//subscription does not match criteria
+				this.info("No subscriptions match criteria.","");
+			}
+		}
+		//set status on event
+		var status,
+			type;
+		if(processed){
+			status = "processed";
+			type = "outbound";
+		}
+		else{
+			status = "ignored";
+			type = "internal";
+		}
+		grEvent.setValue('status',status);
+		grEvent.setValue('type',type);
+		grEvent.update();
+	},
+	findMatch: function(string,table,doc){
+		var patt = /\$\{([A-Za-z_\d]*)\}/g;
+		while(patt.test(string)){
+			this.info("Pattern matches "+string,"");
+			var newString = this.findReplace(string,table,doc);
+			this.info("findMatch New string is: "+newString);
+			string = newString;
+		}
+		return string;
+	},
+	findReplace: function(string,table,doc){
+		var patt = /\$\{([A-Za-z_\d]*)\}/g;
+		var newString = '';
+		this.info("Find replace starting for string: "+string+" and table: "+table+" and doc "+doc,'');
+		var match = patt.exec(string);
+		var pattern = match[0];
+		var fieldName = match[1];
+		var getV = new GlideRecord(table);
+			getV.get(doc);
+		var value = getV.getDisplayValue(fieldName);
+		this.info("Replace "+pattern+" with "+value,'');
+		if(value==null){
+			value = '';
+		}
+		newString = string.replace(pattern,value);
+		this.info("New string is: "+newString);
+		return newString;
+	},
+	sendRestMessage: function(id, subject, body, recipients, priority,reply){
+		try {
+			var r = new sn_ws.RESTMessageV2('OnPage Secured', 'sendMessage');
+			r.setStringParameterNoEscape('URLsub', gs.getProperty('x_gfnll_onpage.URLsubdomain'));
+			r.setStringParameterNoEscape('token', gs.getProperty('x_gfnll_onpage.auth.token'));
+			r.setStringParameterNoEscape('key', gs.getProperty('x_gfnll_onpage.auth.key'));
+			r.setStringParameterNoEscape('ansArray', this.reformat(reply));
+			r.setStringParameterNoEscape('priority', priority);
+			r.setStringParameterNoEscape('subject', subject);
+			r.setStringParameterNoEscape('recipArray', this.reformat(recipients));
+			r.setStringParameterNoEscape('id', id);
+			r.setStringParameter('body', body);
+
+			var response = r.execute();
+			var responseBody = response.getBody();
+			var httpStatus = response.getStatusCode();
+			this.info("Response: "+httpStatus+": "+responseBody,'');
+			if(httpStatus!=200){
+				var request = r.getRequestBody();
+				var errorhandler = new handleErrors().rest(request,responseBody,httpStatus);
+				return "error;"+httpStatus;
+			}
+			else{
+				var json = JSON.parse(responseBody);
+				//this.info("Accepted?: "+json[0].accepted,'');
+				if(json[0].accepted==true){
+					return "sent;"+json[0].id;
+				}
+				else{
+					return "error;"+json[0].errorDescription;
+				}
+			}
+		}
+		catch(ex) {
+			var message = ex.getMessage();
+			return "error;"+message;
+		}
+	},
+	sendRestMessages: function(msgArray){
+		try {
+			var r = new sn_ws.RESTMessageV2('OnPage Secured', 'sendMessages');
+			r.setStringParameterNoEscape('URLsub', gs.getProperty('x_gfnll_onpage.URLsubdomain'));
+			r.setStringParameterNoEscape('token', gs.getProperty('x_gfnll_onpage.auth.token'));
+			r.setStringParameterNoEscape('key', gs.getProperty('x_gfnll_onpage.auth.key'));
+			r.setStringParameterNoEscape('msgArray', msgArray);
+
+			var response = r.execute();
+			var responseBody = response.getBody();
+			var httpStatus = response.getStatusCode();
+			this.info("Response: "+httpStatus+": "+responseBody,'');
+			if(httpStatus!=200){
+				var request = r.getRequestBody();
+				var errorhandler = new handleErrors().rest(request,responseBody,httpStatus);
+				return "error;"+responseBody;
+			}
+			else{
+				return "sent;"+responseBody;
+			}
+		}
+		catch(ex) {
+			var message = ex.getMessage();
+			this.error("Send messages error: "+message);
+		}
+	},
+	reformat: function(array){
+		var string,
+			quotes = [];
+		for(var i=0;i<array.length;i++){
+			quotes.push('"'+array[i]+'"');
+		}
+		string = '['+quotes.toString()+']';
+		return string;
+	},
+	type: 'workflow'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-07 21:57:11</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>48a8831fdb946740c822fcd6f49619bd</sys_id>
+        <sys_mod_count>49</sys_mod_count>
+        <sys_name>workflow</sys_name>
+        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_script_include_48a8831fdb946740c822fcd6f49619bd</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-08 22:18:21</sys_updated_on>
+    </sys_script_include>
+</record_update>

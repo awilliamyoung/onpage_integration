@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_gfnll_onpage.handleErrors</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>handleErrors</name>
+        <script><![CDATA[var handleErrors = Class.create();
+handleErrors.prototype = {
+    initialize: function() {
+		//LOGGING/////////
+		this.logType = "outbound";
+		this.logTable = '';
+		this.logID = '';
+		this.log = new x_gfnll_onpage.log();
+		this.error = function(message){
+		  this.log.error(message,this.logType,this.logTable,this.logID);
+		};
+		this.info = function(message){
+		  this.log.error(message,this.logType,this.logTable,this.logID);
+		};
+    },
+	rest: function(request,status,body){
+		this.error("REST error processing for request body: \n"+request+"\n\n"+"REST error response: \n"+status+": "+body);
+		var json = JSON.parse(body);
+		switch(status){
+			case 400 : break; //wrong format, notify admin
+			case 401 : break; //bad credentials, notify admin
+			case 403 : break; //not authorized, notify user
+			case 500 : break; //server error, retry, notify admin
+		}
+	},
+
+    type: 'handleErrors'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-07 15:49:26</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>26b47917db982740c822fcd6f49619da</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>handleErrors</sys_name>
+        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_script_include_26b47917db982740c822fcd6f49619da</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-08 18:03:07</sys_updated_on>
+    </sys_script_include>
+</record_update>

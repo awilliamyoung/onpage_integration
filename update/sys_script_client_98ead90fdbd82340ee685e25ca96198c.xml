@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>table</field>
+        <global>true</global>
+        <messages/>
+        <name>Get Field Names</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+   }
+	var ajax = new GlideAjax('x_gfnll_onpage.getFields');
+		ajax.addParam('sysparm_name',"getPairs");
+		ajax.addParam('sysparm_table_name',newValue);
+		ajax.getXMLAnswer(display);
+}
+function display(answer){
+	//g_form.addInfoMessage(answer);
+	var fields = '';
+	var array = answer.split(",");
+	for(var i=0;i<array.length;i++){
+		fields += array[i]+"\n";
+	}
+	g_form.setValue('template_values',fields);
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-06 19:11:15</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>98ead90fdbd82340ee685e25ca96198c</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Get Field Names</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_script_client_98ead90fdbd82340ee685e25ca96198c</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-06 19:55:17</sys_updated_on>
+        <table>x_gfnll_onpage_onpage_template</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_gfnll_onpage.setup</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>setup</name>
+        <script><![CDATA[var setup = Class.create();
+setup.prototype = {
+    initialize: function() {
+		this.URLsub = gs.getProperty('x_gfnll_onpage.URLsubdomain');
+		//LOGGING/////////
+		this.logType = "outbound";
+		this.logTable = '';
+		this.logID = '';
+		this.log = new x_gfnll_onpage.log();
+		this.error = function(message){
+		  this.log.error(message,this.logType,this.logTable,this.logID);
+		};
+		this.info = function(message){
+		  this.log.error(message,this.logType,this.logTable,this.logID);
+		};
+    },
+	register: function(email,pw){		
+		//register the instance with OnPage and get token/key
+		this.info("Starting registration process");
+		var instance = gs.getProperty('instance_name'),
+			username = "onpage",
+			password = this._createUser();
+		var rest = new sn_ws.RESTMessageV2("Register with OnPage","Register");
+			rest.setStringParameterNoEscape('URLsub',this.URLsub);
+			rest.setStringParameterNoEscape('dispEmail',email);
+			rest.setStringParameterNoEscape('dispPass',pw);
+			rest.setStringParameterNoEscape('instance',instance);
+			rest.setStringParameterNoEscape('username',username);
+			rest.setStringParameterNoEscape('password',password);
+		var response = rest.execute();
+		var status = response.getStatusCode();
+		var body = response.getBody();
+		this.info("Registration response: "+status+": "+body);
+		if(status!=200){
+			var request = rest.getRequestBody(),
+				table = '',
+				id = '';
+			this._handleErrors(request,status,body);
+		}
+		else{
+			//parse for key values and update sys properties
+			var json = JSON.parse(body);
+			var token = json.credentials.token;
+			var key = json.credentials.secretKey;
+			this.info("New Token: "+token);
+			this.info("New Key: "+key);
+			var prop = new GlideRecord('sys_properties');
+				//set token
+				prop.get('name',"x_gfnll_onpage.auth.token");
+				prop.setValue('value',token);
+				prop.update();
+				//set key
+				prop.get('name',"x_gfnll_onpage.auth.key");
+				prop.setValue('value',key);
+				prop.update();
+		}
+		
+	},
+	_createUser: function(){
+		this.info("Create User function starting");
+		
+		//check for existing account
+		var sys_id;
+		var gr = new GlideRecord('sys_user');
+			gr.addQuery('user_name',"onpage");
+			gr.query();
+		var count = gr.getRowCount();
+		if(count!=0){
+			//if exists, update password
+			this.info("OnPage user exists. Updating password.");
+			gr.next();
+			sys_id = gr.getUniqueValue();
+			gr.setValue('user_password',sys_id);
+			gr.update();
+		}
+		else{
+			//doesn't exist, create user
+			this.info("OnPage user does not exist. Creating.");
+			gr.initialize();
+			gr.setValue('user_name',"onpage");
+			gr.setValue('first_name',"OnPage");
+			gr.setValue('last_name',"Integration");
+			gr.setValue('web_service_access_only',true);
+			gr.insert();
+			sys_id = gr.getUniqueValue();
+			gr.setValue('user_password',sys_id);
+			gr.update();
+		}
+		//check for user roles
+		this.info("Checking for user roles.");
+		var role = new GlideRecord('sys_user_role');
+			role.get("name","x_gfnll_onpage.integration_user");
+		var roleGR = new GlideRecord('sys_user_has_role');
+			roleGR.addQuery('user',sys_id);
+			roleGR.addQuery('role',role.getUniqueValue());
+			roleGR.query();
+		var roleCount = roleGR.getRowCount();
+		if(roleCount>0){
+			//if existing, do nothing
+			this.info("OnPage user has roles. No changes to make.");
+			return;
+		}
+		else{
+			//not existing, create record
+			this.info("OnPage user does not have roles. Adding role.");
+			var grantRole = new GlideRecord('sys_user_has_role');
+			grantRole.initialize();
+			grantRole.setValue('user',sys_id);
+			grantRole.setValue('role',role.getUniqueValue());
+			grantRole.insert();
+		}
+		return sys_id;
+	},
+	_handleErrors: function(request,status,body){
+		var handle = new x_gfnll_onpage.handleErrors();
+			handle.rest(request,status,body);
+	},
+    type: 'setup'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-07 15:49:22</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>71d07917db982740c822fcd6f49619bf</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>setup</sys_name>
+        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_script_include_71d07917db982740c822fcd6f49619bf</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-08 18:07:46</sys_updated_on>
+    </sys_script_include>
+</record_update>

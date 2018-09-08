@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_gfnll_onpage.sync</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>sync</name>
+        <script><![CDATA[var sync = Class.create();
+sync.prototype = {
+    initialize: function() {
+		this.token = gs.getProperty('x_gfnll_onpage.auth.token');
+		this.key = gs.getProperty('x_gfnll_onpage.auth.token');
+		this.URLsub = gs.getProperty('x_gfnll_onpage.URLsubdomain');
+		this.instance = gs.getProperty('instance_name');
+		this.username = 'onpage';
+		this.password = function(){
+			var gr = new GlideRecord('sys_user');
+				gr.get('user_name',"onpage");
+			return gr.getUniqueValue();
+		};
+		//LOGGING/////////
+		this.logTable = '';
+		this.logID = '';
+		this.log = new x_gfnll_onpage.log();
+		this.error = function(message,type){
+		  this.log.error(message,type,this.logTable,this.logID);
+		};
+		this.info = function(message,type){
+		  this.log.error(message,this.lype,this.logTable,this.logID);
+		};
+    },
+	syncGroups: function(){
+		//get groups from OnPage
+		var body = this._getGroups();
+		if(body=="error"){
+			return;
+		}
+		var json = JSON.parse(body);
+		var groups = json.groups;
+		//loop through accounts and get values
+		for(var i=0;i<groups.length;i++){
+			var group = groups[i];
+			this.info("syncGroups: looking for existing group: "+group.toString(),"internal");
+			var name = group.name,
+				opid = group.opid;
+			//check for existing records
+			var gr = new GlideRecord('x_gfnll_onpage_target');
+				gr.addQuery('opid',opid);
+				gr.query();
+			var count = gr.getRowCount();
+			this.info("syncGroups: count = "+count,"internal");
+			if(count>0){
+				//if existing, check for value changes
+				this.info("syncGroups: existing group","internal");
+				var fields = ["name"];
+				var opValues = [name];
+				var update = false;
+				for(var j=0;j<fields.length;j++){
+					var field = fields[j],
+						onpage = opValues[j],
+						existing = gr.getValue(field);
+					if(existing != onpage){
+						//if value changed, set value and mark for update
+						this.info("syncGroups: existing does not match onpage","internal");
+						gr.setValue(field,onpage);
+						update = true;
+					}
+				}
+				if(update){
+					//if any value has changed, update record
+					this.info("syncGroups: updating existing record","internal");
+					gr.update();
+				}
+			}
+			else{
+				this.info("syncGroups: no existing group; creating","internal");
+				//no existing record, create one
+				var grImp = new GlideRecord('x_gfnll_onpage_target_import');
+				grImp.initialize();
+				grImp.setValue('name',name);
+				grImp.setValue('opid',opid);
+				grImp.insert();
+			}
+		}
+	},
+	syncUsers: function(){
+		//get accounts from OnPage
+		var body = this._getAccounts();
+		if(body=="error"){
+			return;
+		}
+		var json = JSON.parse(body);
+		var accounts = json.accounts;
+		//loop through accounts and get values
+		for(var i=0;i<accounts.length;i++){
+			var account = accounts[i];
+			this.info("syncUsers: looking for existing user: "+account.toString(),"internal");
+			var first = account.firstName,
+				last = account.lastName,
+				email = account.email,
+				opid = account.opid;
+			//check for existing records
+			var gr = new GlideRecord('x_gfnll_onpage_target');
+				gr.addQuery('opid',opid);
+				gr.query();
+			var count = gr.getRowCount();
+			this.info("syncUsers: count = "+count,"internal");
+			if(count>0){
+				//if existing, check for value changes
+				this.info("syncUsers: existing user","internal");
+				var fields = ["first","last","email"];
+				var opValues = [first,last,email];
+				var update = false;
+				for(var j=0;j<fields.length;j++){
+					var field = fields[j],
+						onpage = opValues[j],
+						existing = gr.getValue(field);
+					if(existing != onpage){
+						//if value changed, set value and mark for update
+						this.info("syncUsers: existing does not match onpage","internal");
+						gr.setValue(field,onpage);
+						update = true;
+					}
+				}
+				if(update){
+					//if any value has changed, update record
+					this.info("syncUsers: updating existing record","internal");
+					gr.update();
+				}
+			}
+			else{
+				this.info("syncUsers: no existing user; creating","internal");
+				//no existing record, create one
+				var grImp = new GlideRecord('x_gfnll_onpage_target_import');
+				grImp.initialize();
+				grImp.setValue('first',first);
+				grImp.setValue('last',last);
+				grImp.setValue('email',email);
+				grImp.setValue('opid',opid);
+				grImp.insert();
+			}
+		}
+	},
+	_getAccounts: function(){
+		//rest call to onpage, return body if no error
+		var rest = new sn_ws.RESTMessageV2("OnPage Secured","accounts");
+			rest.setStringParameterNoEscape('URLsub',this.URLsub);
+			rest.setStringParameterNoEscape('token',this.token);
+			rest.setStringParameterNoEscape('key',this.key);
+		var response = rest.execute();
+		var status = response.getStatusCode();
+		var body = response.getBody();
+		if(status==200){
+			return body;
+		}
+		else{
+			var request = rest.getRequestBody();
+			this._handleErrors(request,status,body);
+			return "error";
+		}
+	},
+	_getGroups: function(){
+		//rest call to onpage, return body if no error
+		var rest = new sn_ws.RESTMessageV2("OnPage Secured","groups");
+			rest.setStringParameterNoEscape('URLsub',this.URLsub);
+			rest.setStringParameterNoEscape('token',this.token);
+			rest.setStringParameterNoEscape('key',this.key);
+		var response = rest.execute();
+		var status = response.getStatusCode();
+		var body = response.getBody();
+		if(status==200){
+			return body;
+		}
+		else{
+			var request = rest.getRequestBody();
+			this._handleErrors(request,status,body);
+			return "error";
+		}
+	},
+	_handleErrors: function(request,status,body){
+		var handle = new x_gfnll_onpage.handleErrors();
+			handle.rest(request,status,body);
+	},
+
+    type: 'sync'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-07 15:18:33</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>6793a19fdb182740c822fcd6f49619e8</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>sync</sys_name>
+        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_script_include_6793a19fdb182740c822fcd6f49619e8</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-08 18:07:14</sys_updated_on>
+    </sys_script_include>
+</record_update>

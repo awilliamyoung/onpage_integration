@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>inherit_from_parent</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content>{&#13;
+	"id": "${id}",&#13;
+	"subject": "${subject}",&#13;
+	"body": "${body}",&#13;
+	"recipients": ${recipArray},&#13;
+	"priority": "${priority}",&#13;
+	"possibleAnswers" : ${ansArray}&#13;
+}</content>
+        <function_name>sendMessage</function_name>
+        <http_method>post</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>OnPage Secured [ sendMessage ]</qualified_name>
+        <rest_endpoint>https://${URLsub}.onpage.com/v1/s/message</rest_endpoint>
+        <rest_message display_value="OnPage Secured">b880854bdb982340ee685e25ca9619e6</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-06 17:39:59</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>eb75c10fdb982340ee685e25ca961993</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>sendMessage</sys_name>
+        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_rest_message_fn_eb75c10fdb982340ee685e25ca961993</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-06 17:39:59</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>

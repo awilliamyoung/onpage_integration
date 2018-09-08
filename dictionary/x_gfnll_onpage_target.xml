@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="OnPage Target" max_length="40" name="x_gfnll_onpage_target" type="collection">
+        <element dependent="table" dependent_on_field="table" label="Document ID" max_length="32" name="document_id" type="document_id" use_dependent_field="true"/>
+        <element label="Email" max_length="40" name="email" type="string"/>
+        <element label="First Name" max_length="40" name="first_name" type="string"/>
+        <element hint="Makes the account invisible when selecting recipients for messages." label="Hidden" max_length="40" name="hidden" type="boolean"/>
+        <element label="Last Name" max_length="40" name="last_name" type="string"/>
+        <element label="OnPage Name" max_length="40" name="onpage_name" type="string"/>
+        <element display="true" label="OnPage ID" mandatory="true" max_length="100" name="opid" type="string"/>
+        <element label="Table" max_length="80" name="table" type="table_name"/>
+        <index name="index">
+            <element name="opid"/>
+        </index>
+        <index name="index2">
+            <element name="document_id"/>
+        </index>
+    </element>
+</database>

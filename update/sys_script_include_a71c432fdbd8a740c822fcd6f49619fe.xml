@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_gfnll_onpage.log</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>log</name>
+        <script><![CDATA[var log = Class.create();
+log.prototype = {
+    initialize: function() {
+		this.infoEnabled = gs.getProperty('x_gfnll_onpage.event_log.info');
+    },
+	error: function(message,type,table,id){
+		if(table==null||table==undefined){
+			table='';
+		}
+		if(id==null||id==undefined){
+			id='';
+		}
+		this._createEvent(message,type,table,id,"error");
+	},
+	info: function(message,type,table,id){
+		if(this.infoEnabled=="false"){
+			return;
+		}
+		if(table==null||table==undefined){
+			table='';
+		}
+		if(id==null||id==undefined){
+			id='';
+		}
+		this._createEvent(message,type,table,id,"info");
+	},
+	_createEvent: function(message,type,table,id,status){
+		var gr = new GlideRecord('x_gfnll_onpage_event');
+			gr.initialize();
+			gr.setValue('status',status);
+			gr.setValue('type',type);
+			gr.setValue('current',message);
+			gr.setValue('table',table);
+			gr.setValue('document_id',id);
+			gr.insert();
+	},
+
+    type: 'log'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-08 16:51:22</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>a71c432fdbd8a740c822fcd6f49619fe</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>log</sys_name>
+        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_script_include_a71c432fdbd8a740c822fcd6f49619fe</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-08 17:29:29</sys_updated_on>
+    </sys_script_include>
+</record_update>
