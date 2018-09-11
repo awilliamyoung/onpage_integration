@@ -12,7 +12,7 @@
 sync.prototype = {
     initialize: function() {
 		this.token = gs.getProperty('x_gfnll_onpage.auth.token');
-		this.key = gs.getProperty('x_gfnll_onpage.auth.token');
+		this.key = gs.getProperty('x_gfnll_onpage.auth.key');
 		this.URLsub = gs.getProperty('x_gfnll_onpage.URLsubdomain');
 		this.instance = gs.getProperty('instance_name');
 		this.username = 'onpage';
@@ -22,14 +22,14 @@ sync.prototype = {
 			return gr.getUniqueValue();
 		};
 		//LOGGING/////////
-		this.logTable = '';
-		this.logID = '';
+		this.logTable = 'sysauto_script';
+		this.logID = '6c64762cdb282740ee685e25ca96195d'; //scheduled job Sync Targets
 		this.log = new x_gfnll_onpage.log();
 		this.error = function(message,type){
 		  this.log.error(message,type,this.logTable,this.logID);
 		};
 		this.info = function(message,type){
-		  this.log.error(message,this.lype,this.logTable,this.logID);
+		  this.log.info(message,type,this.logTable,this.logID);
 		};
     },
 	syncGroups: function(){
@@ -43,7 +43,7 @@ sync.prototype = {
 		//loop through accounts and get values
 		for(var i=0;i<groups.length;i++){
 			var group = groups[i];
-			this.info("syncGroups: looking for existing group: "+group.toString(),"internal");
+			this.info("Looking for existing group: "+group.toString(),"internal");
 			var name = group.name,
 				opid = group.opid;
 			//check for existing records
@@ -51,10 +51,10 @@ sync.prototype = {
 				gr.addQuery('opid',opid);
 				gr.query();
 			var count = gr.getRowCount();
-			this.info("syncGroups: count = "+count,"internal");
+			this.info("Matching Groups count = "+count,"internal");
 			if(count>0){
 				//if existing, check for value changes
-				this.info("syncGroups: existing group","internal");
+				this.info("Existing group found","internal");
 				var fields = ["name"];
 				var opValues = [name];
 				var update = false;
@@ -64,19 +64,19 @@ sync.prototype = {
 						existing = gr.getValue(field);
 					if(existing != onpage){
 						//if value changed, set value and mark for update
-						this.info("syncGroups: existing does not match onpage","internal");
+						this.info("Existing group record value does not match onpage; updating","internal");
 						gr.setValue(field,onpage);
 						update = true;
 					}
 				}
 				if(update){
 					//if any value has changed, update record
-					this.info("syncGroups: updating existing record","internal");
+					this.info("Updating existing group record","internal");
 					gr.update();
 				}
 			}
 			else{
-				this.info("syncGroups: no existing group; creating","internal");
+				this.info("No existing group; creating","internal");
 				//no existing record, create one
 				var grImp = new GlideRecord('x_gfnll_onpage_target_import');
 				grImp.initialize();
@@ -97,7 +97,7 @@ sync.prototype = {
 		//loop through accounts and get values
 		for(var i=0;i<accounts.length;i++){
 			var account = accounts[i];
-			this.info("syncUsers: looking for existing user: "+account.toString(),"internal");
+			this.info("Looking for existing user: "+account.toString(),"internal");
 			var first = account.firstName,
 				last = account.lastName,
 				email = account.email,
@@ -107,10 +107,10 @@ sync.prototype = {
 				gr.addQuery('opid',opid);
 				gr.query();
 			var count = gr.getRowCount();
-			this.info("syncUsers: count = "+count,"internal");
+			this.info("Matching user count = "+count,"internal");
 			if(count>0){
 				//if existing, check for value changes
-				this.info("syncUsers: existing user","internal");
+				this.info("Existing user found","internal");
 				var fields = ["first","last","email"];
 				var opValues = [first,last,email];
 				var update = false;
@@ -120,19 +120,19 @@ sync.prototype = {
 						existing = gr.getValue(field);
 					if(existing != onpage){
 						//if value changed, set value and mark for update
-						this.info("syncUsers: existing does not match onpage","internal");
+						this.info("Existing user value does not match onpage; updating","internal");
 						gr.setValue(field,onpage);
 						update = true;
 					}
 				}
 				if(update){
 					//if any value has changed, update record
-					this.info("syncUsers: updating existing record","internal");
+					this.info("Updating existing user record","internal");
 					gr.update();
 				}
 			}
 			else{
-				this.info("syncUsers: no existing user; creating","internal");
+				this.info("No existing user; creating","internal");
 				//no existing record, create one
 				var grImp = new GlideRecord('x_gfnll_onpage_target_import');
 				grImp.initialize();
@@ -192,7 +192,7 @@ sync.prototype = {
         <sys_created_on>2018-09-07 15:18:33</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>6793a19fdb182740c822fcd6f49619e8</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>sync</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
@@ -200,6 +200,6 @@ sync.prototype = {
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_include_6793a19fdb182740c822fcd6f49619e8</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-08 18:07:14</sys_updated_on>
+        <sys_updated_on>2018-09-11 21:19:16</sys_updated_on>
     </sys_script_include>
 </record_update>

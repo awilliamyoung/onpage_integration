@@ -2,7 +2,7 @@
 <record_update table="sys_properties">
     <sys_properties action="INSERT_OR_UPDATE">
         <choices/>
-        <description>number of minutes before a notification goes to admin [default:5]</description>
+        <description>How many minutes before an unprocessed event notifies the administrator email address? [default:5]</description>
         <ignore_cache>false</ignore_cache>
         <is_private>false</is_private>
         <name>x_gfnll_onpage.errors.event_age</name>
@@ -13,7 +13,7 @@
         <sys_created_on>2018-08-17 16:38:19</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>7318f128dbcca300ee685e25ca96198a</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>x_gfnll_onpage.errors.event_age</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
@@ -21,7 +21,7 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_properties_7318f128dbcca300ee685e25ca96198a</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-08-17 16:38:19</sys_updated_on>
+        <sys_updated_on>2018-09-10 16:04:50</sys_updated_on>
         <type>integer</type>
         <value>5</value>
         <write_roles>x_gfnll_onpage.admin</write_roles>

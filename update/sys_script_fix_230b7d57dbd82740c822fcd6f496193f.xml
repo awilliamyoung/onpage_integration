@@ -8,22 +8,25 @@
         <name>Test OP scripts</name>
         <run_once>true</run_once>
         <script><![CDATA[//new x_gfnll_onpage.setup().register("will.young@glidefast.com","$3cur3Pa$$w0rd");
-new x_gfnll_onpage.log().info("test message","inbound","","");
-//new x_gfnll_onpage.handleErrors().rest("request","status","body","","");]]></script>
+//new x_gfnll_onpage.log().info("test message","inbound","","");
+//new x_gfnll_onpage.handleErrors().rest("request","status","body","","");
+//new x_gfnll_onpage.sync().syncGroups();
+
+new x_gfnll_onpage.sync().syncUsers();]]></script>
         <sys_class_name>sys_script_fix</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
         <sys_created_on>2018-09-07 16:09:56</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>230b7d57dbd82740c822fcd6f496193f</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>Test OP scripts</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_fix_230b7d57dbd82740c822fcd6f496193f</sys_update_name>
-        <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-08 17:27:11</sys_updated_on>
+        <sys_updated_by>David.Delahoz</sys_updated_by>
+        <sys_updated_on>2018-09-11 15:29:52</sys_updated_on>
         <unloadable>false</unloadable>
     </sys_script_fix>
 </record_update>

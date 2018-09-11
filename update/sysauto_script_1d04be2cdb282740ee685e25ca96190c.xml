@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition/>
+        <conditional>false</conditional>
+        <name>Process Failed Notifications</name>
+        <run_as display_value="Will Young">8d536ad0db0c6700c822fcd6f4961928</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2018-09-11 17:31:01</run_start>
+        <run_time>1970-01-01 05:00:00</run_time>
+        <run_type>on_demand</run_type>
+        <script><![CDATA[//gs.info('ran');
+sendNotif();
+
+function sendNotif(){
+	var notifications = [];
+	
+	//bulk update to sending
+	var gr1 = new GlideRecord('x_gfnll_onpage_notification');
+		gr1.addQuery('status',"failed");
+		gr1.query();
+	var count = gr1.getRowCount();
+	this.info("Failed notifications to process: "+count);
+	if(count==0){
+		return;
+	}
+	while(gr1.next()){
+		notifications.push(gr1.getUniqueValue());
+		gr1.setValue('status',"sending");
+		gr1.setValue('retries',1);
+		gr1.update();
+	}
+	
+	//collect notification values into array of messages
+	var array = [];
+	for(var i=0;i<notifications.length;i++){
+		var gr = new GlideRecord('x_gfnll_onpage_notification');
+			gr.get(notifications[i]);
+		var table = gr.getValue('table'),
+			doc = gr.getValue('document_id'),
+			sd = gr.getValue('short_description'),
+			body = gr.getValue('body'),
+			recip = gr.getValue('recipients').split(","),
+			priority = gr.getValue('priority'),
+			options = gr.getValue('reply_options'),
+			reply = '';
+			if(options!=''&&options!=null){
+				reply = options.split(",");
+			}
+		var template = '{"id": "'+doc+'","subject":"'+sd+'","body":"'+body+'","recipients":'+this.reformat(recip)+',"priority":"'+priority+'","possibleAnswers":'+this.reformat(reply)+'}';
+		array.push(template);
+	}
+	this.info("Message array: "+array.toString());
+	
+	// send bulk message
+	var resp = new x_gfnll_onpage.workflow().sendRestMessages('['+array.toString()+']',"1d04be2cdb282740ee685e25ca96190c");
+	//process response
+	var ans = resp.split(';'),
+		status = ans[0],
+		respBdy = ans[1];
+	this.info("Response body is: "+respBdy);
+	
+	//update all records with status
+	for(var k=0;k<notifications.length;k++){
+		var gr2 = new GlideRecord('x_gfnll_onpage_notification');
+			gr2.get(notifications[k]);
+		if(status=="error"){
+			gr2.setValue('status',"error");
+			gr2.setValue('error',respBdy);
+			gr2.update();
+		}
+		else{
+			var json = JSON.parse(respBdy);
+			var obj = json[k];
+			var snID = obj.id,
+				acptd = obj.accepted;
+			if(acptd){
+				gr2.setValue('status',status);
+				gr2.setValue('onpage_id',snID);
+				gr2.setValue('error','');
+			}
+			else{
+				gr2.setValue('status',"error");
+				gr2.setValue('error',obj.errorDescription);
+			}
+			gr2.update();
+		}
+	}
+}
+
+function info(message){
+	//LOGGING/////////
+	var logType = "outbound";
+	var logTable = 'sysauto_script';
+	var id = "1d04be2cdb282740ee685e25ca96190c"; //this scheduled job
+	var log = new x_gfnll_onpage.log();
+		log.info(message,logType,logTable,id);
+}
+function reformat(array){
+	if(array==''){
+		return '[]';
+	}
+	var string,
+		quotes = [];
+	for(var i=0;i<array.length;i++){
+		quotes.push('"'+array[i]+'"');
+	}
+	string = '['+quotes.toString()+']';
+	return string;
+}]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-11 17:31:13</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>1d04be2cdb282740ee685e25ca96190c</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Process Failed Notifications</sys_name>
+        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sysauto_script_1d04be2cdb282740ee685e25ca96190c</sys_update_name>
+        <sys_updated_by>lorena.villanueva</sys_updated_by>
+        <sys_updated_on>2018-09-11 20:59:08</sys_updated_on>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

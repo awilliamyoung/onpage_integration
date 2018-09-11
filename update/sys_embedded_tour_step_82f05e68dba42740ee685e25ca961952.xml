@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_embedded_tour_step">
+    <sys_embedded_tour_step action="INSERT_OR_UPDATE">
+        <action>false</action>
+        <action_event>next</action_event>
+        <action_target/>
+        <action_target_ref display_value="7c305268dba42740ee685e25ca961932.2.xpath">46f0da68dba42740ee685e25ca961950</action_target_ref>
+        <active>true</active>
+        <content><![CDATA[Select 'No' if OnPage responses should not be recorded in target record's work notes]]></content>
+        <guide display_value="OnPage System Properties">7c305268dba42740ee685e25ca961932</guide>
+        <implicit>false</implicit>
+        <link/>
+        <name>Step 2</name>
+        <options/>
+        <order>2</order>
+        <placement>bottom</placement>
+        <sys_class_name>sys_embedded_tour_step</sys_class_name>
+        <sys_created_by>lorena.villanueva</sys_created_by>
+        <sys_created_on>2018-09-11 14:57:53</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>82f05e68dba42740ee685e25ca961952</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Step 2</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_embedded_tour_step_82f05e68dba42740ee685e25ca961952</sys_update_name>
+        <sys_updated_by>lorena.villanueva</sys_updated_by>
+        <sys_updated_on>2018-09-11 17:04:10</sys_updated_on>
+        <target/>
+        <target_ref display_value="7c305268dba42740ee685e25ca961932.2.xpath">46f0da68dba42740ee685e25ca961950</target_ref>
+        <ui_version>dynamic</ui_version>
+        <view/>
+        <window>system_properties_ui.do</window>
+    </sys_embedded_tour_step>
+</record_update>

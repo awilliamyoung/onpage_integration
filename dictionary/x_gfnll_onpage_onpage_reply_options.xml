@@ -6,6 +6,8 @@
         <element display="true" label="Name" mandatory="true" max_length="100" name="name" type="string"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
         <element label="Owner" mandatory="true" max_length="32" name="owner" reference="sys_user" type="reference"/>
+        <element hint="Makes the template visible to other users" label="Public" max_length="40" name="public" type="boolean"/>
+        <element label="Table" mandatory="true" max_length="80" name="table" type="table_name"/>
         <index name="index">
             <element name="owner"/>
         </index>

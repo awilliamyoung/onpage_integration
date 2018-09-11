@@ -44,7 +44,7 @@
         </filter>
         <from>0</from>
         <funnel_neck_percent>30</funnel_neck_percent>
-        <gauge_autoscale>false</gauge_autoscale>
+        <gauge_autoscale>true</gauge_autoscale>
         <group/>
         <import_table/>
         <interval>year</interval>
@@ -97,23 +97,23 @@
         <sys_created_on>2018-09-08 17:46:20</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>48ca57abdb9ca740c822fcd6f49619f2</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>OP Notifications in Error</sys_name>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>OP Notifications in Error (Retrying)</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_report_48ca57abdb9ca740c822fcd6f49619f2</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-08 17:46:20</sys_updated_on>
+        <sys_updated_on>2018-09-11 21:50:50</sys_updated_on>
         <table>x_gfnll_onpage_notification</table>
-        <title>OP Notifications in Error</title>
+        <title>OP Notifications in Error (Retrying)</title>
         <title_horizontal_alignment>center</title_horizontal_alignment>
         <title_vertical_alignment>top</title_vertical_alignment>
         <to>100</to>
         <trend_field>sys_created_on</trend_field>
         <type>angular_gauge</type>
-        <upper_limit>15</upper_limit>
+        <upper_limit>50</upper_limit>
         <use_color_heatmap>true</use_color_heatmap>
         <use_color_palette>false</use_color_palette>
         <user>8d536ad0db0c6700c822fcd6f4961928</user>

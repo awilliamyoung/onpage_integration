@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sysauto_template">
+    <sysauto_template action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <condition/>
+        <conditional>false</conditional>
+        <name>Torture test create changes</name>
+        <run_as display_value="Will Young">8d536ad0db0c6700c822fcd6f4961928</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period>1970-01-01 00:00:05</run_period>
+        <run_start>2018-09-11 21:29:10</run_start>
+        <run_time>1970-01-01 05:00:00</run_time>
+        <run_type>periodically</run_type>
+        <sys_class_name>sysauto_template</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-11 21:29:34</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>698ae3a8dbe82740ee685e25ca96198f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Torture test create changes</sys_name>
+        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sysauto_template_698ae3a8dbe82740ee685e25ca96198f</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-11 22:37:09</sys_updated_on>
+        <template display_value="Change VLAN on a Cisco switchport">b9c8d15147810200e90d87e8dee490f6</template>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_template>
+</record_update>

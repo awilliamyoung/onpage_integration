@@ -6,14 +6,14 @@
         <ignore_cache>false</ignore_cache>
         <is_private>false</is_private>
         <name>x_gfnll_onpage.auth.key</name>
-        <read_roles/>
+        <read_roles>x_gfnll_onpage.system</read_roles>
         <suffix>auth.key</suffix>
         <sys_class_name>sys_properties</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
         <sys_created_on>2018-09-06 16:49:48</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>6caab047db982340ee685e25ca961947</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>x_gfnll_onpage.auth.key</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
@@ -21,9 +21,9 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_properties_6caab047db982340ee685e25ca961947</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-07 16:34:23</sys_updated_on>
+        <sys_updated_on>2018-09-10 20:28:42</sys_updated_on>
         <type>string</type>
-        <value>oVRFm9YPRL8j8PwnPIrqBEL/uDRYN8JwfjXSu8psWtZqf9ghN2u2ohanHXDV+M7YLLofOIbhz+A7ybThIjqfDA==</value>
+        <value>u0gQlEI0t3WOAOJM9q0dBuMGQm3J69IbCc0JcZ2M2x+ABbGVSGvAwwM4PfbXTNZMixsLznebHWhCmggr4PdDOg==</value>
         <write_roles>x_gfnll_onpage.system,x_gfnll_onpage.integration_user</write_roles>
     </sys_properties>
     <sys_translated_text action="delete_multiple" query="documentkey=6caab047db982340ee685e25ca961947"/>

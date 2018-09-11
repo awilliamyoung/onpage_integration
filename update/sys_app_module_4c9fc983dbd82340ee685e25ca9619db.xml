@@ -2,7 +2,7 @@
 <record_update sys_domain="global" table="sys_app_module">
     <sys_app_module action="INSERT_OR_UPDATE">
         <active>true</active>
-        <application display_value="OnPage">03168f71dbcc2b00c822fcd6f4961903</application>
+        <application display_value="OnPage User">03168f71dbcc2b00c822fcd6f4961903</application>
         <assessment/>
         <content_page/>
         <device_type/>
@@ -17,7 +17,7 @@
         <mobile_title>OnPage Subscriptions</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
         <name>x_gfnll_onpage_onpage_subscription</name>
-        <order/>
+        <order>100</order>
         <override_menu_roles>false</override_menu_roles>
         <query/>
         <report/>
@@ -31,7 +31,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>4c9fc983dbd82340ee685e25ca9619db</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>My OnPage Subscriptions</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
@@ -40,7 +40,7 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_app_module_4c9fc983dbd82340ee685e25ca9619db</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-06 18:26:50</sys_updated_on>
+        <sys_updated_on>2018-09-10 15:54:40</sys_updated_on>
         <timeline_page/>
         <title>My OnPage Subscriptions</title>
         <uncancelable>false</uncancelable>

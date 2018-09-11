@@ -6,7 +6,7 @@
         <action_delete>false</action_delete>
         <action_insert>true</action_insert>
         <action_query>false</action_query>
-        <action_update>false</action_update>
+        <action_update>true</action_update>
         <active>true</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
@@ -29,12 +29,10 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-	gs.info("x_gfnll_onpage.workflow: Is this thing on?");
 	//check for subscriptions for this table
 	var sub = new GlideRecord('x_gfnll_onpage_onpage_subscription');
 		sub.addQuery('table', current.table);
 		sub.query();
-	gs.info("x_gfnll_onpage.workflow: Subscription for this table count: "+sub.getRowCount());
 	if(sub.next()){
 		var wf = new x_gfnll_onpage.workflow();
 			wf.createNotification(current.sys_id);
@@ -51,7 +49,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ad8d4797dbd46740c822fcd6f49619c0</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>Match Subscriptions</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
@@ -60,7 +58,7 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_ad8d4797dbd46740c822fcd6f49619c0</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-07 22:15:11</sys_updated_on>
+        <sys_updated_on>2018-09-11 16:51:25</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

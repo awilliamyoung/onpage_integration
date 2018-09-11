@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="content_block_static">
+    <content_block_static action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <condition/>
+        <conditional>false</conditional>
+        <frame/>
+        <logged_on>false</logged_on>
+        <name>Helpful Links </name>
+        <static_content><![CDATA[<p><a title="Go to Onpage" href="https://www.onpage.com/" target="_blank" rel="nofollow">Go to Onpage</a></p>
+<p><a title="Manage Users" href="nav_to.do?uri&#61;/sys_user_has_role_list.do%3Fsysparm_first_row%3D1%26sysparm_query%3DGOTOrole.nameLIKEonpage%255Erole%253Da6303520dbcca300ee685e25ca9619c3%26sysparm_view%3D" target="_blank" rel="nofollow">Manage Users</a></p>
+<div><a title="Set Preferences" href="system_properties_ui.do?sysparm_category&#61;OnPage%20Configurations&amp;sysparm_domain_restore&#61;false&amp;sysparm_stack&#61;no" target="_blank" rel="nofollow">Set Preferences</a></div>
+<div> </div>
+<div><a title="Retry Failed Notifications" href="https://ven02330.service-now.com/?OnPageRetry&amp;name&#61;test" rel="nofollow">Retry Failed Notifications</a></div>
+<div>Cancel Failed Notifications (script)</div>
+<div>Sync all users, groups, and memberships (script)</div>]]></static_content>
+        <sys_class_name>content_block_static</sys_class_name>
+        <sys_created_by>lorena.villanueva</sys_created_by>
+        <sys_created_on>2018-09-10 16:09:02</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>3b439598db28e340ee685e25ca9619d8</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>Helpful Links </sys_name>
+        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>content_block_static_3b439598db28e340ee685e25ca9619d8</sys_update_name>
+        <sys_updated_by>lorena.villanueva</sys_updated_by>
+        <sys_updated_on>2018-09-11 20:53:08</sys_updated_on>
+    </content_block_static>
+    <sys_translated_text action="delete_multiple" query="documentkey=3b439598db28e340ee685e25ca9619d8"/>
+</record_update>

@@ -2,18 +2,18 @@
 <record_update table="sys_properties">
     <sys_properties action="INSERT_OR_UPDATE">
         <choices/>
-        <description>URL for the BlastIT link</description>
+        <description>URL for the BlastIT hyperlink.</description>
         <ignore_cache>false</ignore_cache>
         <is_private>false</is_private>
         <name>x_gfnll_onpage.link.blast_it</name>
-        <read_roles/>
+        <read_roles>x_gfnll_onpage.system</read_roles>
         <suffix>link.blast_it</suffix>
         <sys_class_name>sys_properties</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
         <sys_created_on>2018-09-04 14:28:07</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>639602d2db50a340c822fcd6f49619a4</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>x_gfnll_onpage.link.blast_it</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
@@ -21,10 +21,10 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_properties_639602d2db50a340c822fcd6f49619a4</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-04 14:28:07</sys_updated_on>
+        <sys_updated_on>2018-09-10 16:11:55</sys_updated_on>
         <type>string</type>
         <value>http://blastitonline.com/login</value>
-        <write_roles/>
+        <write_roles>x_gfnll_onpage.system</write_roles>
     </sys_properties>
     <sys_translated_text action="delete_multiple" query="documentkey=639602d2db50a340c822fcd6f49619a4"/>
 </record_update>

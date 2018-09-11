@@ -11,8 +11,9 @@
                 <element label="HIGH" sequence="200" value="HIGH"/>
             </choice>
         </element>
-        <element label="Recipients" max_length="4000" name="recipients" reference="x_gfnll_onpage_target" reference_qual="hidden=false^EQ" reference_qual_condition="hidden=false^EQ" type="glide_list"/>
-        <element label="Reply Options" max_length="32" name="reply_options" reference="x_gfnll_onpage_onpage_reply_options" type="reference"/>
+        <element hint="Makes the template visible to other users" label="Public" max_length="40" name="public" type="boolean"/>
+        <element label="Recipients" max_length="4000" name="recipients" reference="x_gfnll_onpage_target" reference_qual="hidden=false^active=true^EQ" reference_qual_condition="hidden=false^active=true^EQ" type="glide_list"/>
+        <element label="Reply Options" max_length="32" name="reply_options" reference="x_gfnll_onpage_onpage_reply_options" reference_qual="javascript: &quot;table=&quot;+current.table;" type="reference" use_reference_qualifier="advanced"/>
         <element label="Subject" mandatory="true" max_length="100" name="subject" type="string"/>
         <element label="Table" mandatory="true" max_length="80" name="table" type="table_name"/>
         <element default="&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;" label="Template Values" max_length="10000" name="template_values" read_only="true" type="string_full_utf8"/>

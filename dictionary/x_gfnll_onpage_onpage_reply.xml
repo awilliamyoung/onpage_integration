@@ -6,7 +6,7 @@
         <element display="true" label="Option Name" mandatory="true" max_length="40" name="option_name" type="string"/>
         <element label="Order" max_length="40" name="order" type="integer"/>
         <element label="Parent" mandatory="true" max_length="32" name="parent" reference="x_gfnll_onpage_onpage_reply_options" type="reference"/>
-        <element label="Script to Execute (Advanced)" max_length="8000" name="script" type="script"/>
+        <element hint="Server-side script that runs on the record in the document field when this option is received in an OnPage reply." label="Script to Execute (Advanced)" max_length="8000" name="script" type="script"/>
         <index name="index">
             <element name="parent"/>
         </index>

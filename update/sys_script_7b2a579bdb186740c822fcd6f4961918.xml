@@ -33,17 +33,24 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-	gs.info("x_gfnll_onpage: starting");
+	if(gs.getProperty('x_gfnll_onpage.send_method')=="bulk"){
+		return;
+	}
+	var id = current.getUniqueValue();
 	current.setValue('status',"sending");
 	current.update();
-	var doc = current.getValue('document_id'),
+	var //doc = current.getValue('document_id'),
+		doc = current.getUniqueValue(),
 		sd = current.getValue('short_description'),
 		body = current.getValue('body'),
 		recip = current.getValue('recipients').split(","),
 		priority = current.getValue('priority'),
-		reply = current.getValue('reply_options').split(",");
-	var resp = new x_gfnll_onpage.workflow().sendRestMessage(doc,sd,body,recip,priority,reply);
-		gs.info("x_gfnll_onpage: response: "+resp);
+		options = current.getValue('reply_options'),
+		reply = '';
+		if(options!=''&&options!=null){
+			reply = options.split(",");
+		}
+	var resp = new x_gfnll_onpage.workflow().sendRestMessage(doc,sd,body,recip,priority,reply,id);
 	var ans = resp.split(';'),
 		status = ans[0];
 	if(status=="error"){
@@ -54,7 +61,6 @@
 	}
 	current.setValue('status',status);
 	current.update();
-	gs.info("x_gfnll_onpage: end of script");
 
 })(current, previous);
 
@@ -66,7 +72,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>7b2a579bdb186740c822fcd6f4961918</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>Send Notifications</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
@@ -75,7 +81,7 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_7b2a579bdb186740c822fcd6f4961918</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-08 00:25:56</sys_updated_on>
+        <sys_updated_on>2018-09-11 19:36:57</sys_updated_on>
         <template/>
         <when>async</when>
     </sys_script>

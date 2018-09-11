@@ -12,60 +12,77 @@
 workflow.prototype = {
 	initialize: function() {
 		//LOGGING/////////
-		this.logType = "outbound";
-		this.logTable = 'x_gfnll_onpage_event';
+		this.logType = "internal";
 		this.log = new x_gfnll_onpage.log();
-		this.error = function(message,id){
-			this.log.error(message,this.logType,this.logTable,id);
+		this.error = function(message,type,table,id){
+			this.log.error(message,type,table,id);
 		};
-		this.info = function(message,id){
-			this.log.info(message,this.logType,this.logTable,id);
+		this.info = function(message,type,table,id){
+			this.log.info(message,type,table,id);
 		};
 	},
 	createNotification: function(event){
-		this.info("Create Notification starting",event);
+		var logTable = 'x_gfnll_onpage_event',
+			logType = 'internal';
+		this.info("Create Notification starting",logType,logTable,event);
 		var processed = false;
 		
 		//get event values
 		var grEvent = new GlideRecord('x_gfnll_onpage_event');
-		grEvent.get(event);
+			grEvent.get(event);
 		var table = grEvent.getValue('table'),
-		docID = grEvent.getValue('document_id');
+			docID = grEvent.getValue('document_id');
 		var sub = new GlideRecord('x_gfnll_onpage_onpage_subscription');
-		sub.addQuery('table', table);
-		sub.query();
+			sub.addQuery('table', table);
+			sub.query();
 		while(sub.next()) {
-			this.info("Checking subscription "+sub.getValue('name'),event);
+			this.info("Checking subscription "+sub.getValue('name'),logType,logTable,event);
 			var template = sub.getValue('template'),
-			conditions = sub.getValue('conditions_builder'),
-			subRecip = sub.getValue('recipients'),
-			recips = subRecip.split(",");
+				conditions = sub.getValue('conditions_builder'),
+				subRecip = sub.getValue('recipients'),
+				recips = [];
+			if(subRecip!=''&&subRecip!=null){
+				recips = subRecip.split(",");
+			}
 			
 			//check each subscription to see if the criteria match
 			var rec = new GlideRecord(table);
-			rec.addQuery('sys_id', docID);
-			rec.addEncodedQuery(conditions);
-			rec.query();
+				rec.addQuery('sys_id', docID);
+				rec.addEncodedQuery(conditions);
+				rec.query();
 			var count = rec.getRowCount();
-			this.info("Matching subscriptions: "+count,event);
+			this.info("Subscription matches? "+count,logType,logTable,event);
 			
 			if(rec.hasNext()) {
-				this.info("Subscription found. Recipients are: "+recips.toString(),event);
+				this.info("Subscription found. Recipients are: "+recips.toString(),logType,logTable,event);
 				processed = true;
 				//get template
 				var tempGR = new GlideRecord('x_gfnll_onpage_onpage_template');
 				tempGR.get(template);
-				var priority = tempGR.getValue('priority'),
+				var priority = tempGR.getDisplayValue('priority'),
 				options = tempGR.getValue('reply_options'),
 				trValue = tempGR.getValue('recipients'),
-				tempRecip = trValue.split(",");
+				tempRecip = [];
+				if(trValue!=''&&trValue!=null){
+					tempRecip = trValue.split(",");
+				}
 				//concat recipients list
 				for(var i=0;i<tempRecip.length;i++){
 					if(recips.indexOf(tempRecip[i])==-1){
 						recips.push(tempRecip[i]);
 					}
 				}
-				this.info("Recipient sys IDs: "+recips.toString(),event);
+				this.info("Recipient sys IDs: "+recips.toString(),logType,logTable,event);
+				if(recips.length==0){
+					this.error("No recipients specified in subscription or template. Message cannot be sent.",logType,logTable,event);
+					var curr = grEvent.getValue('current');
+					grEvent.setValue('previous',curr);
+					grEvent.setValue('current',"No recipients specified in subscription or template. Message cannot be sent.");
+					grEvent.setValue('status',"ignored");
+					grEvent.setValue('type',"outbound");
+					grEvent.update();
+					return;
+				}
 				
 				//get opid for each recipient
 				var recipients = [];
@@ -75,7 +92,7 @@ workflow.prototype = {
 					grT.get(id);
 					recipients.push(grT.getValue("opid"));
 				}
-				this.info("Recipients OPIDs: "+recipients.toString(),event);
+				this.info("Recipients OPIDs: "+recipients.toString(),logType,logTable,event);
 				
 				//get response options
 				var replies = [];
@@ -84,7 +101,7 @@ workflow.prototype = {
 				grRply.orderBy('order');
 				grRply.query();
 				var countRply = grRply.getRowCount();
-				this.info("Reply count: "+countRply,event);
+				this.info("Reply count: "+countRply,logType,logTable,event);
 				while(grRply.next()){
 					//for(var k=0;k<countRply;k++){
 						var option = grRply.getValue('option_name');
@@ -92,7 +109,7 @@ workflow.prototype = {
 							replies.push(option);
 						}
 				}
-				this.info("Reply options are: "+replies.toString(),event);
+				this.info("Reply options are: "+replies.toString(),logType,logTable,event);
 
 				//get values for new notification
 				var nshortd = tempGR.getValue('subject'),
@@ -103,9 +120,10 @@ workflow.prototype = {
 					ndoc = docID,
 					npri = priority,
 					nstatus = "send-ready";
-				nshortd = this.findMatch(nshortd,ntable,docID);
-				nbody = this.findMatch(nbody,ntable,docID);
+				nshortd = this.findMatch(nshortd,ntable,docID,event);
+				nbody = this.findMatch(nbody,ntable,docID,event);
 				nbody = encodeURI(nbody);
+				nshortd = encodeURI(nshortd);
 
 				//generate notification record
 				var notification = new GlideRecord('x_gfnll_onpage_notification');
@@ -116,11 +134,12 @@ workflow.prototype = {
 				notification.setValue('reply_options',nreplies);
 				notification.setValue('table',ntable);
 				notification.setValue('document_id',ndoc);
-				notification.setValue('priority',npri);
+				notification.setValue('priority',"LOW");
 				notification.setValue('status',nstatus);
 				notification.setValue('parent',event);
+				notification.setValue('template',template);
 				notification.insert();
-				this.info("Notification inserted: "+notification.getUniqueValue(),event);
+				this.info("Notification inserted: "+notification.getUniqueValue(),logType,logTable,event);
 
 			}
 			else{
@@ -143,35 +162,47 @@ workflow.prototype = {
 		grEvent.setValue('type',type);
 		grEvent.update();
 	},
-	findMatch: function(string,table,doc){
+	deleteInactiveTargets: function(){
+		var gr = new GlideRecord('x_gfnll_onpage_target');
+			gr.addQuery('active',"false");
+			gr.query();
+		gr.deleteMultiple();
+	},
+	findMatch: function(string,table,doc,event){
+		var logTable = 'x_gfnll_onpage_event',
+			logType = 'internal';
 		var patt = /\$\{([A-Za-z_\d]*)\}/g;
 		while(patt.test(string)){
-			this.info("Pattern matches "+string,"");
-			var newString = this.findReplace(string,table,doc);
-			this.info("findMatch New string is: "+newString);
+			this.info("Pattern matches "+string,logType,logTable,event);
+			var newString = this.findReplace(string,table,doc,event);
+			this.info("findMatch New string is: "+newString,logType,logTable,event);
 			string = newString;
 		}
 		return string;
 	},
-	findReplace: function(string,table,doc){
+	findReplace: function(string,table,doc,event){
+		var logTable = 'x_gfnll_onpage_event',
+			logType = 'internal';
 		var patt = /\$\{([A-Za-z_\d]*)\}/g;
 		var newString = '';
-		this.info("Find replace starting for string: "+string+" and table: "+table+" and doc "+doc,'');
+		this.info("Find replace starting for string: "+string+" and table: "+table+" and doc "+doc,logType,logTable,event);
 		var match = patt.exec(string);
 		var pattern = match[0];
 		var fieldName = match[1];
 		var getV = new GlideRecord(table);
 			getV.get(doc);
 		var value = getV.getDisplayValue(fieldName);
-		this.info("Replace "+pattern+" with "+value,'');
 		if(value==null){
 			value = '';
 		}
+		//this.info("Replace "+pattern+" with "+value,event);
 		newString = string.replace(pattern,value);
-		this.info("New string is: "+newString);
+		this.info("New string is: "+newString,logType,logTable,event);
 		return newString;
 	},
-	sendRestMessage: function(id, subject, body, recipients, priority,reply){
+	sendRestMessage: function(id, subject, body, recipients, priority,reply,notif){
+		var logTable = 'x_gfnll_onpage_notification',
+			logType = 'outbound';
 		try {
 			var r = new sn_ws.RESTMessageV2('OnPage Secured', 'sendMessage');
 			r.setStringParameterNoEscape('URLsub', gs.getProperty('x_gfnll_onpage.URLsubdomain'));
@@ -182,12 +213,12 @@ workflow.prototype = {
 			r.setStringParameterNoEscape('subject', subject);
 			r.setStringParameterNoEscape('recipArray', this.reformat(recipients));
 			r.setStringParameterNoEscape('id', id);
-			r.setStringParameter('body', body);
+			r.setStringParameterNoEscape('body', body);
 
 			var response = r.execute();
 			var responseBody = response.getBody();
 			var httpStatus = response.getStatusCode();
-			this.info("Response: "+httpStatus+": "+responseBody,'');
+			this.info("workflow.sendRestMessage response: "+httpStatus+": "+responseBody,logType,logTable,notif);
 			if(httpStatus!=200){
 				var request = r.getRequestBody();
 				var errorhandler = new handleErrors().rest(request,responseBody,httpStatus);
@@ -195,7 +226,6 @@ workflow.prototype = {
 			}
 			else{
 				var json = JSON.parse(responseBody);
-				//this.info("Accepted?: "+json[0].accepted,'');
 				if(json[0].accepted==true){
 					return "sent;"+json[0].id;
 				}
@@ -209,7 +239,9 @@ workflow.prototype = {
 			return "error;"+message;
 		}
 	},
-	sendRestMessages: function(msgArray){
+	sendRestMessages: function(msgArray,id){
+		var logTable = 'sysauto_script',
+			logType = 'outbound';
 		try {
 			var r = new sn_ws.RESTMessageV2('OnPage Secured', 'sendMessages');
 			r.setStringParameterNoEscape('URLsub', gs.getProperty('x_gfnll_onpage.URLsubdomain'));
@@ -220,7 +252,7 @@ workflow.prototype = {
 			var response = r.execute();
 			var responseBody = response.getBody();
 			var httpStatus = response.getStatusCode();
-			this.info("Response: "+httpStatus+": "+responseBody,'');
+			this.info("Response: "+httpStatus+": "+responseBody,logType,logTable,'');
 			if(httpStatus!=200){
 				var request = r.getRequestBody();
 				var errorhandler = new handleErrors().rest(request,responseBody,httpStatus);
@@ -232,7 +264,7 @@ workflow.prototype = {
 		}
 		catch(ex) {
 			var message = ex.getMessage();
-			this.error("Send messages error: "+message);
+			this.error("Send messages error: "+message,logType,logTable,event);
 		}
 	},
 	reformat: function(array){
@@ -251,7 +283,7 @@ workflow.prototype = {
         <sys_created_on>2018-09-07 21:57:11</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>48a8831fdb946740c822fcd6f49619bd</sys_id>
-        <sys_mod_count>49</sys_mod_count>
+        <sys_mod_count>66</sys_mod_count>
         <sys_name>workflow</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
@@ -259,6 +291,6 @@ workflow.prototype = {
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_include_48a8831fdb946740c822fcd6f49619bd</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-08 22:18:21</sys_updated_on>
+        <sys_updated_on>2018-09-11 22:38:14</sys_updated_on>
     </sys_script_include>
 </record_update>

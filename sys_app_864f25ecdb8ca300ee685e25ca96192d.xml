@@ -7,14 +7,14 @@
         <licensable>true</licensable>
         <license_model>none</license_model>
         <logo/>
-        <menu/>
+        <menu display_value="OnPage User">03168f71dbcc2b00c822fcd6f4961903</menu>
         <name>OnPage Integration</name>
         <private>false</private>
         <restrict_table_access>false</restrict_table_access>
         <runtime_access_tracking>permissive</runtime_access_tracking>
         <scope>x_gfnll_onpage</scope>
         <scoped_administration>false</scoped_administration>
-        <short_description/>
+        <short_description>Integrate OnPage with your ServiceNow instance</short_description>
         <source>x_gfnll_onpage</source>
         <store_correlation_id/>
         <store_url/>
@@ -23,9 +23,9 @@
         <sys_created_by>will.young</sys_created_by>
         <sys_created_on>2018-08-17 15:59:19</sys_created_on>
         <sys_id>864f25ecdb8ca300ee685e25ca96192d</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-08-17 16:21:05</sys_updated_on>
+        <sys_updated_on>2018-09-11 14:05:41</sys_updated_on>
         <template/>
         <trackable>true</trackable>
         <user_role display_value="x_gfnll_onpage.user" name="x_gfnll_onpage.user">a6303520dbcca300ee685e25ca9619c3</user_role>
