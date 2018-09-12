@@ -9,6 +9,12 @@
         <element label="Last Name" max_length="40" name="last_name" type="string"/>
         <element label="OnPage Name" max_length="40" name="onpage_name" read_only="true" type="string"/>
         <element display="true" label="OnPage ID" max_length="100" name="opid" read_only="true" type="string"/>
+        <element choice="1" label="Quick Select" max_length="40" name="quick_select" type="choice">
+            <choice>
+                <element label="User" sequence="100" value="sys_user"/>
+                <element label="Group" sequence="200" value="sys_user_group"/>
+            </choice>
+        </element>
         <element label="Table" max_length="80" name="table" type="table_name"/>
         <index name="index">
             <element name="opid"/>

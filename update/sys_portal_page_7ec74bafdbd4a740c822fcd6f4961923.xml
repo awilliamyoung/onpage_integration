@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<record_update node_type="sys_portal_page" unload_date="2018-09-11 22:45:06">
+<record_update node_type="sys_portal_page" unload_date="2018-09-12 04:25:59">
     <sys_portal_page action="INSERT_OR_UPDATE">
         <layout display_value="CMS 3 Column">90f0af530a0a0bb100e1c54f6c1039de</layout>
         <order/>
         <read_roles>x_gfnll_onpage.admin</read_roles>
         <roles/>
-        <selectable>true</selectable>
+        <selectable>false</selectable>
         <sys_class_name>sys_portal_page</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
         <sys_created_on>2018-09-08 16:23:30</sys_created_on>
@@ -13,7 +13,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>7ec74bafdbd4a740c822fcd6f4961923</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>OnPage Integration Status</sys_name>
         <sys_overrides/>
         <sys_package/>
@@ -22,7 +22,7 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_portal_page_7ec74bafdbd4a740c822fcd6f4961923</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-08 18:15:22</sys_updated_on>
+        <sys_updated_on>2018-09-12 03:56:59</sys_updated_on>
         <title>OnPage Integration Status</title>
         <user/>
         <view>default</view>

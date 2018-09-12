@@ -70,7 +70,7 @@
         <pivot_expanded>true</pivot_expanded>
         <report_drilldown/>
         <report_source/>
-        <roles/>
+        <roles>x_gfnll_onpage.admin</roles>
         <row>sys_created_on</row>
         <sc_groupby_item_id/>
         <sc_groupby_variable_id/>
@@ -98,7 +98,7 @@
         <sys_created_on>2018-09-11 22:21:54</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>96963728db2c2740ee685e25ca9619a9</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>OP Unprocess Inbound Events</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
@@ -106,7 +106,7 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_report_96963728db2c2740ee685e25ca9619a9</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-11 22:21:54</sys_updated_on>
+        <sys_updated_on>2018-09-12 04:01:08</sys_updated_on>
         <table>x_gfnll_onpage_event</table>
         <title>OP Unprocess Inbound Events</title>
         <title_horizontal_alignment>center</title_horizontal_alignment>
@@ -117,7 +117,7 @@
         <upper_limit>75</upper_limit>
         <use_color_heatmap>true</use_color_heatmap>
         <use_color_palette>false</use_color_palette>
-        <user>8d536ad0db0c6700c822fcd6f4961928</user>
+        <user>GLOBAL</user>
         <x_axis_display_grid>false</x_axis_display_grid>
         <x_axis_grid_color display_value="LightGrey">65b30308a9fe3dba01ebaa03e87e7cd3</x_axis_grid_color>
         <x_axis_grid_dotted>false</x_axis_grid_dotted>

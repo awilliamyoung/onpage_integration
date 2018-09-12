@@ -29,20 +29,6 @@
             <sys_updated_by>lorena.villanueva</sys_updated_by>
             <sys_updated_on>2018-09-04 14:42:24</sys_updated_on>
         </sys_ui_form_section>
-        <sys_ui_form_section action="INSERT_OR_UPDATE">
-            <position>2</position>
-            <sys_created_by>will.young</sys_created_by>
-            <sys_created_on>2018-09-06 18:08:08</sys_created_on>
-            <sys_domain>global</sys_domain>
-            <sys_domain_path>/</sys_domain_path>
-            <sys_id>089c8d03dbd82340ee685e25ca96197b</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_overrides/>
-            <sys_ui_form display_value="x_gfnll_onpage_onpage_subscription" name="x_gfnll_onpage_onpage_subscription" sys_domain="global" view="Default view">fe4a0256dbd0ef00ee685e25ca96194a</sys_ui_form>
-            <sys_ui_section caption="Content and Recipients" display_value="Content and Recipients" name="x_gfnll_onpage_onpage_subscription" sys_domain="global" view="Default view">c89c8d03dbd82340ee685e25ca961978</sys_ui_section>
-            <sys_updated_by>will.young</sys_updated_by>
-            <sys_updated_on>2018-09-06 18:08:08</sys_updated_on>
-        </sys_ui_form_section>
         <sys_ui_form action="INSERT_OR_UPDATE">
             <name>x_gfnll_onpage_onpage_subscription</name>
             <roles/>
