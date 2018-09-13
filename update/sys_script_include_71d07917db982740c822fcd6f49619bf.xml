@@ -21,7 +21,7 @@ setup.prototype = {
 		  this.log.error(message,this.logType,this.logTable,this.logID);
 		};
 		this.info = function(message){
-		  this.log.error(message,this.logType,this.logTable,this.logID);
+		  this.log.info(message,this.logType,this.logTable,this.logID);
 		};
     },
 	register: function(email,pw){		
@@ -30,6 +30,7 @@ setup.prototype = {
 		var instance = gs.getProperty('instance_name'),
 			username = "onpage",
 			password = this._createUser();
+		//this.info("integration password is:"+password);
 		var rest = new sn_ws.RESTMessageV2("Register with OnPage","Register");
 			rest.setStringParameterNoEscape('URLsub',this.URLsub);
 			rest.setStringParameterNoEscape('dispEmail',email);
@@ -42,6 +43,7 @@ setup.prototype = {
 		var body = response.getBody();
 		this.info("Registration response: "+status+": "+body);
 		if(status!=200){
+			this.error("Automatic registration process failed.");
 			var request = rest.getRequestBody(),
 				table = '',
 				id = '';
@@ -65,6 +67,11 @@ setup.prototype = {
 				prop.update();
 		}
 		
+		//Sync all targets(users/groups) after setup done
+		var syncTargets = new x_gfnll_onpage.sync();
+		syncTargets.targetSync();
+		
+		this.info("Registration process completed.");
 	},
 	_createUser: function(){
 		this.info("Create User function starting");
@@ -77,11 +84,7 @@ setup.prototype = {
 		var count = gr.getRowCount();
 		if(count!=0){
 			//if exists, update password
-			this.info("OnPage user exists. Updating password.");
-			gr.next();
-			sys_id = gr.getUniqueValue();
-			gr.setValue('user_password',sys_id);
-			gr.update();
+			this.info("OnPage user already exists.");
 		}
 		else{
 			//doesn't exist, create user
@@ -93,6 +96,7 @@ setup.prototype = {
 			gr.setValue('web_service_access_only',true);
 			gr.insert();
 			sys_id = gr.getUniqueValue();
+			gr.get(sys_id);
 			gr.setValue('user_password',sys_id);
 			gr.update();
 		}
@@ -108,7 +112,6 @@ setup.prototype = {
 		if(roleCount>0){
 			//if existing, do nothing
 			this.info("OnPage user has roles. No changes to make.");
-			return;
 		}
 		else{
 			//not existing, create record
@@ -119,6 +122,7 @@ setup.prototype = {
 			grantRole.setValue('role',role.getUniqueValue());
 			grantRole.insert();
 		}
+		this.info("create user sys id:"+sys_id);
 		return sys_id;
 	},
 	_handleErrors: function(request,status,body){
@@ -132,14 +136,14 @@ setup.prototype = {
         <sys_created_on>2018-09-07 15:49:22</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>71d07917db982740c822fcd6f49619bf</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_name>setup</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_include_71d07917db982740c822fcd6f49619bf</sys_update_name>
-        <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-08 18:07:46</sys_updated_on>
+        <sys_updated_by>David.Delahoz</sys_updated_by>
+        <sys_updated_on>2018-09-13 17:48:45</sys_updated_on>
     </sys_script_include>
 </record_update>

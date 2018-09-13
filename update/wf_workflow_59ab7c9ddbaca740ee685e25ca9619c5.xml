@@ -1,0 +1,2766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="wf_workflow_version">
+    <wf_workflow_version action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <activity_stages>{"activities":{},"subflows":[],"stages":{},"ends":["b5d155d5db20e740ee685e25ca9619bc"]}</activity_stages>
+        <after_business_rules>false</after_business_rules>
+        <checked_out/>
+        <checked_out_by/>
+        <column_renderer display_value="Workflow-driven">a56213111b030100adca1e094f0713ac</column_renderer>
+        <condition/>
+        <condition_type/>
+        <description/>
+        <expected_sequences>b1d155d5db20e740ee685e25ca9619bd,e1d111d5db20e740ee685e25ca9619cc,edd155d5db20e740ee685e25ca9619b5,31d155d5db20e740ee685e25ca9619be</expected_sequences>
+        <expected_time/>
+        <expected_time_type/>
+        <full_sequences>b1d155d5db20e740ee685e25ca9619bd,e1d111d5db20e740ee685e25ca9619cc,edd155d5db20e740ee685e25ca9619b5,b5d155d5db20e740ee685e25ca9619bc,31d155d5db20e740ee685e25ca9619be,61d155d5db20e740ee685e25ca9619b8,a5d111d5db20e740ee685e25ca9619ca,2dd155d5db20e740ee685e25ca9619b9,b5d155d5db20e740ee685e25ca9619bf,25d155d5db20e740ee685e25ca9619b7,71d155d5db20e740ee685e25ca9619c3,61d155d5db20e740ee685e25ca9619bb</full_sequences>
+        <journal/>
+        <max_activity_count>100</max_activity_count>
+        <name>On-Call: Escalations using OnPage</name>
+        <not_cacheable>false</not_cacheable>
+        <on_cancel><![CDATA[// This script executes if the workflow is cancelled.// The global variable context_sys_id contains the sys_id of the cancelled workflow context.]]></on_cancel>
+        <order>100</order>
+        <pin_type>set_by_activity</pin_type>
+        <published>true</published>
+        <relative_duration display_value="2 business days by 4pm">3bf802c20a0a0b52008e2859cd8abcf2</relative_duration>
+        <requires_ert>true</requires_ert>
+        <run_multiple>false</run_multiple>
+        <schedule/>
+        <stage_field/>
+        <stage_order>computed</stage_order>
+        <start display_value="Begin">b1d155d5db20e740ee685e25ca9619bd</start>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>a5d111d5db20e740ee685e25ca9619c8</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:24:35</sys_updated_on>
+        <table>task</table>
+        <timezone/>
+        <validated>false</validated>
+        <workflow display_value="On-Call: Escalations using OnPage">59ab7c9ddbaca740ee685e25ca9619c5</workflow>
+    </wf_workflow_version>
+    <wf_workflow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <description/>
+        <name>On-Call: Escalations using OnPage</name>
+        <preview/>
+        <sys_class_name>wf_workflow</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 16:40:32</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>59ab7c9ddbaca740ee685e25ca9619c5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>On-Call: Escalations using OnPage</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>wf_workflow_59ab7c9ddbaca740ee685e25ca9619c5</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 16:40:32</sys_updated_on>
+        <table>task</table>
+        <template>false</template>
+        <vars/>
+    </wf_workflow>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="If">98f621ca0a0a0b5900f7c291f5e45a0e</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id/>
+        <height/>
+        <input/>
+        <is_parent>false</is_parent>
+        <name>Assignment done?</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>71d155d5db20e740ee685e25ca9619c3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="On-Call: Escalations using OnPage">a5d111d5db20e740ee685e25ca9619c8</workflow_version>
+        <x>787</x>
+        <y>117</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=71d155d5db20e740ee685e25ca9619c3"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>71d155d5db20e740ee685e25ca9619c3</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>79d155d5db20e740ee685e25ca9619c3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value>answer = ifScript();&#13;
+&#13;
+function ifScript() {&#13;
+	if (JSUtil.notNil(current.assigned_to) || !current.active) {&#13;
+		var message;&#13;
+		if(!current.active)&#13;
+			message = gs.getMessage("Escalation plan has been cancelled as incident has been closed");&#13;
+		if(current.assigned_to)&#13;
+			message = gs.getMessage("Escalation plan has been cancelled as incident has been assigned");&#13;
+		&#13;
+		logToIncidentActivityLog(message);&#13;
+		return 'yes';&#13;
+	}&#13;
+	&#13;
+	return 'no';&#13;
+}&#13;
+&#13;
+function logToIncidentActivityLog(input) {&#13;
+	current.comments = input;&#13;
+}</value>
+        <variable display_value="">c35e50810a0a0ba96248a709b450fc32</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>71d155d5db20e740ee685e25ca9619c3</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>b5d155d5db20e740ee685e25ca9619c3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">493d2c1d0a6a803f3217a75738ea3289</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>71d155d5db20e740ee685e25ca9619c3</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>f1d155d5db20e740ee685e25ca9619c3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">493cba6a0a6a803f07df24b118473551</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>71d155d5db20e740ee685e25ca9619c3</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>f1d155d5db20e740ee685e25ca9619c3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">493cba6a0a6a803f07df24b118473551</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>71d155d5db20e740ee685e25ca9619c3</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>b5d155d5db20e740ee685e25ca9619c3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">493d2c1d0a6a803f3217a75738ea3289</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>71d155d5db20e740ee685e25ca9619c3</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>79d155d5db20e740ee685e25ca9619c3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value>answer = ifScript();&#13;
+&#13;
+function ifScript() {&#13;
+	if (JSUtil.notNil(current.assigned_to) || !current.active) {&#13;
+		var message;&#13;
+		if(!current.active)&#13;
+			message = gs.getMessage("Escalation plan has been cancelled as incident has been closed");&#13;
+		if(current.assigned_to)&#13;
+			message = gs.getMessage("Escalation plan has been cancelled as incident has been assigned");&#13;
+		&#13;
+		logToIncidentActivityLog(message);&#13;
+		return 'yes';&#13;
+	}&#13;
+	&#13;
+	return 'no';&#13;
+}&#13;
+&#13;
+function logToIncidentActivityLog(input) {&#13;
+	current.comments = input;&#13;
+}</value>
+        <variable display_value="">c35e50810a0a0ba96248a709b450fc32</variable>
+    </sys_variable_value>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Assignment done?">71d155d5db20e740ee685e25ca9619c3</activity>
+        <condition>activity.result == 'no'</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>No</name>
+        <order>1</order>
+        <short_description/>
+        <skip_during_generate>true</skip_during_generate>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>7dd155d5db20e740ee685e25ca9619c3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+    </wf_condition>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Assignment done?">71d155d5db20e740ee685e25ca9619c3</activity>
+        <condition>activity.result == 'yes'</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>Yes</name>
+        <order>2</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>fdd155d5db20e740ee685e25ca9619c3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Begin">c7a5e32c0a0a0b3a002377c24ed8ea76</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id/>
+        <height/>
+        <input/>
+        <is_parent>false</is_parent>
+        <name>Begin</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>b1d155d5db20e740ee685e25ca9619bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width>80</width>
+        <workflow_version display_value="On-Call: Escalations using OnPage">a5d111d5db20e740ee685e25ca9619c8</workflow_version>
+        <x>27</x>
+        <y>23</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=b1d155d5db20e740ee685e25ca9619bd"/>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Begin">b1d155d5db20e740ee685e25ca9619bd</activity>
+        <condition>true</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>Always</name>
+        <order>1</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>79d155d5db20e740ee685e25ca9619bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="End">c7a66f7d0a0a0b3a004544a6d2f14076</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id/>
+        <height/>
+        <input/>
+        <is_parent>false</is_parent>
+        <name>End</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>b5d155d5db20e740ee685e25ca9619bc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width>80</width>
+        <workflow_version display_value="On-Call: Escalations using OnPage">a5d111d5db20e740ee685e25ca9619c8</workflow_version>
+        <x>322</x>
+        <y>469</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=b5d155d5db20e740ee685e25ca9619bc"/>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="If">98f621ca0a0a0b5900f7c291f5e45a0e</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id/>
+        <height/>
+        <input>{}</input>
+        <is_parent>false</is_parent>
+        <name>Escalatee has an OnPage account?</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>31d155d5db20e740ee685e25ca9619be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="On-Call: Escalations using OnPage">a5d111d5db20e740ee685e25ca9619c8</workflow_version>
+        <x>300</x>
+        <y>196</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=31d155d5db20e740ee685e25ca9619be"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>31d155d5db20e740ee685e25ca9619be</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>39d155d5db20e740ee685e25ca9619be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value>// run script&#13;
+answer = ifScript();&#13;
+&#13;
+// script to determine answer&#13;
+function ifScript() {&#13;
+	// get the current escalatee&#13;
+	var currentEscalatee = new GlideRecord("sys_user");&#13;
+	currentEscalatee.get(workflow.scratchpad.currentEscalateeId);&#13;
+	workflow.scratchpad.escalateeName = currentEscalatee.name;&#13;
+	var op = new GlideRecord('x_gfnll_onpage_target');&#13;
+		op.addQuery('document_id',workflow.scratchpad.currentEscalateeId);&#13;
+		op.addActiveQuery();&#13;
+		op.query();&#13;
+	if(op.getRowCount()&gt;0){&#13;
+		logToIncident(workflow.scratchpad.currentLevel, currentEscalatee.name);&#13;
+		return 'yes';&#13;
+	}&#13;
+	else {&#13;
+		// log error&#13;
+		var reason = gs.getMessage("Cannot escalate to {0}: no OnPage configured or active", [currentEscalatee.getValue('name')] );&#13;
+		workflow.error(reason);&#13;
+		activity.state = 'faulted';&#13;
+		activity.fault_description = reason;&#13;
+		return 'no';&#13;
+	}&#13;
+}&#13;
+&#13;
+function logToIncident(level, name) {&#13;
+	var message = name + " is " + getLevelName(level) + " and has been contacted via OnPage";&#13;
+	current.comments = message;&#13;
+}&#13;
+&#13;
+function getLevelName(level) {&#13;
+	var levels = [];&#13;
+	levels[1] = "Primary on-call";&#13;
+	levels[2] = "Secondary on-call";&#13;
+	levels[3] = "Tertiary on-call";&#13;
+	if(level &gt; 3)&#13;
+		return level+"th level";&#13;
+	&#13;
+	return levels[level];&#13;
+}&#13;
+&#13;
+</value>
+        <variable display_value="">c35e50810a0a0ba96248a709b450fc32</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>31d155d5db20e740ee685e25ca9619be</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>75d155d5db20e740ee685e25ca9619be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">493d2c1d0a6a803f3217a75738ea3289</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>31d155d5db20e740ee685e25ca9619be</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>b1d155d5db20e740ee685e25ca9619be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">493cba6a0a6a803f07df24b118473551</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>31d155d5db20e740ee685e25ca9619be</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>b1d155d5db20e740ee685e25ca9619be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">493cba6a0a6a803f07df24b118473551</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>31d155d5db20e740ee685e25ca9619be</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>75d155d5db20e740ee685e25ca9619be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">493d2c1d0a6a803f3217a75738ea3289</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>31d155d5db20e740ee685e25ca9619be</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>39d155d5db20e740ee685e25ca9619be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value>// run script&#13;
+answer = ifScript();&#13;
+&#13;
+// script to determine answer&#13;
+function ifScript() {&#13;
+	// get the current escalatee&#13;
+	var currentEscalatee = new GlideRecord("sys_user");&#13;
+	currentEscalatee.get(workflow.scratchpad.currentEscalateeId);&#13;
+	workflow.scratchpad.escalateeName = currentEscalatee.name;&#13;
+	var op = new GlideRecord('x_gfnll_onpage_target');&#13;
+		op.addQuery('document_id',workflow.scratchpad.currentEscalateeId);&#13;
+		op.addActiveQuery();&#13;
+		op.query();&#13;
+	if(op.getRowCount()&gt;0){&#13;
+		logToIncident(workflow.scratchpad.currentLevel, currentEscalatee.name);&#13;
+		return 'yes';&#13;
+	}&#13;
+	else {&#13;
+		// log error&#13;
+		var reason = gs.getMessage("Cannot escalate to {0}: no OnPage configured or active", [currentEscalatee.getValue('name')] );&#13;
+		workflow.error(reason);&#13;
+		activity.state = 'faulted';&#13;
+		activity.fault_description = reason;&#13;
+		return 'no';&#13;
+	}&#13;
+}&#13;
+&#13;
+function logToIncident(level, name) {&#13;
+	var message = name + " is " + getLevelName(level) + " and has been contacted via OnPage";&#13;
+	current.comments = message;&#13;
+}&#13;
+&#13;
+function getLevelName(level) {&#13;
+	var levels = [];&#13;
+	levels[1] = "Primary on-call";&#13;
+	levels[2] = "Secondary on-call";&#13;
+	levels[3] = "Tertiary on-call";&#13;
+	if(level &gt; 3)&#13;
+		return level+"th level";&#13;
+	&#13;
+	return levels[level];&#13;
+}&#13;
+&#13;
+</value>
+        <variable display_value="">c35e50810a0a0ba96248a709b450fc32</variable>
+    </sys_variable_value>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Escalatee has an OnPage account?">31d155d5db20e740ee685e25ca9619be</activity>
+        <condition>activity.result == 'no'</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>No</name>
+        <order>1</order>
+        <short_description/>
+        <skip_during_generate>true</skip_during_generate>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>bdd155d5db20e740ee685e25ca9619be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+    </wf_condition>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Escalatee has an OnPage account?">31d155d5db20e740ee685e25ca9619be</activity>
+        <condition>activity.result == 'yes'</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>Yes</name>
+        <order>2</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>3dd155d5db20e740ee685e25ca9619be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="If">98f621ca0a0a0b5900f7c291f5e45a0e</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id/>
+        <height/>
+        <input/>
+        <is_parent>false</is_parent>
+        <name>Is Catch-All Configured?</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>61d155d5db20e740ee685e25ca9619b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="On-Call: Escalations using OnPage">a5d111d5db20e740ee685e25ca9619c8</workflow_version>
+        <x>76</x>
+        <y>319</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=61d155d5db20e740ee685e25ca9619b8"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>61d155d5db20e740ee685e25ca9619b8</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>69d155d5db20e740ee685e25ca9619b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>// check if catch-all is configured&#13;
+function ifScript() {&#13;
+	var rota = new SNC.OnCallRotation();&#13;
+	var catchAllType = rota.getCatchAllType(workflow.scratchpad.currentRotaID);&#13;
+	&#13;
+	workflow.scratchpad.catchAllType = catchAllType;&#13;
+	&#13;
+	// if catchAllType is defined, catchAll flow should be executed&#13;
+	return JSUtil.notNil(catchAllType) ? 'yes' : 'no';&#13;
+}&#13;
+&#13;
+answer = ifScript();</value>
+        <variable display_value="">c35e50810a0a0ba96248a709b450fc32</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>61d155d5db20e740ee685e25ca9619b8</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>a5d155d5db20e740ee685e25ca9619b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">493d2c1d0a6a803f3217a75738ea3289</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>61d155d5db20e740ee685e25ca9619b8</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>e1d155d5db20e740ee685e25ca9619b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value/>
+        <variable display_value="">493cba6a0a6a803f07df24b118473551</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>61d155d5db20e740ee685e25ca9619b8</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>e1d155d5db20e740ee685e25ca9619b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value/>
+        <variable display_value="">493cba6a0a6a803f07df24b118473551</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>61d155d5db20e740ee685e25ca9619b8</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>a5d155d5db20e740ee685e25ca9619b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">493d2c1d0a6a803f3217a75738ea3289</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>61d155d5db20e740ee685e25ca9619b8</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>69d155d5db20e740ee685e25ca9619b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>// check if catch-all is configured&#13;
+function ifScript() {&#13;
+	var rota = new SNC.OnCallRotation();&#13;
+	var catchAllType = rota.getCatchAllType(workflow.scratchpad.currentRotaID);&#13;
+	&#13;
+	workflow.scratchpad.catchAllType = catchAllType;&#13;
+	&#13;
+	// if catchAllType is defined, catchAll flow should be executed&#13;
+	return JSUtil.notNil(catchAllType) ? 'yes' : 'no';&#13;
+}&#13;
+&#13;
+answer = ifScript();</value>
+        <variable display_value="">c35e50810a0a0ba96248a709b450fc32</variable>
+    </sys_variable_value>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Is Catch-All Configured?">61d155d5db20e740ee685e25ca9619b8</activity>
+        <condition>activity.result == 'yes' &amp;&amp; workflow.scratchpad.catchAllType == 'all' &amp;&amp; activity.state != 'faulted'</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>All</name>
+        <order>3</order>
+        <short_description>Notify everyone on the specified roster</short_description>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>6dd155d5db20e740ee685e25ca9619b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+    </wf_condition>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Is Catch-All Configured?">61d155d5db20e740ee685e25ca9619b8</activity>
+        <condition>activity.state == 'faulted'</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>Error</name>
+        <order>5</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>e1d155d5db20e740ee685e25ca9619b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+    </wf_condition>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Is Catch-All Configured?">61d155d5db20e740ee685e25ca9619b8</activity>
+        <condition>activity.result == 'yes' &amp;&amp; workflow.scratchpad.catchAllType == 'group_manager' &amp;&amp; activity.state != 'faulted'</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>Group Manager</name>
+        <order>1</order>
+        <short_description>Notify the manager of the group linked to the rota</short_description>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>65d155d5db20e740ee685e25ca9619b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+    </wf_condition>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Is Catch-All Configured?">61d155d5db20e740ee685e25ca9619b8</activity>
+        <condition>activity.result == 'yes' &amp;&amp; workflow.scratchpad.catchAllType == 'individual' &amp;&amp; activity.state != 'faulted'</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>Individual</name>
+        <order>2</order>
+        <short_description>Notify the specified individual</short_description>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>61d155d5db20e740ee685e25ca9619b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+    </wf_condition>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Is Catch-All Configured?">61d155d5db20e740ee685e25ca9619b8</activity>
+        <condition>activity.result == 'no' &amp;&amp; activity.state != 'faulted'</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>None</name>
+        <order>4</order>
+        <short_description>There is no catch all configured</short_description>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>edd155d5db20e740ee685e25ca9619b8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="If">98f621ca0a0a0b5900f7c291f5e45a0e</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id/>
+        <height/>
+        <input/>
+        <is_parent>false</is_parent>
+        <name>Is there any schedule at the time?</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>e1d111d5db20e740ee685e25ca9619cc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="On-Call: Escalations using OnPage">a5d111d5db20e740ee685e25ca9619c8</workflow_version>
+        <x>138</x>
+        <y>49</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=e1d111d5db20e740ee685e25ca9619cc"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>e1d111d5db20e740ee685e25ca9619cc</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>6dd111d5db20e740ee685e25ca9619cc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>answer = ifScript();&#13;
+&#13;
+function ifScript() {&#13;
+	var rota = new SNC.OnCallRotation();&#13;
+	var gdt  = new GlideDateTime();&#13;
+	var escalationPlan = rota.getEscalationPlan(vars.assignment_group.sys_id.toString(), gdt);&#13;
+	&#13;
+    if (JSUtil.nil(rota) || JSUtil.nil(rota.getCurrentRotaID())) {&#13;
+        return 'no';&#13;
+    }&#13;
+    return 'yes';&#13;
+}</value>
+        <variable display_value="">c35e50810a0a0ba96248a709b450fc32</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>e1d111d5db20e740ee685e25ca9619cc</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>a9d111d5db20e740ee685e25ca9619cc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">493d2c1d0a6a803f3217a75738ea3289</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>e1d111d5db20e740ee685e25ca9619cc</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>e5d111d5db20e740ee685e25ca9619cc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value/>
+        <variable display_value="">493cba6a0a6a803f07df24b118473551</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>e1d111d5db20e740ee685e25ca9619cc</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>e5d111d5db20e740ee685e25ca9619cc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value/>
+        <variable display_value="">493cba6a0a6a803f07df24b118473551</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>e1d111d5db20e740ee685e25ca9619cc</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>a9d111d5db20e740ee685e25ca9619cc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">493d2c1d0a6a803f3217a75738ea3289</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>e1d111d5db20e740ee685e25ca9619cc</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>6dd111d5db20e740ee685e25ca9619cc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>answer = ifScript();&#13;
+&#13;
+function ifScript() {&#13;
+	var rota = new SNC.OnCallRotation();&#13;
+	var gdt  = new GlideDateTime();&#13;
+	var escalationPlan = rota.getEscalationPlan(vars.assignment_group.sys_id.toString(), gdt);&#13;
+	&#13;
+    if (JSUtil.nil(rota) || JSUtil.nil(rota.getCurrentRotaID())) {&#13;
+        return 'no';&#13;
+    }&#13;
+    return 'yes';&#13;
+}</value>
+        <variable display_value="">c35e50810a0a0ba96248a709b450fc32</variable>
+    </sys_variable_value>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Is there any schedule at the time?">e1d111d5db20e740ee685e25ca9619cc</activity>
+        <condition>activity.result == 'no'</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>No</name>
+        <order>2</order>
+        <short_description/>
+        <skip_during_generate>true</skip_during_generate>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>29d155d5db20e740ee685e25ca9619b5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+    </wf_condition>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Is there any schedule at the time?">e1d111d5db20e740ee685e25ca9619cc</activity>
+        <condition>activity.result == 'yes'</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>Yes</name>
+        <order>1</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>a5d155d5db20e740ee685e25ca9619b5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="If">98f621ca0a0a0b5900f7c291f5e45a0e</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id/>
+        <height/>
+        <input/>
+        <is_parent>false</is_parent>
+        <name>More Escalation Levels Available?</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>edd155d5db20e740ee685e25ca9619b5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="On-Call: Escalations using OnPage">a5d111d5db20e740ee685e25ca9619c8</workflow_version>
+        <x>462</x>
+        <y>87</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=edd155d5db20e740ee685e25ca9619b5"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>edd155d5db20e740ee685e25ca9619b5</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>25d155d5db20e740ee685e25ca9619b6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">493d2c1d0a6a803f3217a75738ea3289</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>edd155d5db20e740ee685e25ca9619b5</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>61d155d5db20e740ee685e25ca9619b6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value/>
+        <variable display_value="">493cba6a0a6a803f07df24b118473551</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>edd155d5db20e740ee685e25ca9619b5</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>e5d155d5db20e740ee685e25ca9619b6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>answer = ifScript();&#13;
+&#13;
+function ifScript() {&#13;
+	// Set current level to 0 if we are here for first time&#13;
+	// and save the assignment group on the scratchpad&#13;
+	if(JSUtil.nil(workflow.scratchpad.currentLevel)) {&#13;
+		workflow.scratchpad.currentLevel = 0;&#13;
+		workflow.scratchpad.assignment_group = vars.assignment_group.sys_id + "";&#13;
+	}&#13;
+	&#13;
+	var rota = new SNC.OnCallRotation();&#13;
+	var gdt = new GlideDateTime();&#13;
+	var escalationPlan = rota.getEscalationPlan(workflow.scratchpad.assignment_group, gdt);&#13;
+	&#13;
+	workflow.scratchpad.currentRotaID = rota.getCurrentRotaID(); // store the rota sys_id&#13;
+	// Check if we have more people on the escalation lineup&#13;
+	if(escalationPlan.size() &gt; workflow.scratchpad.currentLevel) {&#13;
+		workflow.scratchpad.current_backup = workflow.scratchpad.currentLevel ? "backup" : "current";&#13;
+		workflow.scratchpad.currentLevel ++;&#13;
+		var level = workflow.scratchpad.currentLevel+"";&#13;
+		var escalatee = escalationPlan.get(level-1);&#13;
+		var currentEscalatee = rota.getEscalateeAt(workflow.scratchpad.assignment_group, gdt, level);&#13;
+&#13;
+		// Handle null due to time-off case&#13;
+		if(!currentEscalatee || !currentEscalatee.sys_id)&#13;
+			return ifScript();&#13;
+				&#13;
+		workflow.scratchpad.currentEscalateeId = currentEscalatee.sys_id;&#13;
+		workflow.scratchpad.timeBetweenReminders = escalatee.timeBetweenReminders.getNumericValue() / 1000;&#13;
+		workflow.scratchpad.reminderNum = escalatee.reminderNum;&#13;
+		workflow.scratchpad.reminderSentNum = 0;	&#13;
+		&#13;
+		var user = new GlideRecord('sys_user');&#13;
+		user.get(currentEscalatee.sys_id);&#13;
+		&#13;
+		//write to incident activity log&#13;
+		if(level == 1)&#13;
+			//first message, presenting lineup&#13;
+			writeLineupToIncidentActivityLog(escalationPlan, escalatee.reminderNum, workflow.scratchpad.timeBetweenReminders);&#13;
+		else&#13;
+			writeEscalationToIncidentActivityLog(user.name);&#13;
+		&#13;
+		workflow.scratchpad.escalateeName = user.name;&#13;
+		return 'yes';&#13;
+	}&#13;
+	return 'no';&#13;
+}&#13;
+&#13;
+function writeEscalationToIncidentActivityLog(name) {&#13;
+	var message = gs.getMessage("Incident escalated to {0}", name);&#13;
+	current.comments = message;&#13;
+}&#13;
+&#13;
+function writeLineupToIncidentActivityLog(plan, numberOfReminders, timeBetweenReminders) {&#13;
+	//var message = "[code] ";&#13;
+	var message = gs.getMessage("This incident Escalation is in Process. Escalation Plan is now: ");&#13;
+	var lineBreak = " ";&#13;
+	message += lineBreak;&#13;
+	&#13;
+	for(var i = 0; i &lt; plan.size(); i++) {&#13;
+		//show next escalatee and amount of reminders&#13;
+		var userId = plan.get(i).userId;&#13;
+		var userGR = new GlideRecord('sys_user');&#13;
+		userGR.get(userId);&#13;
+		var name = userGR.name;&#13;
+		var reminder = gs.getMessage('{0} reminder', numberOfReminders);&#13;
+		&#13;
+		message += name + " (";&#13;
+		&#13;
+		if(numberOfReminders == 0)&#13;
+			reminder = gs.getMessage("no reminder");&#13;
+		else if(numberOfReminders == 1)&#13;
+			reminder = gs.getMessage('{0} reminder', numberOfReminders);&#13;
+		&#13;
+		message += reminder + ") ";&#13;
+		&#13;
+		message += lineBreak;&#13;
+		if(i &lt; plan.size()) {&#13;
+			//show when next escalation will happen&#13;
+			//take number of reminders times time between reminders&#13;
+			var time = numberOfReminders * timeBetweenReminders;&#13;
+			var minutesToReminder = parseInt(time/60);&#13;
+			var minutesUnit = gs.getMessage("minutes");&#13;
+			if (minutesToReminder &lt; 2)&#13;
+				minutesUnit = gs.getMessage("minute");&#13;
+			message += gs.getMessage('in {0}{1}.', [minutesToReminder, minutesUnit]);&#13;
+		}&#13;
+	}&#13;
+	&#13;
+	//message += " [/code]";&#13;
+	current.comments = message;&#13;
+}</value>
+        <variable display_value="">c35e50810a0a0ba96248a709b450fc32</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>edd155d5db20e740ee685e25ca9619b5</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>61d155d5db20e740ee685e25ca9619b6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value/>
+        <variable display_value="">493cba6a0a6a803f07df24b118473551</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>edd155d5db20e740ee685e25ca9619b5</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>25d155d5db20e740ee685e25ca9619b6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">493d2c1d0a6a803f3217a75738ea3289</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>edd155d5db20e740ee685e25ca9619b5</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>e5d155d5db20e740ee685e25ca9619b6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>answer = ifScript();&#13;
+&#13;
+function ifScript() {&#13;
+	// Set current level to 0 if we are here for first time&#13;
+	// and save the assignment group on the scratchpad&#13;
+	if(JSUtil.nil(workflow.scratchpad.currentLevel)) {&#13;
+		workflow.scratchpad.currentLevel = 0;&#13;
+		workflow.scratchpad.assignment_group = vars.assignment_group.sys_id + "";&#13;
+	}&#13;
+	&#13;
+	var rota = new SNC.OnCallRotation();&#13;
+	var gdt = new GlideDateTime();&#13;
+	var escalationPlan = rota.getEscalationPlan(workflow.scratchpad.assignment_group, gdt);&#13;
+	&#13;
+	workflow.scratchpad.currentRotaID = rota.getCurrentRotaID(); // store the rota sys_id&#13;
+	// Check if we have more people on the escalation lineup&#13;
+	if(escalationPlan.size() &gt; workflow.scratchpad.currentLevel) {&#13;
+		workflow.scratchpad.current_backup = workflow.scratchpad.currentLevel ? "backup" : "current";&#13;
+		workflow.scratchpad.currentLevel ++;&#13;
+		var level = workflow.scratchpad.currentLevel+"";&#13;
+		var escalatee = escalationPlan.get(level-1);&#13;
+		var currentEscalatee = rota.getEscalateeAt(workflow.scratchpad.assignment_group, gdt, level);&#13;
+&#13;
+		// Handle null due to time-off case&#13;
+		if(!currentEscalatee || !currentEscalatee.sys_id)&#13;
+			return ifScript();&#13;
+				&#13;
+		workflow.scratchpad.currentEscalateeId = currentEscalatee.sys_id;&#13;
+		workflow.scratchpad.timeBetweenReminders = escalatee.timeBetweenReminders.getNumericValue() / 1000;&#13;
+		workflow.scratchpad.reminderNum = escalatee.reminderNum;&#13;
+		workflow.scratchpad.reminderSentNum = 0;	&#13;
+		&#13;
+		var user = new GlideRecord('sys_user');&#13;
+		user.get(currentEscalatee.sys_id);&#13;
+		&#13;
+		//write to incident activity log&#13;
+		if(level == 1)&#13;
+			//first message, presenting lineup&#13;
+			writeLineupToIncidentActivityLog(escalationPlan, escalatee.reminderNum, workflow.scratchpad.timeBetweenReminders);&#13;
+		else&#13;
+			writeEscalationToIncidentActivityLog(user.name);&#13;
+		&#13;
+		workflow.scratchpad.escalateeName = user.name;&#13;
+		return 'yes';&#13;
+	}&#13;
+	return 'no';&#13;
+}&#13;
+&#13;
+function writeEscalationToIncidentActivityLog(name) {&#13;
+	var message = gs.getMessage("Incident escalated to {0}", name);&#13;
+	current.comments = message;&#13;
+}&#13;
+&#13;
+function writeLineupToIncidentActivityLog(plan, numberOfReminders, timeBetweenReminders) {&#13;
+	//var message = "[code] ";&#13;
+	var message = gs.getMessage("This incident Escalation is in Process. Escalation Plan is now: ");&#13;
+	var lineBreak = " ";&#13;
+	message += lineBreak;&#13;
+	&#13;
+	for(var i = 0; i &lt; plan.size(); i++) {&#13;
+		//show next escalatee and amount of reminders&#13;
+		var userId = plan.get(i).userId;&#13;
+		var userGR = new GlideRecord('sys_user');&#13;
+		userGR.get(userId);&#13;
+		var name = userGR.name;&#13;
+		var reminder = gs.getMessage('{0} reminder', numberOfReminders);&#13;
+		&#13;
+		message += name + " (";&#13;
+		&#13;
+		if(numberOfReminders == 0)&#13;
+			reminder = gs.getMessage("no reminder");&#13;
+		else if(numberOfReminders == 1)&#13;
+			reminder = gs.getMessage('{0} reminder', numberOfReminders);&#13;
+		&#13;
+		message += reminder + ") ";&#13;
+		&#13;
+		message += lineBreak;&#13;
+		if(i &lt; plan.size()) {&#13;
+			//show when next escalation will happen&#13;
+			//take number of reminders times time between reminders&#13;
+			var time = numberOfReminders * timeBetweenReminders;&#13;
+			var minutesToReminder = parseInt(time/60);&#13;
+			var minutesUnit = gs.getMessage("minutes");&#13;
+			if (minutesToReminder &lt; 2)&#13;
+				minutesUnit = gs.getMessage("minute");&#13;
+			message += gs.getMessage('in {0}{1}.', [minutesToReminder, minutesUnit]);&#13;
+		}&#13;
+	}&#13;
+	&#13;
+	//message += " [/code]";&#13;
+	current.comments = message;&#13;
+}</value>
+        <variable display_value="">c35e50810a0a0ba96248a709b450fc32</variable>
+    </sys_variable_value>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="More Escalation Levels Available?">edd155d5db20e740ee685e25ca9619b5</activity>
+        <condition>activity.result == 'no'</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>No</name>
+        <order>2</order>
+        <short_description/>
+        <skip_during_generate>true</skip_during_generate>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>e9d155d5db20e740ee685e25ca9619b6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+    </wf_condition>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="More Escalation Levels Available?">edd155d5db20e740ee685e25ca9619b5</activity>
+        <condition>activity.result == 'yes'</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>Yes</name>
+        <order>1</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>6dd155d5db20e740ee685e25ca9619b6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Run Script">db8c65aec0a8016501d00259bc7203a4</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id>1</databus_lookup_id>
+        <height/>
+        <input>{}</input>
+        <is_parent>false</is_parent>
+        <name>OnPage Notification</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>a5d111d5db20e740ee685e25ca9619ca</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:45</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="On-Call: Escalations using OnPage">a5d111d5db20e740ee685e25ca9619c8</workflow_version>
+        <x>662</x>
+        <y>207</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=a5d111d5db20e740ee685e25ca9619ca"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a5d111d5db20e740ee685e25ca9619ca</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>add111d5db20e740ee685e25ca9619ca</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:45</sys_updated_on>
+        <value>//Specify the number that this notification should use, EG: OPT0001019&#13;
+var templateNumber = 'OPT0001042';&#13;
+&#13;
+//////////////////////////////////////////////////////&#13;
+var recip = workflow.scratchpad.currentEscalateeId,&#13;
+	template = getTemplateID(templateNumber),&#13;
+	table = current.getTableName(),&#13;
+	doc = current.getUniqueValue();&#13;
+if(template!=null &amp;&amp; template!='' &amp;&amp; recip!=null &amp;&amp; recip!=''){&#13;
+	newEvent(template,recip,table,doc);&#13;
+}&#13;
+&#13;
+function getTemplateID(templateNumber){&#13;
+	var gr = new GlideRecord('x_gfnll_onpage_template');&#13;
+	if(gr.get("number",templateNumber)){&#13;
+		return gr.getUniqueValue();&#13;
+	}&#13;
+	else{&#13;
+		return '';&#13;
+	}&#13;
+}&#13;
+&#13;
+function newEvent(template,recip,table,doc){&#13;
+	var wf = new x_gfnll_onpage.workflow();&#13;
+		wf.notification(template,recip,table,doc);&#13;
+}</value>
+        <variable display_value="">c35ddef20a0a0ba96248a7090eccd518</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>a5d111d5db20e740ee685e25ca9619ca</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>add111d5db20e740ee685e25ca9619ca</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:45</sys_updated_on>
+        <value>//Specify the number that this notification should use, EG: OPT0001019&#13;
+var templateNumber = 'OPT0001042';&#13;
+&#13;
+//////////////////////////////////////////////////////&#13;
+var recip = workflow.scratchpad.currentEscalateeId,&#13;
+	template = getTemplateID(templateNumber),&#13;
+	table = current.getTableName(),&#13;
+	doc = current.getUniqueValue();&#13;
+if(template!=null &amp;&amp; template!='' &amp;&amp; recip!=null &amp;&amp; recip!=''){&#13;
+	newEvent(template,recip,table,doc);&#13;
+}&#13;
+&#13;
+function getTemplateID(templateNumber){&#13;
+	var gr = new GlideRecord('x_gfnll_onpage_template');&#13;
+	if(gr.get("number",templateNumber)){&#13;
+		return gr.getUniqueValue();&#13;
+	}&#13;
+	else{&#13;
+		return '';&#13;
+	}&#13;
+}&#13;
+&#13;
+function newEvent(template,recip,table,doc){&#13;
+	var wf = new x_gfnll_onpage.workflow();&#13;
+		wf.notification(template,recip,table,doc);&#13;
+}</value>
+        <variable display_value="">c35ddef20a0a0ba96248a7090eccd518</variable>
+    </sys_variable_value>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="OnPage Notification">a5d111d5db20e740ee685e25ca9619ca</activity>
+        <condition>true</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>true</is_positive>
+        <name>Always</name>
+        <order>0</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>29d111d5db20e740ee685e25ca9619cb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Run Script">db8c65aec0a8016501d00259bc7203a4</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id>2</databus_lookup_id>
+        <height/>
+        <input>{}</input>
+        <is_parent>false</is_parent>
+        <name>OnPage Notification - Catch All</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>25d155d5db20e740ee685e25ca9619b7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="On-Call: Escalations using OnPage">a5d111d5db20e740ee685e25ca9619c8</workflow_version>
+        <x>619</x>
+        <y>349</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=25d155d5db20e740ee685e25ca9619b7"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>25d155d5db20e740ee685e25ca9619b7</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>a5d155d5db20e740ee685e25ca9619b7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>//Specify the number that this notification should use, EG: OPT0001019&#13;
+var templateNumber = '';&#13;
+&#13;
+//////////////////////////////////////////////////////&#13;
+var recip = workflow.scratchpad.catchAllEmailUsers,&#13;
+	template = getTemplateID(templateNumber),&#13;
+	table = current.getTableName(),&#13;
+	doc = current.getUniqueValue();&#13;
+if(template!=null &amp;&amp; template!='' &amp;&amp; recip!=null &amp;&amp; recip!=''){&#13;
+	newEvent(template,recip,table,doc);&#13;
+}&#13;
+&#13;
+function getTemplateID(templateNumber){&#13;
+	var gr = new GlideRecord('x_gfnll_onpage_template');&#13;
+	if(gr.get("number",templateNumber)){&#13;
+		return gr.getUniqueValue();&#13;
+	}&#13;
+	else{&#13;
+		return '';&#13;
+	}&#13;
+}&#13;
+&#13;
+function newEvent(template,recip,table,doc){&#13;
+	var wf = new x_gfnll_onpage.workflow();&#13;
+		wf.notification(template,recip,table,doc);&#13;
+}</value>
+        <variable display_value="">c35ddef20a0a0ba96248a7090eccd518</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>25d155d5db20e740ee685e25ca9619b7</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>a5d155d5db20e740ee685e25ca9619b7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>//Specify the number that this notification should use, EG: OPT0001019&#13;
+var templateNumber = '';&#13;
+&#13;
+//////////////////////////////////////////////////////&#13;
+var recip = workflow.scratchpad.catchAllEmailUsers,&#13;
+	template = getTemplateID(templateNumber),&#13;
+	table = current.getTableName(),&#13;
+	doc = current.getUniqueValue();&#13;
+if(template!=null &amp;&amp; template!='' &amp;&amp; recip!=null &amp;&amp; recip!=''){&#13;
+	newEvent(template,recip,table,doc);&#13;
+}&#13;
+&#13;
+function getTemplateID(templateNumber){&#13;
+	var gr = new GlideRecord('x_gfnll_onpage_template');&#13;
+	if(gr.get("number",templateNumber)){&#13;
+		return gr.getUniqueValue();&#13;
+	}&#13;
+	else{&#13;
+		return '';&#13;
+	}&#13;
+}&#13;
+&#13;
+function newEvent(template,recip,table,doc){&#13;
+	var wf = new x_gfnll_onpage.workflow();&#13;
+		wf.notification(template,recip,table,doc);&#13;
+}</value>
+        <variable display_value="">c35ddef20a0a0ba96248a7090eccd518</variable>
+    </sys_variable_value>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="OnPage Notification - Catch All">25d155d5db20e740ee685e25ca9619b7</activity>
+        <condition>true</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>true</is_positive>
+        <name>Always</name>
+        <order>0</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>a9d155d5db20e740ee685e25ca9619b7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="If">98f621ca0a0a0b5900f7c291f5e45a0e</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id/>
+        <height/>
+        <input/>
+        <is_parent>false</is_parent>
+        <name>Reminder needed?</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>61d155d5db20e740ee685e25ca9619bb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="On-Call: Escalations using OnPage">a5d111d5db20e740ee685e25ca9619c8</workflow_version>
+        <x>1020</x>
+        <y>151</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=61d155d5db20e740ee685e25ca9619bb"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>61d155d5db20e740ee685e25ca9619bb</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>79d155d5db20e740ee685e25ca9619bb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>answer = ifScript();&#13;
+&#13;
+function ifScript() {&#13;
+	// Send a reminder if needed&#13;
+	if (workflow.scratchpad.reminderSentNum &lt; workflow.scratchpad.reminderNum) {&#13;
+		workflow.scratchpad.reminderSentNum ++ ;&#13;
+		workflow.scratchpad.reminder = "REMINDER: ";&#13;
+		activityLog();&#13;
+		return 'yes';&#13;
+	} else&#13;
+		workflow.scratchpad.reminder = "";&#13;
+	&#13;
+	return 'no';&#13;
+}&#13;
+&#13;
+function activityLog() {&#13;
+	var message = gs.getMessage('{0} has been reminded via Email', workflow.scratchpad.escalateeName);&#13;
+	current.comments = message;&#13;
+}</value>
+        <variable display_value="">c35e50810a0a0ba96248a709b450fc32</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>61d155d5db20e740ee685e25ca9619bb</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>b5d155d5db20e740ee685e25ca9619bb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">493d2c1d0a6a803f3217a75738ea3289</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>61d155d5db20e740ee685e25ca9619bb</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>e1d155d5db20e740ee685e25ca9619bb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value/>
+        <variable display_value="">493cba6a0a6a803f07df24b118473551</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>61d155d5db20e740ee685e25ca9619bb</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>e1d155d5db20e740ee685e25ca9619bb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value/>
+        <variable display_value="">493cba6a0a6a803f07df24b118473551</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>61d155d5db20e740ee685e25ca9619bb</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>b5d155d5db20e740ee685e25ca9619bb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">493d2c1d0a6a803f3217a75738ea3289</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>61d155d5db20e740ee685e25ca9619bb</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>79d155d5db20e740ee685e25ca9619bb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>answer = ifScript();&#13;
+&#13;
+function ifScript() {&#13;
+	// Send a reminder if needed&#13;
+	if (workflow.scratchpad.reminderSentNum &lt; workflow.scratchpad.reminderNum) {&#13;
+		workflow.scratchpad.reminderSentNum ++ ;&#13;
+		workflow.scratchpad.reminder = "REMINDER: ";&#13;
+		activityLog();&#13;
+		return 'yes';&#13;
+	} else&#13;
+		workflow.scratchpad.reminder = "";&#13;
+	&#13;
+	return 'no';&#13;
+}&#13;
+&#13;
+function activityLog() {&#13;
+	var message = gs.getMessage('{0} has been reminded via Email', workflow.scratchpad.escalateeName);&#13;
+	current.comments = message;&#13;
+}</value>
+        <variable display_value="">c35e50810a0a0ba96248a709b450fc32</variable>
+    </sys_variable_value>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Reminder needed?">61d155d5db20e740ee685e25ca9619bb</activity>
+        <condition>activity.result == 'no'</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>No</name>
+        <order>1</order>
+        <short_description/>
+        <skip_during_generate>true</skip_during_generate>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>7dd155d5db20e740ee685e25ca9619bb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+    </wf_condition>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Reminder needed?">61d155d5db20e740ee685e25ca9619bb</activity>
+        <condition>activity.result == 'yes'</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>Yes</name>
+        <order>2</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>fdd155d5db20e740ee685e25ca9619bb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="If">98f621ca0a0a0b5900f7c291f5e45a0e</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id/>
+        <height/>
+        <input/>
+        <is_parent>false</is_parent>
+        <name>Users have e-mail?</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>2dd155d5db20e740ee685e25ca9619b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="On-Call: Escalations using OnPage">a5d111d5db20e740ee685e25ca9619c8</workflow_version>
+        <x>396</x>
+        <y>315</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=2dd155d5db20e740ee685e25ca9619b9"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>2dd155d5db20e740ee685e25ca9619b9</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>25d155d5db20e740ee685e25ca9619ba</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>// initialize local variables&#13;
+var emailUsers = [];&#13;
+&#13;
+// get the user(s) to notify&#13;
+if ( workflow.scratchpad.catchAllType == "all" ) {&#13;
+	// get all members for this roster&#13;
+	var rota = new SNC.OnCallRotation();&#13;
+	var catchAllRoster = rota.getCatchAll( workflow.scratchpad.currentRotaID );&#13;
+	var member = new GlideRecord('cmn_rota_member');&#13;
+	member.query('roster', catchAllRoster);&#13;
+&#13;
+	// iterate over members&#13;
+	while ( member.next() ) {&#13;
+		//check if member have email address configured&#13;
+		if (JSUtil.notNil(member.member.email)) {&#13;
+			// use email&#13;
+			emailUsers.push( member.member.toString() );&#13;
+		} else {&#13;
+			// no device to notify the user on&#13;
+			gs.log("Cannot notify " + member.getValue('member.name') + ": no email address configured");&#13;
+		}&#13;
+	}&#13;
+	//write to incident log&#13;
+	var roster = GlideRecord('cmn_rota_roster');&#13;
+	roster.get(catchAllRoster);&#13;
+	writeToIncidentActivityLog("the duty rotation with the name " + roster.name);&#13;
+} else {&#13;
+	// get individual user or group manager&#13;
+	var rota = new SNC.OnCallRotation();&#13;
+	var catchAll = rota.getCatchAll( workflow.scratchpad.currentRotaID );&#13;
+&#13;
+	// check if this user has a mobile phone or an email address configured&#13;
+	var member = new GlideRecord('sys_user');&#13;
+	member.get(catchAll);&#13;
+	if (member.isValid() &amp;&amp; JSUtil.notNil(member.email)) {&#13;
+		// use email&#13;
+		emailUsers.push( member.getUniqueValue() );&#13;
+		writeToIncidentActivityLog(member.name);&#13;
+	} else {&#13;
+		// no device to notify the user on&#13;
+		gs.log("Cannot notify " + member.getValue('member.name') + ": no email address configured");&#13;
+	}&#13;
+}&#13;
+&#13;
+function writeToIncidentActivityLog(name) {&#13;
+	var message = gs.getMessage("Escalation plan exhausted and failed to assign incident. Communication has been sent to ");&#13;
+	message += name;&#13;
+	current.comments = message;&#13;
+}&#13;
+&#13;
+// store the user(s) in the scratchpad&#13;
+workflow.scratchpad.catchAllEmailUsers = emailUsers.join(',');&#13;
+&#13;
+&#13;
+answer = (workflow.scratchpad.catchAllEmailUsers.length &gt; 0) ? 'yes' : 'no';</value>
+        <variable display_value="">c35e50810a0a0ba96248a709b450fc32</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>2dd155d5db20e740ee685e25ca9619b9</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>61d155d5db20e740ee685e25ca9619ba</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">493d2c1d0a6a803f3217a75738ea3289</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>2dd155d5db20e740ee685e25ca9619b9</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>add155d5db20e740ee685e25ca9619b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value/>
+        <variable display_value="">493cba6a0a6a803f07df24b118473551</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>2dd155d5db20e740ee685e25ca9619b9</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>add155d5db20e740ee685e25ca9619b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value/>
+        <variable display_value="">493cba6a0a6a803f07df24b118473551</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>2dd155d5db20e740ee685e25ca9619b9</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>61d155d5db20e740ee685e25ca9619ba</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>1</value>
+        <variable display_value="">493d2c1d0a6a803f3217a75738ea3289</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>2dd155d5db20e740ee685e25ca9619b9</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>25d155d5db20e740ee685e25ca9619ba</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <value>// initialize local variables&#13;
+var emailUsers = [];&#13;
+&#13;
+// get the user(s) to notify&#13;
+if ( workflow.scratchpad.catchAllType == "all" ) {&#13;
+	// get all members for this roster&#13;
+	var rota = new SNC.OnCallRotation();&#13;
+	var catchAllRoster = rota.getCatchAll( workflow.scratchpad.currentRotaID );&#13;
+	var member = new GlideRecord('cmn_rota_member');&#13;
+	member.query('roster', catchAllRoster);&#13;
+&#13;
+	// iterate over members&#13;
+	while ( member.next() ) {&#13;
+		//check if member have email address configured&#13;
+		if (JSUtil.notNil(member.member.email)) {&#13;
+			// use email&#13;
+			emailUsers.push( member.member.toString() );&#13;
+		} else {&#13;
+			// no device to notify the user on&#13;
+			gs.log("Cannot notify " + member.getValue('member.name') + ": no email address configured");&#13;
+		}&#13;
+	}&#13;
+	//write to incident log&#13;
+	var roster = GlideRecord('cmn_rota_roster');&#13;
+	roster.get(catchAllRoster);&#13;
+	writeToIncidentActivityLog("the duty rotation with the name " + roster.name);&#13;
+} else {&#13;
+	// get individual user or group manager&#13;
+	var rota = new SNC.OnCallRotation();&#13;
+	var catchAll = rota.getCatchAll( workflow.scratchpad.currentRotaID );&#13;
+&#13;
+	// check if this user has a mobile phone or an email address configured&#13;
+	var member = new GlideRecord('sys_user');&#13;
+	member.get(catchAll);&#13;
+	if (member.isValid() &amp;&amp; JSUtil.notNil(member.email)) {&#13;
+		// use email&#13;
+		emailUsers.push( member.getUniqueValue() );&#13;
+		writeToIncidentActivityLog(member.name);&#13;
+	} else {&#13;
+		// no device to notify the user on&#13;
+		gs.log("Cannot notify " + member.getValue('member.name') + ": no email address configured");&#13;
+	}&#13;
+}&#13;
+&#13;
+function writeToIncidentActivityLog(name) {&#13;
+	var message = gs.getMessage("Escalation plan exhausted and failed to assign incident. Communication has been sent to ");&#13;
+	message += name;&#13;
+	current.comments = message;&#13;
+}&#13;
+&#13;
+// store the user(s) in the scratchpad&#13;
+workflow.scratchpad.catchAllEmailUsers = emailUsers.join(',');&#13;
+&#13;
+&#13;
+answer = (workflow.scratchpad.catchAllEmailUsers.length &gt; 0) ? 'yes' : 'no';</value>
+        <variable display_value="">c35e50810a0a0ba96248a709b450fc32</variable>
+    </sys_variable_value>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Users have e-mail?">2dd155d5db20e740ee685e25ca9619b9</activity>
+        <condition>activity.result == 'no'</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>No</name>
+        <order>2</order>
+        <short_description/>
+        <skip_during_generate>true</skip_during_generate>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>a9d155d5db20e740ee685e25ca9619ba</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+    </wf_condition>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Users have e-mail?">2dd155d5db20e740ee685e25ca9619b9</activity>
+        <condition>activity.result == 'yes'</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>Yes</name>
+        <order>1</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>29d155d5db20e740ee685e25ca9619ba</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+    </wf_condition>
+    <wf_activity action="INSERT_OR_UPDATE">
+        <activity_definition display_value="Timer">3961a1da0a0a0b5c00ecd84822f70d85</activity_definition>
+        <activity_definition_updated>false</activity_definition_updated>
+        <databus_lookup_id/>
+        <height/>
+        <input/>
+        <is_parent>false</is_parent>
+        <name>Wait for escalation</name>
+        <new_activity_definition/>
+        <notes/>
+        <out_of_date>false</out_of_date>
+        <parent/>
+        <pinned>false</pinned>
+        <pinned_version/>
+        <stage/>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>b5d155d5db20e740ee685e25ca9619bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <timeout>1970-01-01 00:00:00</timeout>
+        <vars/>
+        <width/>
+        <workflow_version display_value="On-Call: Escalations using OnPage">a5d111d5db20e740ee685e25ca9619c8</workflow_version>
+        <x>792</x>
+        <y>282</y>
+    </wf_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=b5d155d5db20e740ee685e25ca9619bf"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>1350</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>31d155d5db20e740ee685e25ca9619c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">4cc836da0a0a0b520083ebc07da2f47c</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>1350</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>35d155d5db20e740ee685e25ca9619c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">4cc740fe0a0a0b520025dcf8e2ff78e7</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>1320</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>39d155d5db20e740ee685e25ca9619c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">4cc4a4030a0a0b52007334f001376dc5</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>1310</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>3dd155d5db20e740ee685e25ca9619c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value>3bf802c20a0a0b52008e2859cd8abcf2</value>
+        <variable display_value="">220cd53d0a0a0b214103bdc2ec5c7ab4</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>310</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>71d155d5db20e740ee685e25ca9619c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value>script</value>
+        <variable display_value="">21f80cd00a0a0b2101fcd5b5defc0810</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>1360</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>75d155d5db20e740ee685e25ca9619c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">292b2f0e0a0a0b215aa2dd2cbc578dc5</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>1310</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>79d155d5db20e740ee685e25ca9619c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">c35dc0df0a0a0ba96248a7098d737925</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>500</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>7dd155d5db20e740ee685e25ca9619bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">220dc5a40a0a0b2109fbd28b8c4b6213</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>1360</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>b1d155d5db20e740ee685e25ca9619c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">292bd15e0a0a0b215a040c701033e3c5</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>3000</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>b5d155d5db20e740ee685e25ca9619c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value>// Set 'answer' to the number of seconds this timer should wait&#13;
+answer = workflow.scratchpad.timeBetweenReminders;&#13;
+</value>
+        <variable display_value="">293493710a0a0b2115e3e5b4fce1d12a</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>320</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>b9d155d5db20e740ee685e25ca9619bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">4cba34da0a0a0b5200798c86eafe1203</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>1360</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>bdd155d5db20e740ee685e25ca9619c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">292c91070a0a0b212543d91ffde5014c</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>350</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>f1d155d5db20e740ee685e25ca9619c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">4cbfe48a0a0a0b5200cf8b82cc6685f1</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>1320</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>f9d155d5db20e740ee685e25ca9619c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">4cc6788c0a0a0b5200e6743c94001b16</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>1310</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>fdd155d5db20e740ee685e25ca9619c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">21fd462c0a0a0b211c997276d7806c03</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>310</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>71d155d5db20e740ee685e25ca9619c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value>script</value>
+        <variable display_value="">21f80cd00a0a0b2101fcd5b5defc0810</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>320</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>b9d155d5db20e740ee685e25ca9619bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">4cba34da0a0a0b5200798c86eafe1203</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>350</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>f1d155d5db20e740ee685e25ca9619c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">4cbfe48a0a0a0b5200cf8b82cc6685f1</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>500</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>7dd155d5db20e740ee685e25ca9619bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">220dc5a40a0a0b2109fbd28b8c4b6213</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>1310</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>fdd155d5db20e740ee685e25ca9619c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">21fd462c0a0a0b211c997276d7806c03</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>1310</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>79d155d5db20e740ee685e25ca9619c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">c35dc0df0a0a0ba96248a7098d737925</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>1310</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>3dd155d5db20e740ee685e25ca9619c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value>3bf802c20a0a0b52008e2859cd8abcf2</value>
+        <variable display_value="">220cd53d0a0a0b214103bdc2ec5c7ab4</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>1320</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>39d155d5db20e740ee685e25ca9619c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">4cc4a4030a0a0b52007334f001376dc5</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>1320</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>f9d155d5db20e740ee685e25ca9619c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">4cc6788c0a0a0b5200e6743c94001b16</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>1350</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>35d155d5db20e740ee685e25ca9619c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">4cc740fe0a0a0b520025dcf8e2ff78e7</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>1350</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>31d155d5db20e740ee685e25ca9619c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">4cc836da0a0a0b520083ebc07da2f47c</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>1360</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>75d155d5db20e740ee685e25ca9619c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">292b2f0e0a0a0b215aa2dd2cbc578dc5</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>1360</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>b1d155d5db20e740ee685e25ca9619c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">292bd15e0a0a0b215a040c701033e3c5</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>1360</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>bdd155d5db20e740ee685e25ca9619c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value/>
+        <variable display_value="">292c91070a0a0b212543d91ffde5014c</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>wf_activity</document>
+        <document_key>b5d155d5db20e740ee685e25ca9619bf</document_key>
+        <order>3000</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>b5d155d5db20e740ee685e25ca9619c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <value>// Set 'answer' to the number of seconds this timer should wait&#13;
+answer = workflow.scratchpad.timeBetweenReminders;&#13;
+</value>
+        <variable display_value="">293493710a0a0b2115e3e5b4fce1d12a</variable>
+    </sys_variable_value>
+    <wf_condition action="INSERT_OR_UPDATE">
+        <activity display_value="Wait for escalation">b5d155d5db20e740ee685e25ca9619bf</activity>
+        <condition>true</condition>
+        <condition_default/>
+        <condition_type>standard</condition_type>
+        <else_flag>false</else_flag>
+        <error>false</error>
+        <event>false</event>
+        <event_name/>
+        <is_positive>false</is_positive>
+        <name>Always</name>
+        <order>1</order>
+        <short_description/>
+        <skip_during_generate>false</skip_during_generate>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>b9d155d5db20e740ee685e25ca9619c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+    </wf_condition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="All">6dd155d5db20e740ee685e25ca9619b8</condition>
+        <from display_value="Is Catch-All Configured?">61d155d5db20e740ee685e25ca9619b8</from>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>31d155d5db20e740ee685e25ca9619c6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <to display_value="Users have e-mail?">2dd155d5db20e740ee685e25ca9619b9</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="No">a9d155d5db20e740ee685e25ca9619ba</condition>
+        <from display_value="Users have e-mail?">2dd155d5db20e740ee685e25ca9619b9</from>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>35d155d5db20e740ee685e25ca9619c5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <to display_value="End">b5d155d5db20e740ee685e25ca9619bc</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="None">edd155d5db20e740ee685e25ca9619b8</condition>
+        <from display_value="Is Catch-All Configured?">61d155d5db20e740ee685e25ca9619b8</from>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>35d155d5db20e740ee685e25ca9619c6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <to display_value="End">b5d155d5db20e740ee685e25ca9619bc</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="No">29d155d5db20e740ee685e25ca9619b5</condition>
+        <from display_value="Is there any schedule at the time?">e1d111d5db20e740ee685e25ca9619cc</from>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>35d155d5db20e740ee685e25ca9619c7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <to display_value="End">b5d155d5db20e740ee685e25ca9619bc</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Always">a9d155d5db20e740ee685e25ca9619b7</condition>
+        <from display_value="OnPage Notification - Catch All">25d155d5db20e740ee685e25ca9619b7</from>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>35d155d5db20e740ee685e25ca9619c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <to display_value="End">b5d155d5db20e740ee685e25ca9619bc</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="No">e9d155d5db20e740ee685e25ca9619b6</condition>
+        <from display_value="More Escalation Levels Available?">edd155d5db20e740ee685e25ca9619b5</from>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>3dd155d5db20e740ee685e25ca9619c7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <to display_value="Is Catch-All Configured?">61d155d5db20e740ee685e25ca9619b8</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Always">79d155d5db20e740ee685e25ca9619bd</condition>
+        <from display_value="Begin">b1d155d5db20e740ee685e25ca9619bd</from>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>71d155d5db20e740ee685e25ca9619c5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <to display_value="Is there any schedule at the time?">e1d111d5db20e740ee685e25ca9619cc</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Always">b9d155d5db20e740ee685e25ca9619c2</condition>
+        <from display_value="Wait for escalation">b5d155d5db20e740ee685e25ca9619bf</from>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>71d155d5db20e740ee685e25ca9619c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <to display_value="Assignment done?">71d155d5db20e740ee685e25ca9619c3</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="No">7dd155d5db20e740ee685e25ca9619c3</condition>
+        <from display_value="Assignment done?">71d155d5db20e740ee685e25ca9619c3</from>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>79d155d5db20e740ee685e25ca9619c5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <to display_value="Reminder needed?">61d155d5db20e740ee685e25ca9619bb</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="No">bdd155d5db20e740ee685e25ca9619be</condition>
+        <from display_value="Escalatee has an OnPage account?">31d155d5db20e740ee685e25ca9619be</from>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>79d155d5db20e740ee685e25ca9619c6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <to display_value="More Escalation Levels Available?">edd155d5db20e740ee685e25ca9619b5</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="No">7dd155d5db20e740ee685e25ca9619bb</condition>
+        <from display_value="Reminder needed?">61d155d5db20e740ee685e25ca9619bb</from>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>79d155d5db20e740ee685e25ca9619c7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <to display_value="More Escalation Levels Available?">edd155d5db20e740ee685e25ca9619b5</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Error">e1d155d5db20e740ee685e25ca9619b9</condition>
+        <from display_value="Is Catch-All Configured?">61d155d5db20e740ee685e25ca9619b8</from>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>b1d155d5db20e740ee685e25ca9619c6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <to display_value="End">b5d155d5db20e740ee685e25ca9619bc</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Yes">a5d155d5db20e740ee685e25ca9619b5</condition>
+        <from display_value="Is there any schedule at the time?">e1d111d5db20e740ee685e25ca9619cc</from>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>b1d155d5db20e740ee685e25ca9619c7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <to display_value="More Escalation Levels Available?">edd155d5db20e740ee685e25ca9619b5</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Yes">29d155d5db20e740ee685e25ca9619ba</condition>
+        <from display_value="Users have e-mail?">2dd155d5db20e740ee685e25ca9619b9</from>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>b5d155d5db20e740ee685e25ca9619c5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <to display_value="OnPage Notification - Catch All">25d155d5db20e740ee685e25ca9619b7</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Individual">61d155d5db20e740ee685e25ca9619b9</condition>
+        <from display_value="Is Catch-All Configured?">61d155d5db20e740ee685e25ca9619b8</from>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>b5d155d5db20e740ee685e25ca9619c6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <to display_value="Users have e-mail?">2dd155d5db20e740ee685e25ca9619b9</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Group Manager">65d155d5db20e740ee685e25ca9619b9</condition>
+        <from display_value="Is Catch-All Configured?">61d155d5db20e740ee685e25ca9619b8</from>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>bdd155d5db20e740ee685e25ca9619c5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <to display_value="Users have e-mail?">2dd155d5db20e740ee685e25ca9619b9</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Yes">6dd155d5db20e740ee685e25ca9619b6</condition>
+        <from display_value="More Escalation Levels Available?">edd155d5db20e740ee685e25ca9619b5</from>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>bdd155d5db20e740ee685e25ca9619c7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <to display_value="Escalatee has an OnPage account?">31d155d5db20e740ee685e25ca9619be</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Yes">fdd155d5db20e740ee685e25ca9619bb</condition>
+        <from display_value="Reminder needed?">61d155d5db20e740ee685e25ca9619bb</from>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>f5d155d5db20e740ee685e25ca9619c7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <to display_value="OnPage Notification">a5d111d5db20e740ee685e25ca9619ca</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Yes">fdd155d5db20e740ee685e25ca9619c3</condition>
+        <from display_value="Assignment done?">71d155d5db20e740ee685e25ca9619c3</from>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>f9d155d5db20e740ee685e25ca9619c5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <to display_value="End">b5d155d5db20e740ee685e25ca9619bc</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Yes">3dd155d5db20e740ee685e25ca9619be</condition>
+        <from display_value="Escalatee has an OnPage account?">31d155d5db20e740ee685e25ca9619be</from>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>f9d155d5db20e740ee685e25ca9619c6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <to display_value="OnPage Notification">a5d111d5db20e740ee685e25ca9619ca</to>
+    </wf_transition>
+    <wf_transition action="INSERT_OR_UPDATE">
+        <condition display_value="Always">29d111d5db20e740ee685e25ca9619cb</condition>
+        <from display_value="OnPage Notification">a5d111d5db20e740ee685e25ca9619ca</from>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:31</sys_created_on>
+        <sys_id>fdd155d5db20e740ee685e25ca9619c6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
+        <to display_value="Wait for escalation">b5d155d5db20e740ee685e25ca9619bf</to>
+    </wf_transition>
+    <wf_estimated_runtime_config action="INSERT_OR_UPDATE">
+        <estimated_run_time/>
+        <no_of_data_points>1</no_of_data_points>
+        <percentage_threshold_ert>20</percentage_threshold_ert>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-13 18:17:30</sys_created_on>
+        <sys_id>a9d111d5db20e740ee685e25ca9619c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-13 18:17:30</sys_updated_on>
+        <workflow_version display_value="On-Call: Escalations using OnPage">a5d111d5db20e740ee685e25ca9619c8</workflow_version>
+    </wf_estimated_runtime_config>
+    <wf_workflow_version action="update_multiple" query="workflow=59ab7c9ddbaca740ee685e25ca9619c5^sys_id!=a5d111d5db20e740ee685e25ca9619c8">
+        <published>false</published>
+    </wf_workflow_version>
+</record_update>

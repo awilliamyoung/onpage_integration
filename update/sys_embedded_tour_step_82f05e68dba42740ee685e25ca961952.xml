@@ -6,7 +6,7 @@
         <action_target/>
         <action_target_ref display_value="7c305268dba42740ee685e25ca961932.2.xpath">46f0da68dba42740ee685e25ca961950</action_target_ref>
         <active>true</active>
-        <content><![CDATA[Select 'No' if OnPage responses should not be recorded in target record's work notes]]></content>
+        <content><![CDATA[Indicate who will be receiving information for error reporting]]></content>
         <guide display_value="OnPage System Properties">7c305268dba42740ee685e25ca961932</guide>
         <implicit>false</implicit>
         <link/>
@@ -20,7 +20,7 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>82f05e68dba42740ee685e25ca961952</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>Step 2</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
@@ -29,7 +29,7 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_embedded_tour_step_82f05e68dba42740ee685e25ca961952</sys_update_name>
         <sys_updated_by>lorena.villanueva</sys_updated_by>
-        <sys_updated_on>2018-09-11 17:04:10</sys_updated_on>
+        <sys_updated_on>2018-09-13 18:56:24</sys_updated_on>
         <target/>
         <target_ref display_value="7c305268dba42740ee685e25ca961932.2.xpath">46f0da68dba42740ee685e25ca961950</target_ref>
         <ui_version>dynamic</ui_version>

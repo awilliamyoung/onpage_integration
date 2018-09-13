@@ -16,7 +16,9 @@
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition/>
+        <filter_condition table="sys_user_has_role">role=a6303520dbcca300ee685e25ca9619c3^EQ<item display_table="sys_user_role" display_value="x_gfnll_onpage.user" endquery="false" field="role" goto="false" newquery="false" operator="=" or="false" value="a6303520dbcca300ee685e25ca9619c3"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
         <is_rest>false</is_rest>
         <message/>
         <name>Target Matching Scripts</name>
@@ -29,50 +31,65 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	// 1. User is granted role
+	// 2. Script attempts to match existing onpage user
+	var user = current.user;
+	var onPageUser = new GlideRecord('x_gfnll_onpage_target');
+	onPageUser.addQuery('email', current.user.email); //gets target email from current users emil
+	//onPageUser.addQuery('onpage_name', user.user_name); //is this needed for unique or email suffice?
+	onPageUser.query();
 	
-	//only if the user has OnPage user role will they be associated to a record
-	if(gs.hasRole('x_gfnll_onpage.user')) {
-		var user = current.user;
-		var onPageUser = new GlideRecord('x_gfnll_onpage_target');
-		onPageUser.addQuery('email', user.email); //gets target email from current users emil
-		onPageUser.addQuery('onpage_name', user.user_name);
-		onPageUser.query();
+	if(onPageUser.next()) {
+		onPageUser.document_id = current.user; //sys_id of user
+		onPageUser.table = "sys_user";
+		onPageUser.update();
 		
-		//this associates the queried onPage user with the current user
-		if(onPageUser.next()) {
-			var u = new GlideRecord('sys_user');
-			u.get(user);
-			u.email = onPageUser.email;
-			u.user_name = onPageUser.onpage_name;
-			u.first_name = onPageUser.first_name;
-			u.last_name = onPageUser.last_name;
-			u.update();
-		} //the else will create a new target record with fields from the user table
-		else{
+		//Are following lines 16-22 needed for updating ?
+		var u = new GlideRecord('sys_user');
+		u.get(current.user);
+		u.email = onPageUser.email;
+		u.user_name = onPageUser.onpage_name;
+		u.first_name = onPageUser.first_name;
+		u.last_name = onPageUser.last_name;
+		u.update();
+	}
+	else{
+		// 3. If no match, creates a user in OnPage using integration
+		try {
+			// 4. If match, updates onpage record to the sys_user table and user's document_id
+			// 5. After us is create in OnPage, OP will create a new target in SN
+			// 6. Script runs to match up newly created target with user in the system.
+			var r = new sn_ws.RESTMessageV2('x_gfnll_onpage.OnPage Secured', 'createAccount');
+			r.setStringParameterNoEscape('opid', '');  //is this needed for creating?
+			r.setStringParameterNoEscape('token',  gs.getProperty('x_gfnll_onpage.auth.token'));
+			r.setStringParameterNoEscape('URLsub', gs.getProperty('x_gfnll_onpage.URLsubdomain'));
+			r.setStringParameterNoEscape('first', current.user.first_name);
+			r.setStringParameterNoEscape('last', current.user.last_name);
+			r.setStringParameterNoEscape('email', current.user.email);
+			r.setStringParameterNoEscape('secondary', ''); //is this needed for creating 
+			r.setStringParameterNoEscape('phone', current.user.phone);
+			r.setStringParameterNoEscape('key',  gs.getProperty('x_gfnll_onpage.auth.key'));
+			
+			var response = r.execute();
+			var responseBody = response.getBody();
+			var httpStatus = response.getStatusCode();
+			var obj = new JSON().decode(responseBody);
+			
 			var target = new GlideRecord('x_gfnll_onpage_target');
 			target.initialize();
-			target.setValue('email',user.email);
-			target.setValue('onpage_name',user.user_name);
-			target.setValue('first_name',user.first_name);
-			target.setValue('last_name',user.last_name);
+			target.setValue('email',current.user.email);
+			target.setValue('onpage_name',current.user.user_name);
+			target.setValue('first_name', current.user.first_name);
+			target.setValue('last_name', current.user.last_name);
+			target.setValue('document_id', current.user); //sys_id of user
+			target.setValue('table', "sys_user");
+			//to do:
+			//After rest Message(is the current one correct?)...need response results and set OnPage Id on target and
+			//necessary fields. These will come from OBJ variable on line 44
 			target.insert();
 		}
-	}
-	//if user does not have OnPage user role but a target exists associated to current user
-	else if(!gs.hasRole('x_gfnll_onpage.user')){
-		var noRoleUser = current.user;
-		var existingTarget = new GlideRecord('x_gfnll_onpage_target');
-		existingTarget.addQuery('email', noRoleUser.email); //grab the target record that is associated to user with noRole
-		existingTarget.addQuery('onpage_name', noRoleUser.user_name);
-		existingTarget.query();
-		
-		//disassociate existing target record from SN record since role is removed
-		if(existingTarget.next()) {
-			existingTarget.setValue('email', '');
-			existingTarget.setValue('onpage_name', '');
-			existingTarget.setValue('first_name', '');
-			existingTarget.setValue('last_name', '');
-			existingTarget.update();
+		catch(ex) {
+			var message = ex.getMessage();
 		}
 	}
 })(current, previous);]]></script>
@@ -83,7 +100,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>17bff585db182f00ee685e25ca961975</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>Target Matching Scripts</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
@@ -92,7 +109,7 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_17bff585db182f00ee685e25ca961975</sys_update_name>
         <sys_updated_by>lorena.villanueva</sys_updated_by>
-        <sys_updated_on>2018-09-04 17:54:56</sys_updated_on>
+        <sys_updated_on>2018-09-13 15:59:02</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

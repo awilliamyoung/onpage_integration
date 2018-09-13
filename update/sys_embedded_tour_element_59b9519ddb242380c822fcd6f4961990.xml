@@ -5,7 +5,7 @@
         <cell_types/>
         <col/>
         <cxs_results/>
-        <element_type>other</element_type>
+        <element_type>link</element_type>
         <field/>
         <field_action/>
         <field_header/>
@@ -16,8 +16,8 @@
         <frameset>nav_filter</frameset>
         <list_element>ui_action</list_element>
         <list_header/>
-        <manual_css>tr:nth-of-type(15) td:nth-of-type(1)</manual_css>
-        <name>7c305268dba42740ee685e25ca961932.8.xpath</name>
+        <manual_css>.module-node[id="ba931187dbd82340ee685e25ca961906"]</manual_css>
+        <name>.module-node[id="ba931187dbd82340ee685e2</name>
         <record_id/>
         <related_field/>
         <related_links/>
@@ -27,20 +27,20 @@
         <row/>
         <sys_class_name>sys_embedded_tour_element</sys_class_name>
         <sys_created_by>lorena.villanueva</sys_created_by>
-        <sys_created_on>2018-09-11 14:59:36</sys_created_on>
+        <sys_created_on>2018-09-13 18:51:54</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
-        <sys_id>c75196a8dba42740ee685e25ca9619c0</sys_id>
+        <sys_id>59b9519ddb242380c822fcd6f4961990</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>7c305268dba42740ee685e25ca961932.8.xpath</sys_name>
+        <sys_name>.module-node[id="ba931187dbd82340ee685e2</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
-        <sys_update_name>sys_embedded_tour_element_c75196a8dba42740ee685e25ca9619c0</sys_update_name>
+        <sys_update_name>sys_embedded_tour_element_59b9519ddb242380c822fcd6f4961990</sys_update_name>
         <sys_updated_by>lorena.villanueva</sys_updated_by>
-        <sys_updated_on>2018-09-11 14:59:36</sys_updated_on>
+        <sys_updated_on>2018-09-13 18:51:54</sys_updated_on>
         <table/>
         <type>manual_css</type>
         <ui_action/>

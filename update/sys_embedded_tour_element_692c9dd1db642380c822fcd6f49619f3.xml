@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_embedded_tour_element">
+    <sys_embedded_tour_element action="INSERT_OR_UPDATE">
+        <cell_edit/>
+        <cell_types/>
+        <col/>
+        <cxs_results/>
+        <element_type>other</element_type>
+        <field/>
+        <field_action/>
+        <field_header/>
+        <filters/>
+        <form_buttons>additional_actions</form_buttons>
+        <form_element>field</form_element>
+        <form_section/>
+        <frameset>nav_filter</frameset>
+        <list_element>ui_action</list_element>
+        <list_header/>
+        <manual_css>tr:nth-of-type(8) td.tdwrap.label_left:nth-of-type(1)</manual_css>
+        <name>7c305268dba42740ee685e25ca961932.14.xpat</name>
+        <record_id/>
+        <related_field/>
+        <related_links/>
+        <related_list_element>ui_action</related_list_element>
+        <related_lists/>
+        <related_table/>
+        <row/>
+        <sys_class_name>sys_embedded_tour_element</sys_class_name>
+        <sys_created_by>lorena.villanueva</sys_created_by>
+        <sys_created_on>2018-09-13 19:02:33</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>692c9dd1db642380c822fcd6f49619f3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>7c305268dba42740ee685e25ca961932.14.xpat</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_embedded_tour_element_692c9dd1db642380c822fcd6f49619f3</sys_update_name>
+        <sys_updated_by>lorena.villanueva</sys_updated_by>
+        <sys_updated_on>2018-09-13 19:02:33</sys_updated_on>
+        <table/>
+        <type>manual_css</type>
+        <ui_action/>
+    </sys_embedded_tour_element>
+</record_update>

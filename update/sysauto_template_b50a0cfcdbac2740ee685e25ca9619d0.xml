@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update table="sysauto_template">
     <sysauto_template action="INSERT_OR_UPDATE">
-        <active>true</active>
+        <active>false</active>
         <condition/>
         <conditional>false</conditional>
         <name>Torture Test Incident 2</name>
@@ -18,7 +18,7 @@
         <sys_created_on>2018-09-11 23:47:09</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>b50a0cfcdbac2740ee685e25ca9619d0</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Torture Test Incident 2</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
@@ -26,7 +26,7 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sysauto_template_b50a0cfcdbac2740ee685e25ca9619d0</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-12 21:30:10</sys_updated_on>
+        <sys_updated_on>2018-09-13 15:21:21</sys_updated_on>
         <template display_value="Major Incident Candidate">5fd009740b2003005775aabcb4673a50</template>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_template>

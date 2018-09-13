@@ -4,36 +4,36 @@
         <action>false</action>
         <action_event>next</action_event>
         <action_target/>
-        <action_target_ref display_value="7c305268dba42740ee685e25ca961932.9.xpath">1e8b5660dbe42740ee685e25ca9619bf</action_target_ref>
+        <action_target_ref display_value="7c305268dba42740ee685e25ca961932.13.xpat">64fbd915db642380c822fcd6f49619e2</action_target_ref>
         <active>true</active>
-        <content><![CDATA[Navigate to the "Filter navigator" and type "OnPage Configuration"]]></content>
+        <content><![CDATA[Indicate how many unprocessed events should be in queue before a notification will alert administrator email]]></content>
         <guide display_value="OnPage System Properties">7c305268dba42740ee685e25ca961932</guide>
         <implicit>false</implicit>
         <link/>
-        <name>Step 1</name>
+        <name>Step 13</name>
         <options/>
-        <order>0</order>
+        <order>13</order>
         <placement>bottom</placement>
         <sys_class_name>sys_embedded_tour_step</sys_class_name>
         <sys_created_by>lorena.villanueva</sys_created_by>
-        <sys_created_on>2018-09-11 15:44:03</sys_created_on>
+        <sys_created_on>2018-09-13 19:01:40</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
-        <sys_id>1e8b9a60dbe42740ee685e25ca961941</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_name>Step 1</sys_name>
+        <sys_id>e0fb1555db642380c822fcd6f496196d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Step 13</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
-        <sys_update_name>sys_embedded_tour_step_1e8b9a60dbe42740ee685e25ca961941</sys_update_name>
+        <sys_update_name>sys_embedded_tour_step_e0fb1555db642380c822fcd6f496196d</sys_update_name>
         <sys_updated_by>lorena.villanueva</sys_updated_by>
-        <sys_updated_on>2018-09-11 17:04:10</sys_updated_on>
+        <sys_updated_on>2018-09-13 19:01:40</sys_updated_on>
         <target/>
-        <target_ref display_value="7c305268dba42740ee685e25ca961932.9.xpath">1e8b5660dbe42740ee685e25ca9619bf</target_ref>
+        <target_ref display_value="7c305268dba42740ee685e25ca961932.13.xpat">64fbd915db642380c822fcd6f49619e2</target_ref>
         <ui_version>dynamic</ui_version>
         <view/>
-        <window>home.do</window>
+        <window>system_properties_ui.do</window>
     </sys_embedded_tour_step>
 </record_update>
