@@ -2,29 +2,32 @@
 <record_update sys_domain="global" table="sys_ui_module">
     <sys_ui_module action="INSERT_OR_UPDATE">
         <active>true</active>
-        <application display_value="OnPage">bca8fa66dbc4ab00c822fcd6f4961990</application>
-        <filter/>
-        <name>OnPage Templates</name>
-        <order/>
+        <application display_value="OnPage User">bca8fa66dbc4ab00c822fcd6f4961990</application>
+        <filter table="x_gfnll_onpage_onpage_template">ownerDYNAMIC90d1921e5f510100a9ad2572f2b477fe^ORpublic=true^EQ<item endquery="false" field="owner" goto="false" newquery="false" operator="DYNAMIC" or="false" value="90d1921e5f510100a9ad2572f2b477fe"/>
+            <item endquery="false" field="public" goto="false" newquery="false" operator="=" or="true" value="true"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter>
+        <name>My Templates</name>
+        <order>200</order>
         <path/>
         <path_relative_to_root>false</path_relative_to_root>
         <roles>x_gfnll_onpage.user</roles>
         <sys_class_name>sys_ui_module</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
-        <sys_created_on>2018-09-06 18:57:52</sys_created_on>
+        <sys_created_on>2018-09-13 02:24:20</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>a4f79d4bdbd82340ee685e25ca96197b</sys_id>
+        <sys_id>7087b105dba4a740ee685e25ca9619fa</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>OnPage Templates</sys_name>
+        <sys_name>My Templates</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
-        <sys_update_name>sys_ui_module_a4f79d4bdbd82340ee685e25ca96197b</sys_update_name>
+        <sys_update_name>sys_ui_module_7087b105dba4a740ee685e25ca9619fa</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-06 18:57:52</sys_updated_on>
+        <sys_updated_on>2018-09-13 02:24:20</sys_updated_on>
         <table>x_gfnll_onpage_onpage_template</table>
         <uncancelable>false</uncancelable>
         <view_name/>
