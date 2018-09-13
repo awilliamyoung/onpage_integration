@@ -16,13 +16,13 @@
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="x_gfnll_onpage_notification">statusVALCHANGES^statusINsend-ready,sent^EQ<item endquery="false" field="status" goto="false" newquery="false" operator="VALCHANGES" or="false" value=""/>
-            <item endquery="false" field="status" goto="false" newquery="false" operator="IN" or="false" value="send-ready,sent"/>
+        <filter_condition table="x_gfnll_onpage_notification">statusVALCHANGES^statusINerror,send-ready,sent^EQ<item endquery="false" field="status" goto="false" newquery="false" operator="VALCHANGES" or="false" value=""/>
+            <item endquery="false" field="status" goto="false" newquery="false" operator="IN" or="false" value="error,send-ready,sent"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
         <is_rest>false</is_rest>
         <message/>
-        <name>Create/Update Metric</name>
+        <name>Create/Update Metrics</name>
         <order>10000</order>
         <priority>100</priority>
         <rest_method/>
@@ -35,20 +35,38 @@
 	var type = '',
 		status = current.getValue('status'),
 		now = new GlideDateTime(),
-		definition = "52226aa4dbe42740ee685e25ca9619fc", //OnPage Notification Send Time
+		sendRdy = "52226aa4dbe42740ee685e25ca9619fc",
+		error = '89ed2c74db606740ee685e25ca9619d0',
+		definition = '',
+		retries = current.getValue('retries'),
 		table = "x_gfnll_onpage_notification",
 		field = 'status',
 		id = current.getUniqueValue(),
 		cc = false,
 		value = status,
 		end ='';
+	//create a new send-ready metric for new records
 	if(status=='send-ready'&&current.isNewRecord()){
 		type = 'create';
+		definition = sendRdy;
 	}
-	else{
+	//create a new error metric for new errors
+	else if(status=="error"&&retries==0){
+		type = 'create';
+		definition = error;
+	}
+	//close any open metrics for this record
+	else if(status=="sent"){
 		type = 'update';
+		definition = sendRdy+","+error;
+	}
+	//stop calculating error metric when failed
+	else if(status=="failed"){
+		type = 'update';
+		definition = error;
 	}
 	var gr = new GlideRecord('metric_instance');
+	//create a new metric
 	if(type=='create'){
 		new x_gfnll_onpage.log().info("Creating metric for "+current.getValue('number'),"internal",current.getRecordClassName(),id);
 		gr.initialize();
@@ -63,8 +81,9 @@
 		gr.insert();
 		new x_gfnll_onpage.log().info("Created metric "+gr.getUniqueValue()+" for "+current.getValue('number'),"internal",current.getRecordClassName(),id);
 	}
+	//lookup and update existing metric(s)
 	if(type=="update"){
-		gr.addQuery('definition',definition);
+		gr.addQuery('definition',"IN",definition);
 		gr.addQuery('table',table);
 		gr.addQuery('field',field);
 		gr.addQuery('id',id);
@@ -88,8 +107,8 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>42977eecdb282740ee685e25ca9619a5</sys_id>
-        <sys_mod_count>15</sys_mod_count>
-        <sys_name>Create/Update Metric</sys_name>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_name>Create/Update Metrics</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
@@ -97,7 +116,7 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_42977eecdb282740ee685e25ca9619a5</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-12 03:09:51</sys_updated_on>
+        <sys_updated_on>2018-09-13 00:06:08</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

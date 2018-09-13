@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element audit="true" label="Onpage Notification" max_length="40" name="x_gfnll_onpage_notification" type="collection">
+    <element audit="true" label="Onpage Notification" max_length="40" name="x_gfnll_onpage_notification" sizeclass="22004" type="collection">
         <element label="Body" max_length="800" name="body" type="string_full_utf8"/>
         <element dependent="table" dependent_on_field="table" label="Document ID" max_length="32" name="document_id" type="document_id" use_dependent_field="true"/>
         <element label="Error" max_length="1000" name="error" read_only="true" type="string"/>

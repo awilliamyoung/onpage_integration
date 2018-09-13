@@ -8,22 +8,19 @@
         <frame/>
         <logged_on>false</logged_on>
         <name>OnPage Links</name>
-        <static_content><![CDATA[<p><img src="onpage.png" width="140" height="38" /></p>
-<p><a title="Onpage Enterprise Dispatcher" href="https://nps.onpage.com/onpageDashboard/" target="_blank" rel="nofollow">Onpage Enterprise Dispatcher</a></p>
-<p><a title="Manage Users" href="nav_to.do?uri&#61;/sys_user_has_role_list.do%3Fsysparm_first_row%3D1%26sysparm_query%3DGOTOrole.nameLIKEonpage%255Erole%253Da6303520dbcca300ee685e25ca9619c3%26sysparm_view%3D" target="_blank" rel="nofollow">Manage Users</a></p>
-<div><a title="Set Preferences" href="system_properties_ui.do?sysparm_category&#61;OnPage%20Configurations&amp;sysparm_domain_restore&#61;false&amp;sysparm_stack&#61;no" target="_blank" rel="nofollow">Configure OnPage Integration</a></div>
-<div> </div>
-<div><a title="Retry Failed Notifications" href="https://ven02330.service-now.com/?OnPageRetry&amp;name&#61;test" rel="nofollow">Retry Failed Notifications</a></div>
-<div> </div>
-<div>Cancel Failed Notifications (script)</div>
-<div> </div>
-<div>Sync Users and Groups</div>]]></static_content>
+        <static_content><![CDATA[<p><img style="display: block; margin-left: auto; margin-right: auto;" src="onpage.png" width="140" height="38" /></p>
+<p style="text-align: left;"><a title="Onpage Enterprise Dispatcher" href="https://nps.onpage.com/onpageDashboard/" target="_blank" rel="nofollow">Onpage Enterprise Dispatcher</a></p>
+<p style="text-align: left;"><a title="Manage Users" href="nav_to.do?uri&#61;/sys_user_has_role_list.do%3Fsysparm_first_row%3D1%26sysparm_query%3DGOTOrole.nameLIKEonpage%255Erole%253Da6303520dbcca300ee685e25ca9619c3%26sysparm_view%3D" target="_blank" rel="nofollow">Manage Users</a></p>
+<p style="text-align: left;"><a title="Set Preferences" href="system_properties_ui.do?sysparm_category&#61;OnPage%20Configurations&amp;sysparm_domain_restore&#61;false&amp;sysparm_stack&#61;no" target="_blank" rel="nofollow">Configure OnPage Integration</a></p>
+<p style="text-align: left;"><a title="Retry Failed Notifications" href="https://ven02330.service-now.com/x_gfnll_onpage_OnPageRetry.do?name&#61;Process&#43;Failed&#43;Notifications" rel="nofollow">Retry Failed Notifications</a> </p>
+<p style="text-align: left;"><a title="Cancel Failed Notifications" href="http://google.com" rel="nofollow">Cancel Failed Notifications</a></p>
+<p style="text-align: left;"><a title="Sync Users and Groups" href="http://google.com" rel="nofollow">Sync Users and Groups</a></p>]]></static_content>
         <sys_class_name>content_block_static</sys_class_name>
         <sys_created_by>lorena.villanueva</sys_created_by>
         <sys_created_on>2018-09-10 16:09:02</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>3b439598db28e340ee685e25ca9619d8</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>OnPage Links</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
@@ -31,7 +28,7 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>content_block_static_3b439598db28e340ee685e25ca9619d8</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-12 04:21:24</sys_updated_on>
+        <sys_updated_on>2018-09-12 23:36:06</sys_updated_on>
     </content_block_static>
     <sys_translated_text action="delete_multiple" query="documentkey=3b439598db28e340ee685e25ca9619d8"/>
 </record_update>

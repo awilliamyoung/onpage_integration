@@ -7,7 +7,7 @@
         <color_id display_value="Gold">65b30290a9fe3dba00c4074fed068bcd</color_id>
         <operator>between</operator>
         <order>-1</order>
-        <report_id display_value="OP Average Send Time (past 24 hours)">896be7e8dbe82740ee685e25ca961982</report_id>
+        <report_id display_value="OP Average Send Time (12 hours)">896be7e8dbe82740ee685e25ca961982</report_id>
         <sys_class_name>sys_report_mpivot_rule</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
         <sys_created_on>2018-09-11 21:32:57</sys_created_on>

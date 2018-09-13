@@ -144,6 +144,32 @@ sync.prototype = {
 			}
 		}
 	},
+	createAccount: function(firstName, lastName, email, secondaryEmail, phone, opid){
+		
+	
+ var rest = new sn_ws.RESTMessageV2('OnPage Secured', 'createAccount');
+			rest.setStringParameterNoEscape('URLsub',this.URLsub);
+			rest.setStringParameterNoEscape('token',this.token);
+			rest.setStringParameterNoEscape('key',this.key);
+			rest.setStringParameterNoEscape('first', firstName);
+			rest.setStringParameterNoEscape('last', lastName);
+			rest.setStringParameterNoEscape('email', email);
+			rest.setStringParameterNoEscape('secondary', secondaryEmail);
+			rest.setStringParameterNoEscape('phone', phone);
+			rest.setStringParameterNoEscape('opid', opid);
+
+			var response = r.execute();
+			var body = response.getBody();
+			var status = response.getStatusCode();
+			if(status==200){
+			return body;
+		}
+		else{
+			var request = rest.getRequestBody();
+			this._handleErrors(request,status,body);
+			return "error";
+		}
+	},
 	_getAccounts: function(){
 		//rest call to onpage, return body if no error
 		var rest = new sn_ws.RESTMessageV2("OnPage Secured","accounts");
@@ -192,14 +218,14 @@ sync.prototype = {
         <sys_created_on>2018-09-07 15:18:33</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>6793a19fdb182740c822fcd6f49619e8</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>sync</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_include_6793a19fdb182740c822fcd6f49619e8</sys_update_name>
-        <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-11 21:19:16</sys_updated_on>
+        <sys_updated_by>David.Delahoz</sys_updated_by>
+        <sys_updated_on>2018-09-12 19:30:12</sys_updated_on>
     </sys_script_include>
 </record_update>

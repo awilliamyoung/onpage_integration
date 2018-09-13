@@ -40,7 +40,8 @@
         <exp_report_attrs>true</exp_report_attrs>
         <field>sys_created_on</field>
         <field_list/>
-        <filter table="metric_instance">definition=52226aa4dbe42740ee685e25ca9619fc^sys_created_onRELATIVEGE@hour@ago@1^durationISNOTEMPTY<item display_table="metric_definition" display_value="OnPage Notification Send Time" endquery="false" field="definition" goto="false" newquery="false" operator="=" or="false" value="52226aa4dbe42740ee685e25ca9619fc"/>
+        <filter table="metric_instance">definition=52226aa4dbe42740ee685e25ca9619fc^ORdefinition=89ed2c74db606740ee685e25ca9619d0^sys_created_onRELATIVEGE@hour@ago@1^durationISNOTEMPTY<item display_table="metric_definition" display_value="OnPage Notification Send Time" endquery="false" field="definition" goto="false" newquery="false" operator="=" or="false" value="52226aa4dbe42740ee685e25ca9619fc"/>
+            <item display_table="metric_definition" display_value="OnPage Notification Error Time" endquery="false" field="definition" goto="false" newquery="false" operator="=" or="true" value="89ed2c74db606740ee685e25ca9619d0"/>
             <item endquery="false" field="sys_created_on" goto="false" newquery="false" operator="RELATIVE" or="false" value="GE@hour@ago@1"/>
             <item endquery="false" field="duration" goto="false" newquery="false" operator="ISNOTEMPTY" or="false" value=""/>
         </filter>
@@ -99,17 +100,17 @@
         <sys_created_on>2018-09-11 19:46:39</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>c4135ba4dba82740ee685e25ca961983</sys_id>
-        <sys_mod_count>7</sys_mod_count>
-        <sys_name>OP Average Send Time (past hour)</sys_name>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>OP Average Send Time (1hr)</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_report_c4135ba4dba82740ee685e25ca961983</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-12 04:00:27</sys_updated_on>
+        <sys_updated_on>2018-09-13 00:26:11</sys_updated_on>
         <table>metric_instance</table>
-        <title>OP Average Send Time (past hour)</title>
+        <title>OP Average Send Time (1hr)</title>
         <title_horizontal_alignment>center</title_horizontal_alignment>
         <title_vertical_alignment>top</title_vertical_alignment>
         <to/>

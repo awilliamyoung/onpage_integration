@@ -5,13 +5,13 @@
             <element>table</element>
             <position>0</position>
             <sys_created_by>will.young</sys_created_by>
-            <sys_created_on>2018-09-07 20:37:47</sys_created_on>
-            <sys_id>4a68765fdb146740c822fcd6f496194a</sys_id>
+            <sys_created_on>2018-09-12 22:56:01</sys_created_on>
+            <sys_id>73f70549dbe0a740ee685e25ca961902</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Conditions" display_value="Conditions" name="x_gfnll_onpage_onpage_subscription" sys_domain="global" view="Default view">3e4a0256dbd0ef00ee685e25ca961949</sys_ui_section>
             <sys_updated_by>will.young</sys_updated_by>
-            <sys_updated_on>2018-09-07 20:37:47</sys_updated_on>
+            <sys_updated_on>2018-09-12 22:56:01</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -19,13 +19,27 @@
             <element>conditions_builder</element>
             <position>1</position>
             <sys_created_by>will.young</sys_created_by>
-            <sys_created_on>2018-09-07 20:37:47</sys_created_on>
-            <sys_id>ca68765fdb146740c822fcd6f496194a</sys_id>
+            <sys_created_on>2018-09-12 22:56:01</sys_created_on>
+            <sys_id>f3f70549dbe0a740ee685e25ca961902</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Conditions" display_value="Conditions" name="x_gfnll_onpage_onpage_subscription" sys_domain="global" view="Default view">3e4a0256dbd0ef00ee685e25ca961949</sys_ui_section>
             <sys_updated_by>will.young</sys_updated_by>
-            <sys_updated_on>2018-09-07 20:37:47</sys_updated_on>
+            <sys_updated_on>2018-09-12 22:56:01</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>template</element>
+            <position>2</position>
+            <sys_created_by>will.young</sys_created_by>
+            <sys_created_on>2018-09-12 22:56:01</sys_created_on>
+            <sys_id>77f70549dbe0a740ee685e25ca961902</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Conditions" display_value="Conditions" name="x_gfnll_onpage_onpage_subscription" sys_domain="global" view="Default view">3e4a0256dbd0ef00ee685e25ca961949</sys_ui_section>
+            <sys_updated_by>will.young</sys_updated_by>
+            <sys_updated_on>2018-09-12 22:56:01</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

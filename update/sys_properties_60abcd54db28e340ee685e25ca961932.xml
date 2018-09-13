@@ -5,7 +5,7 @@
         <description>Comma separated string of additional tables that you want to use with the OnPage integration. &#13;
 NOTE: You must create your own business rule(s) for this to work.</description>
         <ignore_cache>false</ignore_cache>
-        <is_private>false</is_private>
+        <is_private>true</is_private>
         <name>x_gfnll_onpage.subscription.other_tables</name>
         <read_roles>x_gfnll_onpage.admin,x_gfnll_onpage.system</read_roles>
         <suffix>subscription.other_tables</suffix>
@@ -14,7 +14,7 @@ NOTE: You must create your own business rule(s) for this to work.</description>
         <sys_created_on>2018-09-10 15:18:46</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>60abcd54db28e340ee685e25ca961932</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>x_gfnll_onpage.subscription.other_tables</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
@@ -22,7 +22,7 @@ NOTE: You must create your own business rule(s) for this to work.</description>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_properties_60abcd54db28e340ee685e25ca961932</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-10 16:17:38</sys_updated_on>
+        <sys_updated_on>2018-09-12 21:14:28</sys_updated_on>
         <type>string</type>
         <value/>
         <write_roles>x_gfnll_onpage.admin</write_roles>
