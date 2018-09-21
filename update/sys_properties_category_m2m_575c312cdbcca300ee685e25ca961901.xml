@@ -3,7 +3,7 @@
     <sys_properties_category_m2m action="INSERT_OR_UPDATE">
         <category display_value="OnPage Configurations">2e1c79e8dbcca300ee685e25ca961934</category>
         <order>700</order>
-        <property display_value="x_gfnll_onpage.can_update.state" name="x_gfnll_onpage.can_update.state">efabb1e8dbcca300ee685e25ca961981</property>
+        <property display_value="x_gfnll_onpage.can_update.script" name="x_gfnll_onpage.can_update.script">efabb1e8dbcca300ee685e25ca961981</property>
         <sys_class_name>sys_properties_category_m2m</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
         <sys_created_on>2018-08-17 16:56:28</sys_created_on>

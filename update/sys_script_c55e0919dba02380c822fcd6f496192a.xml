@@ -6,8 +6,8 @@
         <action_delete>false</action_delete>
         <action_insert>true</action_insert>
         <action_query>false</action_query>
-        <action_update>false</action_update>
-        <active>true</active>
+        <action_update>true</action_update>
+        <active>false</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -16,13 +16,10 @@
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="x_gfnll_onpage_event">status=new^type=inbound^EQ<item endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value="new"/>
-            <item endquery="false" field="type" goto="false" newquery="false" operator="=" or="false" value="inbound"/>
-            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
-        </filter_condition>
+        <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
-        <name>Onpage Inbound Events</name>
+        <name>//Onpage Inbound Events</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -32,19 +29,38 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	gs.info("BR: is this thing on?");
+	//logging
+	function log(message,type){
+		//LOGGING/////////
+		var logTable = 'sys_script';
+		var logID = 'c55e0919dba02380c822fcd6f496192a';
+		var logMe = new x_gfnll_onpage.log();
+		if(type=="info"){
+		 logMe.info(message,type,logTable,logID);
+		}
+		if (type=="error"){
+		  logMe.error(message,type,logTable,logID);
+		}
+	}
+	log("Inbound event BR: Starting","error");
+	log("Inbound event BR: Current value "+current.getValue("current"),"error");
 
 	
-	var json = current.current;
-	var parser = new JSONParser();
-	var eventContent = parser.parse(json);
+	var json = current.getValue("current");
+	var eventContent = JSON.parse(json);
+	var eventStatus = eventContent.value.toString();
+	var eventTimeStamp = eventContent.timestamp.toString();
+	var eventReply = eventContent.replyoption.toString();
+	var eventOPID = eventContent.opid.toString();
 	var grActualNotification = new GlideRecord('x_gfnll_onpage_notification');
-		grActualNotification.addQuery('sys_id', eventContent.status.id);
+		grActualNotification.addQuery('sys_id', eventContent.id);
 		grActualNotification.query();
 	
 		if (grActualNotification.next())
 		{
 			var workNotes = gs.getProperty('x_gfnll_onpage.can_update.work_notes');
-			if(workNotes)
+			if(workNotes=="true")
 			{
 
 
@@ -53,16 +69,50 @@
 				grNotification.setValue('status','received');
 				grNotification.setValue('parent',current);
 				grNotification.setValue('table', 'x_gfnll_onpage_notification');
-				grNotification.setValue('document_id',eventContent.status.id);
+				grNotification.setValue('document_id',eventContent.id);
 				grNotification.setValue('short_description','Work notes entry');
 				grNotification.setValue('priority',"LOW");
+				var userFullName = '';
+				
+								/*
+sent,sending,send-ready,received,failed,error,cancelled,applied
 
-				grNotification.setValue('body',nbody);
-				grNotification.setValue('recipients',nrecips);
-				grNotification.setValue('reply_options',nreplies);
-				grNotification.setValue('table',ntable);
-				grNotification.setValue('template',template);
-				notification.insert();
+"An OnPage message for Joe Smith was sent at 12:13pm"
+---------------"An OnPage message for Joe Smith was delivered at 12:14pm"
+---------------"Joe Smith replied "Assign" via OnPage."*/
+				var message = "";
+				var verb = "";
+				switch(eventStatus)
+					{
+						case 'sent':
+						case 'cancelled':
+							verb = "was";
+							break;
+						case 'received':
+							eventStatus='delivered';
+							verb = "was";
+							break;
+						case 'sending':
+						case 'send-ready':
+							verb = "is";
+							break;
+						case 'failed':
+						case 'error':
+							verb="shows";
+							break;
+							
+					}
+				if(verb=='was' || verb=='is' || verb =='shows')
+				{
+					message = "An OnPage message for "+ userFullName + " "+verb+ " "+eventStatus+" at "+ eventTimeStamp;
+				}
+				else if(eventStatus=='applied')
+				{
+					message = userFullName + ' replied "' + eventReply + '" via OnPage at '+ eventTimeStamp;
+				}
+
+				grNotification.setValue('body',message);
+				grNotification.insert();
 			}
 		}
 		else
@@ -78,18 +128,18 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c55e0919dba02380c822fcd6f496192a</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>Onpage Inbound Events</sys_name>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>//Onpage Inbound Events</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_c55e0919dba02380c822fcd6f496192a</sys_update_name>
-        <sys_updated_by>David.Delahoz</sys_updated_by>
-        <sys_updated_on>2018-09-13 20:03:33</sys_updated_on>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-20 05:15:18</sys_updated_on>
         <template/>
-        <when>after</when>
+        <when>before</when>
     </sys_script>
     <sys_translated_text action="delete_multiple" query="documentkey=c55e0919dba02380c822fcd6f496192a"/>
 </record_update>

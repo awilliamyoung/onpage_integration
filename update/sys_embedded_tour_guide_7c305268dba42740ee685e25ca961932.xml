@@ -2,7 +2,7 @@
 <record_update sys_domain="global" table="sys_embedded_tour_guide">
     <sys_embedded_tour_guide action="INSERT_OR_UPDATE">
         <active>true</active>
-        <autolaunch_order>1</autolaunch_order>
+        <autolaunch_order>0</autolaunch_order>
         <context>home</context>
         <description/>
         <name>OnPage System Properties</name>
@@ -14,7 +14,7 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>7c305268dba42740ee685e25ca961932</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>OnPage System Properties</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
@@ -23,6 +23,6 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_embedded_tour_guide_7c305268dba42740ee685e25ca961932</sys_update_name>
         <sys_updated_by>lorena.villanueva</sys_updated_by>
-        <sys_updated_on>2018-09-11 15:25:53</sys_updated_on>
+        <sys_updated_on>2018-09-13 20:51:18</sys_updated_on>
     </sys_embedded_tour_guide>
 </record_update>

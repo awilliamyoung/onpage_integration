@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_gfnll_onpage_Support.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<body>
+		<h1 style="text-align: left;"><img src="onpage.png" alt="OnPage Logo" /></h1>
+		<h3>For further support, please refer to <a href="https://www.onpage.com/it-resource-library/"> OnPage IT Resources</a> </h3>
+	</body>
+</j:jelly>]]></html>
+        <name>Support</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>lorena.villanueva</sys_created_by>
+        <sys_created_on>2018-09-14 21:30:10</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>3f37cba1dba42b40ee685e25ca9619cd</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Support</sys_name>
+        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_ui_page_3f37cba1dba42b40ee685e25ca9619cd</sys_update_name>
+        <sys_updated_by>lorena.villanueva</sys_updated_by>
+        <sys_updated_on>2018-09-14 21:39:33</sys_updated_on>
+    </sys_ui_page>
+</record_update>

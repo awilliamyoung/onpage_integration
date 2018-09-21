@@ -113,11 +113,12 @@ sync.prototype = {
 			var count = gr.getRowCount();
 			this.info("Matching user count = "+count,"internal");
 			if(count>0){
+				gr.next();
 				//if existing, check for value changes
 				this.info("Existing user found","internal");
 				var fields = ["first","last","email"];
 				var opValues = [first,last,email];
-				var update = false;
+				var update = false; 
 				for(var j=0;j<fields.length;j++){
 					var field = fields[j],
 						onpage = opValues[j],
@@ -222,7 +223,7 @@ sync.prototype = {
         <sys_created_on>2018-09-07 15:18:33</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>6793a19fdb182740c822fcd6f49619e8</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>sync</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
@@ -230,6 +231,6 @@ sync.prototype = {
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_include_6793a19fdb182740c822fcd6f49619e8</sys_update_name>
         <sys_updated_by>David.Delahoz</sys_updated_by>
-        <sys_updated_on>2018-09-13 17:45:24</sys_updated_on>
+        <sys_updated_on>2018-09-14 19:57:01</sys_updated_on>
     </sys_script_include>
 </record_update>

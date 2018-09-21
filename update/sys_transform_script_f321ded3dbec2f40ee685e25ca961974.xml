@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_transform_script">
+    <sys_transform_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <map display_value="Onpage Event Transform">789411badb0cab00c822fcd6f49619df</map>
+        <order>100</order>
+        <script><![CDATA[(function runTransformScript(source, map, log, target /*undefined onStart*/ ) {
+	
+	var eventStatus = source.value.toString();
+	var eventTimeStamp = source.timestamp.toString();
+	var eventReply = source.replyoption.toString();
+	var eventOPID = source.opid.toString();
+	//gs.info("Transform variables: "+eventStatus+" "+eventTimeStamp+" "+eventReply+" "+eventOPID);
+	
+	
+	var grActualNotification = new GlideRecord('x_gfnll_onpage_notification');
+	if(grActualNotification.get(source.id.toString())){
+		//gs.info("Transform matched notification");
+		var targetTable = grActualNotification.getValue('table');
+		var targetRec = grActualNotification.getValue('document_id');
+		//get reply options
+		if(eventReply!=''&&eventReply!=null){
+			gs.info("runReply : Running event reply from transform");
+			try{
+				var wf = new x_gfnll_onpage.workflow();
+				//wf.runReply(eventReply,grActualNotification,source.getUniqueValue());
+				wf.runReply('','','');
+			} catch(e){
+				gs.error(e);
+			}
+		}
+		
+		//create notification for work notes
+		gs.info("Transform can update work notes");
+		var grNotification = new GlideRecord('x_gfnll_onpage_notification');
+		grNotification.initialize();
+		grNotification.setValue('status','received');
+		grNotification.setValue('parent','');
+		grNotification.setValue('table',targetTable);
+		grNotification.setValue('document_id',targetRec);
+		grNotification.setValue('short_description','OnPage Response');
+		grNotification.setValue('priority',"LOW");
+		
+		
+		var userFullName = getUsername(eventOPID);
+		var message = "";
+		var verb = "";
+		switch(eventStatus){
+			case 'Replied': message = userFullName+ " replied "+eventReply +" at "+ eventTimeStamp; break;
+			default : message = userFullName + " | " + eventStatus + " at " + eventTimeStamp; break;
+		}
+		grNotification.setValue('body',message);
+		grNotification.insert();
+	}
+	
+	function getUsername(eventOPID){
+		var gr = new GlideRecord('x_gfnll_onpage_target');
+		gr.get(eventOPID,"opid");
+		var first = gr.getValue('first_name'),
+		last = gr.getValue('last_name');
+		return first + " "+ last;
+	}
+})(source, map, log, target);]]></script>
+        <sys_class_name>sys_transform_script</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-20 04:04:53</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>f321ded3dbec2f40ee685e25ca961974</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_name>onBefore</sys_name>
+        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_transform_script_f321ded3dbec2f40ee685e25ca961974</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-21 03:37:11</sys_updated_on>
+        <when>onBefore</when>
+    </sys_transform_script>
+</record_update>

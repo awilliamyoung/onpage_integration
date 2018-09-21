@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update table="sys_script_include">
     <sys_script_include action="INSERT_OR_UPDATE">
-        <access>package_private</access>
+        <access>public</access>
         <active>true</active>
         <api_name>x_gfnll_onpage.workflow</api_name>
         <caller_access/>
@@ -34,7 +34,22 @@ workflow.prototype = {
 		while(gr.next()){
 			var table = gr.getValue('table');
 			if(array.indexOf(table)==-1){
-				array.push(table);
+				// get a list of tables allowed to have subscriptions
+				var allowed = gs.getProperty('x_gfnll_onpage.subscription.task_tables');
+				var allowedArr = allowed.split(",");
+				if(gs.getProperty('x_gfnll_onpage.incident_alert.enabled')=="true"){
+					allowedArr.push('incident_alert');
+				}
+				var other = gs.getProperty('x_gfnll_onpage.subscription.other_tables');
+				if(other!=''&&other!=null){
+					var others = other.split(",");
+					for(var i=0;i<others.length;i++){
+						allowedArr.push(others[i]);
+					}
+				}
+				if(allowedArr.indexOf(table)>=0){
+					array.push(table);
+				}
 			}
 		}
 		var string = array.toString();
@@ -303,9 +318,64 @@ workflow.prototype = {
 		this.info("Workflow notification inserted: "+notification.getUniqueValue(),logType,logTable,event);
 	},
 	
+	runReply: function(reply,origNotif,source){
+		gs.info("runReply running");
+		var logTable = 'x_gfnll_onpage_event_import',
+			logType = 'internal';
+		
+		// lookup outbound notification
+		var gr = new GlideRecord('x_gfnll_onpage_notification');
+		if(gr.get(origNotif)){
+			//this.error("Notification found",logType,logTable,source);
+			gs.info("runReply notification found");
+			//get values from notification
+			var targetTable = gr.getValue('table');
+			var targetRec = gr.getValue('document_id');
+			var template = gr.getValue('template');
+			//get reply options from template
+			var tempGR = new GlideRecord('x_gfnll_onpage__onpage_template');
+			if(tempGR.get(template)){
+				//this.error("Template found",logType,logTable,source);
+				gs.info("runReply template found");
+				var replies = tempGR.getValue('reply_options');
+				if(replies==''||replies==null){
+					this.error("No replies found",logType,logTable,source);
+					return;
+				}
+				//check if execute script is enabled
+				var repliesGR = new GlideRecord('x_gfnll_onpage_onpage_reply_options');
+					repliesGR.get('replies');
+				var enabled = repliesGR.getValue('execute_scripts');
+				if(enabled!='true'){
+					return;
+				}
+				//check if there is a matching reply and get the script
+				var replyGR = new GlideRecord('x_gfnll_onpage_onpage_reply');
+					replyGR.addQuery('parent',replies);
+					replyGR.addQuery('option_name',reply);
+					replyGR.query();
+				if(replyGR.next()){
+					var script = replyGR.getValue('script');
+					if(script!=''&&script!=null){
+						// setup variables to be used by the script
+						var vars = {'targetTable' : targetTable , 'targetRec':targetRec};
+						//evaluate script
+						var evaluator = new GlideScopedEvaluator(); 
+						evaluator.evaluateScript(replyGR,'script', vars);
+					}
+				}
+			}
+		}
+		
+	},
+	
 	sendRestMessage: function(id, subject, body, recipients, priority,reply,notif){
 		var logTable = 'x_gfnll_onpage_notification',
 			logType = 'outbound';
+		if(gs.getProperty('x_gfnll_onpage.send.enabled')=="false"){
+			this.error("Message sending is disabled. Unable to send REST message.",logType,logTable,id);
+			return "error;"+"Message sending is disabled.";
+		}
 		try {
 			var r = new sn_ws.RESTMessageV2('OnPage Secured', 'sendMessage');
 			r.setStringParameterNoEscape('URLsub', gs.getProperty('x_gfnll_onpage.URLsubdomain'));
@@ -345,6 +415,10 @@ workflow.prototype = {
 	sendRestMessages: function(msgArray,id){
 		var logTable = 'sysauto_script',
 			logType = 'outbound';
+		if(gs.getProperty('x_gfnll_onpage.send.enabled')=="false"){
+			this.error("Message sending is disabled. Unable to send REST message.",logType,logTable,id);
+			return "error;"+"Message sending is disabled.";
+		}
 		try {
 			var r = new sn_ws.RESTMessageV2('OnPage Secured', 'sendMessages');
 			r.setStringParameterNoEscape('URLsub', gs.getProperty('x_gfnll_onpage.URLsubdomain'));
@@ -386,7 +460,7 @@ workflow.prototype = {
         <sys_created_on>2018-09-07 21:57:11</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>48a8831fdb946740c822fcd6f49619bd</sys_id>
-        <sys_mod_count>71</sys_mod_count>
+        <sys_mod_count>77</sys_mod_count>
         <sys_name>workflow</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
@@ -394,6 +468,6 @@ workflow.prototype = {
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_include_48a8831fdb946740c822fcd6f49619bd</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-13 18:12:02</sys_updated_on>
+        <sys_updated_on>2018-09-21 03:29:03</sys_updated_on>
     </sys_script_include>
 </record_update>

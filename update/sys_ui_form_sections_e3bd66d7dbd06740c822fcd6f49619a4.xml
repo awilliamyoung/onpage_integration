@@ -15,6 +15,20 @@
             <sys_updated_by>will.young</sys_updated_by>
             <sys_updated_on>2018-09-07 19:51:12</sys_updated_on>
         </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>will.young</sys_created_by>
+            <sys_created_on>2018-09-14 20:49:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>6b3e7ea9db642b40ee685e25ca961945</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_gfnll_onpage_onpage_reply_options" name="x_gfnll_onpage_onpage_reply_options" sys_domain="global" view="Default view">e3bd66d7dbd06740c822fcd6f49619a4</sys_ui_form>
+            <sys_ui_section caption="Replies" display_value="Replies" name="x_gfnll_onpage_onpage_reply_options" sys_domain="global" view="Default view">2f3e7ea9db642b40ee685e25ca961943</sys_ui_section>
+            <sys_updated_by>will.young</sys_updated_by>
+            <sys_updated_on>2018-09-14 20:49:37</sys_updated_on>
+        </sys_ui_form_section>
         <sys_ui_form action="INSERT_OR_UPDATE">
             <name>x_gfnll_onpage_onpage_reply_options</name>
             <roles/>

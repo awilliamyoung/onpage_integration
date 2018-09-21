@@ -3,8 +3,12 @@
     <element extends="sys_import_set_row" label="Onpage Event Import" max_length="40" name="x_gfnll_onpage_event_import" type="collection">
         <element label="Current" max_length="1000" name="current" type="string_full_utf8"/>
         <element dependent="table" dependent_on_field="table" label="Document ID" max_length="32" name="document_id" type="document_id" use_dependent_field="true"/>
+        <element label="ID" max_length="40" name="id" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" display="true" label="Number" max_length="40" name="number" type="string"/>
         <element label="OnPage ID" max_length="40" name="onpage_id" type="string"/>
+        <element label="opid" max_length="40" name="opid" type="string"/>
         <element label="Previous" max_length="1000" name="previous" type="string_full_utf8"/>
+        <element label="Reply Option" max_length="40" name="replyoption" type="string"/>
         <element choice="1" label="Status" max_length="40" name="status" type="choice">
             <choice>
                 <element label="Error" value="error"/>
@@ -15,6 +19,7 @@
             </choice>
         </element>
         <element label="Table" max_length="80" name="table" type="table_name"/>
+        <element label="Timestamp" max_length="40" name="timestamp" type="glide_date_time"/>
         <element choice="1" label="Type" max_length="40" name="type" type="choice">
             <choice>
                 <element label="Inbound" value="inbound"/>
@@ -22,6 +27,7 @@
                 <element label="Outbound" value="outbound"/>
             </choice>
         </element>
+        <element label="Value" max_length="40" name="value" type="string"/>
         <index name="index">
             <element name="document_id"/>
         </index>

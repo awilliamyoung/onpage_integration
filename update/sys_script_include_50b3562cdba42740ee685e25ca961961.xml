@@ -14,7 +14,7 @@ cleanup.prototype = {
 		//LOGGING/////////
 		this.logType = "internal";
 		this.logTable = 'sysauto_script';
-		this.logID = '';
+		this.logID = 'e7098e24dba42740ee685e25ca961937';
 		this.log = new x_gfnll_onpage.log();
 		this.error = function(message){
 		  this.log.error(message,this.logType,this.logTable,this.logID);
@@ -23,9 +23,28 @@ cleanup.prototype = {
 		  this.log.info(message,this.logType,this.logTable,this.logID);
 		};
     },
+	allEvents: function(){
+		this.info('Cleanup info function starting');
+		this.info("Starting default log cleanup.");
+		//number of days
+		var days = 90;
+		var gr = new GlideRecord('x_gfnll_onpage_event');
+			gr.addEncodedQuery('sys_created_onRELATIVELE@dayofweek@ago@'+days);
+			gr.query();
+		var count = gr.getRowCount();
+		this.info('Deleting '+count+' info messages older than '+days+' days.');
+		gr.deleteMultiple();
+		
+		var gr2 = new GlideRecord('x_gfnll_onpage_notification');
+			gr2.addEncodedQuery('sys_created_onRELATIVELE@dayofweek@ago@'+days);
+			gr2.query();
+		var count2 = gr.getRowCount();
+		this.info('Deleting '+coun2t+' info messages older than '+days+' days.');
+		gr2.deleteMultiple();
+	},
 
-	info: function(){
-		gs.info('Cleanup info function starting');
+	infoLog: function(){
+		this.info('Cleanup info function starting');
 		this.info("Starting info log cleanup.");
 		//number of days
 		var days = 14;
@@ -38,7 +57,7 @@ cleanup.prototype = {
 		gr.deleteMultiple();
 	},
 
-	error: function(){
+	errorLog: function(){
 		this.info("Starting error log cleanup.");
 		//number of days
 		var days = 30;
@@ -58,7 +77,7 @@ cleanup.prototype = {
         <sys_created_on>2018-09-11 15:14:09</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>50b3562cdba42740ee685e25ca961961</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>cleanup</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
@@ -66,6 +85,6 @@ cleanup.prototype = {
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_include_50b3562cdba42740ee685e25ca961961</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-11 15:22:29</sys_updated_on>
+        <sys_updated_on>2018-09-14 18:54:33</sys_updated_on>
     </sys_script_include>
 </record_update>

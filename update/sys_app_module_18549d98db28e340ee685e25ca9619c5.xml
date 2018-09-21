@@ -17,7 +17,7 @@
         <name/>
         <order>400</order>
         <override_menu_roles>false</override_menu_roles>
-        <query>https://google.com</query>
+        <query>x_gfnll_onpage_Support.do</query>
         <report/>
         <roles>x_gfnll_onpage.user</roles>
         <survey/>
@@ -29,7 +29,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>18549d98db28e340ee685e25ca9619c5</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>Get Support</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
@@ -37,8 +37,8 @@
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_app_module_18549d98db28e340ee685e25ca9619c5</sys_update_name>
-        <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-13 01:58:27</sys_updated_on>
+        <sys_updated_by>lorena.villanueva</sys_updated_by>
+        <sys_updated_on>2018-09-14 21:32:24</sys_updated_on>
         <timeline_page/>
         <title>Get Support</title>
         <uncancelable>false</uncancelable>
