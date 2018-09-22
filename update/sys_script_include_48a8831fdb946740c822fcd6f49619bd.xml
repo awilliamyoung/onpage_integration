@@ -318,54 +318,78 @@ workflow.prototype = {
 		this.info("Workflow notification inserted: "+notification.getUniqueValue(),logType,logTable,event);
 	},
 	
-	runReply: function(reply,origNotif,source){
-		gs.info("runReply running");
-		var logTable = 'x_gfnll_onpage_event_import',
+	runReply: function(reply,origNotif,source,opid){ 
+		var logTable = "x_gfnll_onpage_event",
 			logType = 'internal';
+		this.info("runReply running. Values: "+reply+", "+origNotif+", "+source+", "+opid,logType,logTable,source);
+		
+		var user = '';
+		var converted = this._convertOPID(opid);
+		if(converted){
+			this.info("runreply converted "+converted,logType,logTable,source);
+			var obj = JSON.parse(converted);
+				if(obj.table=='sys_user'){
+					user = obj.user;
+				}
+		}
 		
 		// lookup outbound notification
 		var gr = new GlideRecord('x_gfnll_onpage_notification');
 		if(gr.get(origNotif)){
 			//this.error("Notification found",logType,logTable,source);
-			gs.info("runReply notification found");
+			this.info("runReply notification found",logType,logTable,source);
 			//get values from notification
 			var targetTable = gr.getValue('table');
 			var targetRec = gr.getValue('document_id');
 			var template = gr.getValue('template');
+			this.info('runreply template is: '+template,logType,logTable,source);
 			//get reply options from template
-			var tempGR = new GlideRecord('x_gfnll_onpage__onpage_template');
+			var tempGR = new GlideRecord('x_gfnll_onpage_onpage_template');
 			if(tempGR.get(template)){
 				//this.error("Template found",logType,logTable,source);
-				gs.info("runReply template found");
+				this.info("runReply template found",logType,logTable,source);
 				var replies = tempGR.getValue('reply_options');
 				if(replies==''||replies==null){
-					this.error("No replies found",logType,logTable,source);
+					this.error("runReply No replies found",logType,logTable,source);
 					return;
 				}
+				this.info('runReply template has reply options: '+replies,logType,logTable,source);
 				//check if execute script is enabled
 				var repliesGR = new GlideRecord('x_gfnll_onpage_onpage_reply_options');
-					repliesGR.get('replies');
+					repliesGR.get(replies);
 				var enabled = repliesGR.getValue('execute_scripts');
-				if(enabled!='true'){
+				this.info('runReply execute scripts value is '+enabled,logType,logTable,source);
+				if(enabled!='1'){
+					this.info('runReply execute scripts are disabled',logType,logTable,source);
 					return;
 				}
+				this.info('runReply execute scripts is enabled',logType,logTable,source);
 				//check if there is a matching reply and get the script
 				var replyGR = new GlideRecord('x_gfnll_onpage_onpage_reply');
 					replyGR.addQuery('parent',replies);
 					replyGR.addQuery('option_name',reply);
 					replyGR.query();
+				this.info('runreply searching for reply '+reply,logType,logTable,source);
 				if(replyGR.next()){
+					this.info('runreply reply found',logType,logTable,source);
 					var script = replyGR.getValue('script');
 					if(script!=''&&script!=null){
 						// setup variables to be used by the script
-						var vars = {'targetTable' : targetTable , 'targetRec':targetRec};
+						var vars = {'targetTable' : targetTable , 'targetRec':targetRec , 'responseUser':user};
 						//evaluate script
 						var evaluator = new GlideScopedEvaluator(); 
-						evaluator.evaluateScript(replyGR,'script', vars);
+						evaluator.evaluateScript(replyGR,"script", vars);
+						this.info('runreply script executed',logType,logTable,source);
 					}
 				}
+				else
+					this.info('runreply reply NOT found',logType,logTable,source);
 			}
+			else
+			this.info('runReply template NOT found',logType,logTable,source);
 		}
+		else
+		this.info("runReply notification NOT found",logType,logTable,source);
 		
 	},
 	
@@ -453,6 +477,28 @@ workflow.prototype = {
 		string = '['+quotes.toString()+']';
 		return string;
 	},
+	_convertOPID: function(opid){
+		gs.info("_convertOPID: opid: "+opid);
+		var target = new GlideRecord('x_gfnll_onpage_target');
+		if(target.get('opid',opid)){
+			var gr = target.getValue('document_id');
+			gs.info("_convertOPID: document_id: "+gr);
+			var obj = {};
+				obj.table = target.getValue('table');
+			if(obj.table=='sys_user'){
+				obj.user=gr;
+				obj.group='';
+			}
+			if(obj.table=='sys_user_group'){
+				obj.group=gr;
+				obj.user='';
+			}
+			var string = JSON.stringify(obj);
+			gs.info("_convertOPID: string: "+string);
+			return string;
+		}
+		return false;
+	},
 	type: 'workflow'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
@@ -460,7 +506,7 @@ workflow.prototype = {
         <sys_created_on>2018-09-07 21:57:11</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>48a8831fdb946740c822fcd6f49619bd</sys_id>
-        <sys_mod_count>77</sys_mod_count>
+        <sys_mod_count>102</sys_mod_count>
         <sys_name>workflow</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
@@ -468,6 +514,6 @@ workflow.prototype = {
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_include_48a8831fdb946740c822fcd6f49619bd</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-21 03:29:03</sys_updated_on>
+        <sys_updated_on>2018-09-22 22:31:29</sys_updated_on>
     </sys_script_include>
 </record_update>

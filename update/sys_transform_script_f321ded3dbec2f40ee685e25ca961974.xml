@@ -19,16 +19,16 @@
 		var targetTable = grActualNotification.getValue('table');
 		var targetRec = grActualNotification.getValue('document_id');
 		//get reply options
-		if(eventReply!=''&&eventReply!=null){
-			gs.info("runReply : Running event reply from transform");
-			try{
-				var wf = new x_gfnll_onpage.workflow();
+		//if(eventReply!=''&&eventReply!=null){
+			//gs.info("runReply : Running event reply from transform");
+			//try{
+				//var wf = new x_gfnll_onpage.workflow();
 				//wf.runReply(eventReply,grActualNotification,source.getUniqueValue());
-				wf.runReply('','','');
-			} catch(e){
-				gs.error(e);
-			}
-		}
+				//wf.runReply('','','');
+			//} catch(e){
+			//	gs.error(e);
+			//}
+		//}
 		
 		//create notification for work notes
 		gs.info("Transform can update work notes");
@@ -66,7 +66,7 @@
         <sys_created_on>2018-09-20 04:04:53</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>f321ded3dbec2f40ee685e25ca961974</sys_id>
-        <sys_mod_count>26</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_name>onBefore</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
@@ -74,7 +74,7 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_transform_script_f321ded3dbec2f40ee685e25ca961974</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-21 03:37:11</sys_updated_on>
+        <sys_updated_on>2018-09-22 18:46:53</sys_updated_on>
         <when>onBefore</when>
     </sys_transform_script>
 </record_update>

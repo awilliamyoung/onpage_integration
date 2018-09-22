@@ -6,7 +6,7 @@
         <element display="true" label="Option Name" mandatory="true" max_length="40" name="option_name" type="string"/>
         <element label="Order" max_length="40" name="order" type="integer"/>
         <element label="Parent" mandatory="true" max_length="32" name="parent" reference="x_gfnll_onpage_onpage_reply_options" type="reference"/>
-        <element hint="Server-side script that runs on the record in the document field when this option is received in an OnPage reply." label="Script to Execute (Advanced)" max_length="8000" name="script" type="script"/>
+        <element default="var table = this.targetTable,&#13;&#10;&#9;record = this.targetRec,&#13;&#10;&#9;user = this.responseUser;&#13;&#10;executeScript(table,record,user);&#13;&#10;function executeScript(table,record,user){&#13;&#10;&#9;var gr = new GlideRecord(table);&#13;&#10;&#9;if(gr.get(record)){&#13;&#10;&#9;&#9;///////////////////////////////////////&#13;&#10;&#9;&#9;////// set values on the target record&#13;&#10;&#9;&#9;//gr.setValue('','');&#13;&#10;&#13;&#10;&#13;&#10;&#9;&#9;//////////////////////////////////&#13;&#10;&#9;&#9;gr.update();&#13;&#10;&#9;}&#13;&#10;}" hint="Server-side script that runs on the record in the document field when this option is received in an OnPage reply." label="Script to Execute (Advanced)" max_length="8000" name="script" type="script"/>
         <index name="index">
             <element name="parent"/>
         </index>

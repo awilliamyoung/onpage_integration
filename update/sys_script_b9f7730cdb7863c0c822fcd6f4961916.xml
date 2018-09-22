@@ -12,14 +12,14 @@
         <advanced>true</advanced>
         <change_fields>false</change_fields>
         <client_callable>false</client_callable>
-        <collection>task</collection>
+        <collection>x_gfnll_onpage_event</collection>
         <condition/>
         <description/>
         <execute_function>false</execute_function>
         <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
-        <name>Generate Events from Task Updates</name>
+        <name>Run Reply Scripts</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -29,51 +29,53 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
-	var updatedBy = current.getValue('sys_updated_by');
-	if(updatedBy=='onpage'){
+	var type = current.getValue('type');
+	var status = current.getValue('status');
+	
+	if(type!='inbound' || status !='new'){
 		return;
 	}
 	
-	//check if there is are subscriptions for this table
-	var prop = gs.getProperty('x_gfnll_onpage.subscription.tables'),
-		tables = prop.split(","),
-		table = current.getTableName();
-	if(tables.indexOf(table)==-1){
-		return;
-	}
+	var eventStatus = current.getValue('value');
+	var eventTimeStamp = current.getValue('timestamp');
+	var eventReply = current.getValue('replyoption');
+	var eventOPID = current.getValue('opid');
 	
-	var jsonCurrent = new global.JSON().encode(current);
-	var jsonPrevious = new global.JSON().encode(previous);
+	var grActualNotification = new GlideRecord('x_gfnll_onpage_notification');
+	if(grActualNotification.get(current.getValue('document_id'))){
+		var targetTable = grActualNotification.getValue('table');
+		var targetRec = grActualNotification.getValue('document_id');
+		//get reply options
+		if(eventReply!=''&&eventReply!=null){
+			gs.info("runReply : Running event reply from business rule");
+			try{
+				new x_gfnll_onpage.workflow().runReply(eventReply,grActualNotification.getUniqueValue(),current.getUniqueValue(),eventOPID);
+			} catch(e){
+				gs.error(e);
+			}
+		}
+	}
 
-	var gr = new GlideRecord('x_gfnll_onpage_event'); 
-		gr.initialize();
-		gr.setValue('table', current.getTableName());
-		gr.setValue('document_id', current.sys_id);
-		gr.setValue('status', 'new');
-		gr.setValue('type', 'internal');
-		gr.setValue('current', jsonCurrent);
-		gr.setValue('previous', jsonPrevious);
-		gr.insert();
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
-        <sys_created_by>David.Delahoz</sys_created_by>
-        <sys_created_on>2018-08-24 03:23:31</sys_created_on>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-22 19:27:51</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>d5bf3eaadbc4ab00c822fcd6f4961992</sys_id>
-        <sys_mod_count>15</sys_mod_count>
-        <sys_name>Generate Events from Task Updates</sys_name>
+        <sys_id>b9f7730cdb7863c0c822fcd6f4961916</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Run Reply Scripts</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
-        <sys_update_name>sys_script_d5bf3eaadbc4ab00c822fcd6f4961992</sys_update_name>
+        <sys_update_name>sys_script_b9f7730cdb7863c0c822fcd6f4961916</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-22 19:43:31</sys_updated_on>
+        <sys_updated_on>2018-09-22 22:53:44</sys_updated_on>
         <template/>
-        <when>after</when>
+        <when>before</when>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=d5bf3eaadbc4ab00c822fcd6f4961992"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=b9f7730cdb7863c0c822fcd6f4961916"/>
 </record_update>
