@@ -49,7 +49,8 @@
 		if(eventReply!=''&&eventReply!=null){
 			gs.info("runReply : Running event reply from business rule");
 			try{
-				new x_gfnll_onpage.workflow().runReply(eventReply,grActualNotification.getUniqueValue(),current.getUniqueValue(),eventOPID);
+				var wf = new x_gfnll_onpage.workflow();
+				wf.runReply(eventReply,grActualNotification.getUniqueValue(),current.getUniqueValue(),eventOPID);
 			} catch(e){
 				gs.error(e);
 			}
@@ -64,7 +65,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b9f7730cdb7863c0c822fcd6f4961916</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>Run Reply Scripts</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
@@ -73,9 +74,9 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_b9f7730cdb7863c0c822fcd6f4961916</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-22 22:53:44</sys_updated_on>
+        <sys_updated_on>2018-09-22 23:20:21</sys_updated_on>
         <template/>
-        <when>before</when>
+        <when>after</when>
     </sys_script>
     <sys_translated_text action="delete_multiple" query="documentkey=b9f7730cdb7863c0c822fcd6f4961916"/>
 </record_update>

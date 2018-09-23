@@ -36,11 +36,13 @@
 	if(sub.next()){
 		var wf = new x_gfnll_onpage.workflow();
 			wf.createNotification(current.sys_id);
+		current.setValue('status','processed');
 	}
 	// Did not find at least one subscription
 	else{
-		current.status = 'ignored';
+		current.setValue('status','ignored');
 	}
+	current.update();
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
@@ -49,7 +51,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ad8d4797dbd46740c822fcd6f49619c0</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Generate Notifications from Events</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
@@ -58,7 +60,7 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_ad8d4797dbd46740c822fcd6f49619c0</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-12 22:27:25</sys_updated_on>
+        <sys_updated_on>2018-09-22 23:10:52</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
