@@ -47,10 +47,10 @@ sync.prototype = {
 		//loop through accounts and get values
 		for(var i=0;i<groups.length;i++){
 			var group = groups[i];
-			this.info("Looking for existing group: "+group.toString(),"internal");
-			var name = group.name,
-				opid = group.opid,
-				grpID = group.id;
+			this.info("Looking for existing group: "+JSON.stringify(group),"internal");
+			var name = group.name.toString(),
+				opid = group.opid.toString(),
+				grpID = group.id.toString();
 			//check for existing records
 			var gr = new GlideRecord('x_gfnll_onpage_target');
 				gr.addQuery('opid',opid);
@@ -60,7 +60,7 @@ sync.prototype = {
 			if(count>0){
 				//if existing, check for value changes
 				this.info("Existing group found","internal");
-				var fields = ["name"];
+				var fields = ["onpage_name"];
 				var opValues = [name];
 				var update = false;
 				for(var j=0;j<fields.length;j++){
@@ -85,7 +85,7 @@ sync.prototype = {
 				//no existing record, create one
 				var grImp = new GlideRecord('x_gfnll_onpage_target_import');
 				grImp.initialize();
-				grImp.setValue('name',name);
+				grImp.setValue('onpage_name',name);
 				grImp.setValue('opid',opid);
 				grImp.setValue('id',grpID);
 				grImp.insert();
@@ -104,11 +104,11 @@ sync.prototype = {
 		for(var i=0;i<accounts.length;i++){
 			var account = accounts[i];
 			this.info("Looking for existing user: "+JSON.stringify(account),"internal");
-			var first = account.firstName,
-				last = account.lastName,
-				email = account.email,
-				opid = account.opid,
-				id = account.id;
+			var first = account.firstName.toString(),
+				last = account.lastName.toString(),
+				email = account.email.toString(),
+				opid = account.opid.toString(),
+				id = account.id.toString();
 			//check for existing records
 			var gr = new GlideRecord('x_gfnll_onpage_target');
 				gr.addQuery('opid',opid);
@@ -119,7 +119,7 @@ sync.prototype = {
 				gr.next();
 				//if existing, check for value changes
 				this.info("Existing user found","internal");
-				var fields = ["first","last","email"];
+				var fields = ["first_name","last_name","email"];
 				var opValues = [first,last,email];
 				var update = false; 
 				for(var j=0;j<fields.length;j++){
@@ -146,8 +146,8 @@ sync.prototype = {
 				grImp.initialize();
 				grImp.setValue('active',true);
 				grImp.setValue('hidden',false);
-				grImp.setValue('first',first);
-				grImp.setValue('last',last);
+				grImp.setValue('first_name',first);
+				grImp.setValue('last_name',last);
 				grImp.setValue('email',email);
 				grImp.setValue('opid',opid);
 				grImp.setValue('id',id);
@@ -229,7 +229,7 @@ sync.prototype = {
         <sys_created_on>2018-09-07 15:18:33</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>6793a19fdb182740c822fcd6f49619e8</sys_id>
-        <sys_mod_count>21</sys_mod_count>
+        <sys_mod_count>23</sys_mod_count>
         <sys_name>sync</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
@@ -237,6 +237,6 @@ sync.prototype = {
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_include_6793a19fdb182740c822fcd6f49619e8</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-24 12:40:55</sys_updated_on>
+        <sys_updated_on>2018-09-24 13:22:54</sys_updated_on>
     </sys_script_include>
 </record_update>
