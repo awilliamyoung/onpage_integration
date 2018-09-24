@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_embedded_tour_guide">
+    <sys_embedded_tour_guide action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <autolaunch_order>0</autolaunch_order>
+        <context>home</context>
+        <description/>
+        <name>OnPage Guided Tour (Admin)</name>
+        <options/>
+        <roles>x_gfnll_onpage.admin,admin</roles>
+        <sys_class_name>sys_embedded_tour_guide</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-24 15:50:09</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>9e9911b0dbb027c0c822fcd6f4961977</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>OnPage Guided Tour (Admin)</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_embedded_tour_guide_9e9911b0dbb027c0c822fcd6f4961977</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-24 16:34:12</sys_updated_on>
+    </sys_embedded_tour_guide>
+</record_update>

@@ -6,7 +6,7 @@
         <action_target/>
         <action_target_ref display_value=".module-node[id=&quot;ba931187dbd82340ee685e2">59b9519ddb242380c822fcd6f4961990</action_target_ref>
         <active>true</active>
-        <content><![CDATA[Select 'OnPage Configuration']]></content>
+        <content><![CDATA[Select 'OnPage Configuration' to open basic configuration options.]]></content>
         <guide display_value="OnPage System Properties">7c305268dba42740ee685e25ca961932</guide>
         <implicit>false</implicit>
         <link/>
@@ -20,7 +20,7 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>adb9991ddb242380c822fcd6f49619ca</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Step 1</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
@@ -28,8 +28,8 @@
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_embedded_tour_step_adb9991ddb242380c822fcd6f49619ca</sys_update_name>
-        <sys_updated_by>lorena.villanueva</sys_updated_by>
-        <sys_updated_on>2018-09-13 18:57:53</sys_updated_on>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-24 15:36:19</sys_updated_on>
         <target/>
         <target_ref display_value=".module-node[id=&quot;ba931187dbd82340ee685e2">59b9519ddb242380c822fcd6f4961990</target_ref>
         <ui_version>dynamic</ui_version>

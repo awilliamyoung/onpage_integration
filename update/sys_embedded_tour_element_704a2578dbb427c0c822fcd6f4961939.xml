@@ -16,8 +16,8 @@
         <frameset>nav_filter</frameset>
         <list_element>ui_action</list_element>
         <list_header/>
-        <manual_css>tr:nth-of-type(3) td:nth-of-type(1)</manual_css>
-        <name>7c305268dba42740ee685e25ca961932.2.xpath</name>
+        <manual_css>li#concourse_module_859199d4db28e340ee685e25ca961991 div.sn-widget-list_v2.sn-widget-list_dense:nth-of-type(1) a.nav-expandable.sn-aside-group-title.sn-aside-group-title_selectable.sn-aside-group-title_nav.nav-open-state:nth-of-type(1) span:nth-of-type(2)</manual_css>
+        <name>li#concourse_module_859199d4db28e340ee68</name>
         <record_id/>
         <related_field/>
         <related_links/>
@@ -26,21 +26,21 @@
         <related_table/>
         <row/>
         <sys_class_name>sys_embedded_tour_element</sys_class_name>
-        <sys_created_by>lorena.villanueva</sys_created_by>
-        <sys_created_on>2018-09-11 14:57:53</sys_created_on>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-24 17:02:57</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
-        <sys_id>46f0da68dba42740ee685e25ca961950</sys_id>
+        <sys_id>704a2578dbb427c0c822fcd6f4961939</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>7c305268dba42740ee685e25ca961932.2.xpath</sys_name>
+        <sys_name>li#concourse_module_859199d4db28e340ee68</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
-        <sys_update_name>sys_embedded_tour_element_46f0da68dba42740ee685e25ca961950</sys_update_name>
-        <sys_updated_by>lorena.villanueva</sys_updated_by>
-        <sys_updated_on>2018-09-11 14:57:53</sys_updated_on>
+        <sys_update_name>sys_embedded_tour_element_704a2578dbb427c0c822fcd6f4961939</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-24 17:02:57</sys_updated_on>
         <table/>
         <type>manual_css</type>
         <ui_action/>

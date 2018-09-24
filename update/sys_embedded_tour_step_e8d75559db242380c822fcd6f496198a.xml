@@ -6,13 +6,13 @@
         <action_target/>
         <action_target_ref display_value="7c305268dba42740ee685e25ca961932.11.xpat">80d751d9db242380c822fcd6f496199c</action_target_ref>
         <active>true</active>
-        <content><![CDATA[Indicate whether info-level logging should be enabled]]></content>
+        <content><![CDATA[Turn the integration on/off here.]]></content>
         <guide display_value="OnPage System Properties">7c305268dba42740ee685e25ca961932</guide>
         <implicit>false</implicit>
         <link/>
-        <name>Step 11</name>
+        <name>Step 2</name>
         <options/>
-        <order>11</order>
+        <order>2</order>
         <placement>right</placement>
         <sys_class_name>sys_embedded_tour_step</sys_class_name>
         <sys_created_by>lorena.villanueva</sys_created_by>
@@ -20,16 +20,16 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>e8d75559db242380c822fcd6f496198a</sys_id>
-        <sys_mod_count>4</sys_mod_count>
-        <sys_name>Step 11</sys_name>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Step 2</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_embedded_tour_step_e8d75559db242380c822fcd6f496198a</sys_update_name>
-        <sys_updated_by>lorena.villanueva</sys_updated_by>
-        <sys_updated_on>2018-09-13 18:56:25</sys_updated_on>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-24 15:47:19</sys_updated_on>
         <target/>
         <target_ref display_value="7c305268dba42740ee685e25ca961932.11.xpat">80d751d9db242380c822fcd6f496199c</target_ref>
         <ui_version>dynamic</ui_version>

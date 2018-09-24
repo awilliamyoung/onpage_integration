@@ -16,8 +16,8 @@
         <frameset>nav_filter</frameset>
         <list_element>ui_action</list_element>
         <list_header/>
-        <manual_css>tr:nth-of-type(3) td:nth-of-type(1)</manual_css>
-        <name>d31c4298dbe8e340ee685e25ca961908.0.xpath</name>
+        <manual_css>.module-node [data-id="74a8fa66dbc4ab00c822fcd6f496198e"]</manual_css>
+        <name>.module-node [data-id="74a8fa66dbc4ab00c</name>
         <record_id/>
         <related_field/>
         <related_links/>
@@ -26,21 +26,21 @@
         <related_table/>
         <row/>
         <sys_class_name>sys_embedded_tour_element</sys_class_name>
-        <sys_created_by>lorena.villanueva</sys_created_by>
-        <sys_created_on>2018-09-10 20:21:02</sys_created_on>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-24 17:22:47</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
-        <sys_id>315196dcdbe8e340ee685e25ca961974</sys_id>
+        <sys_id>97cee938dbf427c0c822fcd6f496191d</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>d31c4298dbe8e340ee685e25ca961908.0.xpath</sys_name>
+        <sys_name>.module-node [data-id="74a8fa66dbc4ab00c</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
-        <sys_update_name>sys_embedded_tour_element_315196dcdbe8e340ee685e25ca961974</sys_update_name>
-        <sys_updated_by>lorena.villanueva</sys_updated_by>
-        <sys_updated_on>2018-09-10 20:21:02</sys_updated_on>
+        <sys_update_name>sys_embedded_tour_element_97cee938dbf427c0c822fcd6f496191d</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-24 17:22:47</sys_updated_on>
         <table/>
         <type>manual_css</type>
         <ui_action/>

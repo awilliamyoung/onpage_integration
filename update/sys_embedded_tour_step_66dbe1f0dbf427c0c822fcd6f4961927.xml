@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_embedded_tour_step">
+    <sys_embedded_tour_step action="INSERT_OR_UPDATE">
+        <action>true</action>
+        <action_event>click</action_event>
+        <action_target/>
+        <action_target_ref display_value="x_gfnll_onpage_target.list.ui_action">52db6db4dbb427c0c822fcd6f49619e4</action_target_ref>
+        <active>true</active>
+        <content><![CDATA[You will never create a target in this manner. This is the only way to review the form for the guided tour.]]></content>
+        <guide display_value="OnPage Guided Tour (Admin)">9e9911b0dbb027c0c822fcd6f4961977</guide>
+        <implicit>false</implicit>
+        <link/>
+        <name>Step 18</name>
+        <options/>
+        <order>19</order>
+        <placement>bottom</placement>
+        <sys_class_name>sys_embedded_tour_step</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-24 17:09:54</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>66dbe1f0dbf427c0c822fcd6f4961927</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Step 18</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_embedded_tour_step_66dbe1f0dbf427c0c822fcd6f4961927</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-24 17:45:59</sys_updated_on>
+        <target/>
+        <target_ref display_value="x_gfnll_onpage_target.list.ui_action">52db6db4dbb427c0c822fcd6f49619e4</target_ref>
+        <ui_version>dynamic</ui_version>
+        <view/>
+        <window>x_gfnll_onpage_target_list.do</window>
+    </sys_embedded_tour_step>
+</record_update>
