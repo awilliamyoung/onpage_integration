@@ -7,7 +7,7 @@
         <action_target_ref display_value="d31c4298dbe8e340ee685e25ca961908.1.xpath">9351dedcdbe8e340ee685e25ca9619a5</action_target_ref>
         <active>true</active>
         <content><![CDATA[If the integration experiences technical difficulties, what email address should be notified?]]></content>
-        <guide display_value="OnPage Guided Tour">d31c4298dbe8e340ee685e25ca961908</guide>
+        <guide/>
         <implicit>false</implicit>
         <link/>
         <name>Step 1</name>

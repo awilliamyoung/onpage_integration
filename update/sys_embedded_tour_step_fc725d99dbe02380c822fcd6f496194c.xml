@@ -7,7 +7,7 @@
         <action_target_ref display_value="7c305268dba42740ee685e25ca961932.8.xpath">78721999dbe02380c822fcd6f49619da</action_target_ref>
         <active>true</active>
         <content><![CDATA[Indicate whether OnPage responses should be in the work notes of the target record]]></content>
-        <guide display_value="OnPage System Properties">7c305268dba42740ee685e25ca961932</guide>
+        <guide/>
         <implicit>false</implicit>
         <link/>
         <name>Step 8</name>

@@ -7,7 +7,7 @@
         <action_target_ref display_value="d31c4298dbe8e340ee685e25ca961908.6.xpath">46a21210db2ce340ee685e25ca96191d</action_target_ref>
         <active>true</active>
         <content><![CDATA[A plain text work notes entry is recorded for status updates returned by OnPage. The work note is created by the OnPage Integration user account.]]></content>
-        <guide display_value="OnPage Guided Tour">d31c4298dbe8e340ee685e25ca961908</guide>
+        <guide/>
         <implicit>false</implicit>
         <link/>
         <name>Step 6</name>

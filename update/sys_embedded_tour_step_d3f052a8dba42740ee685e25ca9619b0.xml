@@ -7,7 +7,7 @@
         <action_target_ref display_value="7c305268dba42740ee685e25ca961932.3.xpath">9ff052a8dba42740ee685e25ca9619b6</action_target_ref>
         <active>true</active>
         <content><![CDATA[Indicate which tables will have notifications enabled]]></content>
-        <guide display_value="OnPage System Properties">7c305268dba42740ee685e25ca961932</guide>
+        <guide/>
         <implicit>false</implicit>
         <link/>
         <name>Step 3</name>

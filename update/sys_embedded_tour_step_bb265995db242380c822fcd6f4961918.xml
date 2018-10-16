@@ -7,7 +7,7 @@
         <action_target_ref display_value="7c305268dba42740ee685e25ca961932.9.xpath">e32651d5db242380c822fcd6f49619d7</action_target_ref>
         <active>true</active>
         <content><![CDATA[To modify advanced OnPage properties, in the 'Filter navigator' type and select 'OnPage Configuration (Advanced)']]></content>
-        <guide display_value="OnPage System Properties">7c305268dba42740ee685e25ca961932</guide>
+        <guide/>
         <implicit>false</implicit>
         <link/>
         <name>Step 9</name>

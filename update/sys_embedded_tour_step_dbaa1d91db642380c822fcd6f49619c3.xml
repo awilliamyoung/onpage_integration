@@ -7,7 +7,7 @@
         <action_target_ref display_value="7c305268dba42740ee685e25ca961932.14.xpat">1faa9d51db642380c822fcd6f496196a</action_target_ref>
         <active>true</active>
         <content><![CDATA[Navigate to the 'Filter navigator' and type 'OnPage Configuration']]></content>
-        <guide display_value="OnPage System Properties">7c305268dba42740ee685e25ca961932</guide>
+        <guide/>
         <implicit>false</implicit>
         <link/>
         <name>Step 14</name>

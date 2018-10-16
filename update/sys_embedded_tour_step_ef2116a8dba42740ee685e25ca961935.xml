@@ -8,7 +8,7 @@
         <active>true</active>
         <content><![CDATA[Indicate whether ServiceNow Scheduler should be used for notifications
 ]]></content>
-        <guide display_value="OnPage System Properties">7c305268dba42740ee685e25ca961932</guide>
+        <guide/>
         <implicit>false</implicit>
         <link/>
         <name>Step 5</name>

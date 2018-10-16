@@ -7,7 +7,7 @@
         <action_target_ref display_value=".module-node[id=&quot;e2439d58db28e340ee685e2">66969dd5db242380c822fcd6f4961919</action_target_ref>
         <active>true</active>
         <content><![CDATA[Select 'OnPage Configuration (Advanced)']]></content>
-        <guide display_value="OnPage System Properties">7c305268dba42740ee685e25ca961932</guide>
+        <guide/>
         <implicit>false</implicit>
         <link/>
         <name>Step 10</name>

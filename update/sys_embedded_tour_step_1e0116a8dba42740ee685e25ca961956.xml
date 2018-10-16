@@ -7,7 +7,7 @@
         <action_target_ref display_value="7c305268dba42740ee685e25ca961932.4.xpath">d60152a8dba42740ee685e25ca9619b3</action_target_ref>
         <active>true</active>
         <content><![CDATA[Indicate whether notifications should be enabled for the Incident Alert table]]></content>
-        <guide display_value="OnPage System Properties">7c305268dba42740ee685e25ca961932</guide>
+        <guide/>
         <implicit>false</implicit>
         <link/>
         <name>Step 4</name>

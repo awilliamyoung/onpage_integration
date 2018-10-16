@@ -7,7 +7,7 @@
         <action_target_ref display_value="7c305268dba42740ee685e25ca961932.11.xpat">80d751d9db242380c822fcd6f496199c</action_target_ref>
         <active>true</active>
         <content><![CDATA[Turn the integration on/off here.]]></content>
-        <guide display_value="OnPage System Properties">7c305268dba42740ee685e25ca961932</guide>
+        <guide/>
         <implicit>false</implicit>
         <link/>
         <name>Step 2</name>

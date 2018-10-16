@@ -7,7 +7,7 @@
         <action_target_ref display_value="d31c4298dbe8e340ee685e25ca961908.4.xpath">1b521edcdbe8e340ee685e25ca961952</action_target_ref>
         <active>true</active>
         <content><![CDATA[This setting allows notifications to be sent from the OnPage scheduler custom workflow. It only takes effect when the custom workflow has been selected in On-Call scheduling. This setting does not disable scheduling in OnPage; it only enables scheduling in ServiceNow.]]></content>
-        <guide display_value="OnPage Guided Tour">d31c4298dbe8e340ee685e25ca961908</guide>
+        <guide/>
         <implicit>false</implicit>
         <link/>
         <name>Step 4</name>

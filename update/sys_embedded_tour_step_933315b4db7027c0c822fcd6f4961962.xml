@@ -7,7 +7,7 @@
         <action_target_ref display_value="d31c4298dbe8e340ee685e25ca961908.7.xpath">7e3315b4db7027c0c822fcd6f4961922</action_target_ref>
         <active>true</active>
         <content><![CDATA[Turns on and off the integration]]></content>
-        <guide display_value="OnPage Guided Tour">d31c4298dbe8e340ee685e25ca961908</guide>
+        <guide/>
         <implicit>false</implicit>
         <link/>
         <name>Step 7</name>

@@ -7,7 +7,7 @@
         <action_target_ref display_value="d31c4298dbe8e340ee685e25ca961908.5.xpath">4a921210db2ce340ee685e25ca961910</action_target_ref>
         <active>true</active>
         <content><![CDATA[Notifications can be sent on a per-message basis (single) and in groups (batch). By default, messages are sent individually. If you are experiencing performance issue (long sending times) or you anticipate high volumes, batch may provide better performance.]]></content>
-        <guide display_value="OnPage Guided Tour">d31c4298dbe8e340ee685e25ca961908</guide>
+        <guide/>
         <implicit>false</implicit>
         <link/>
         <name>Step 5</name>

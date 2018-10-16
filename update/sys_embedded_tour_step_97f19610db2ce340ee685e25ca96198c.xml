@@ -7,7 +7,7 @@
         <action_target_ref display_value="d31c4298dbe8e340ee685e25ca961908.3.xpath">17f15adcdbe8e340ee685e25ca961955</action_target_ref>
         <active>true</active>
         <content><![CDATA[Notifications can be triggered from the Incident Alert table if specified here. ]]></content>
-        <guide display_value="OnPage Guided Tour">d31c4298dbe8e340ee685e25ca961908</guide>
+        <guide/>
         <implicit>false</implicit>
         <link/>
         <name>Step 3</name>

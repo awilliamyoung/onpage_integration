@@ -7,7 +7,7 @@
         <action_target_ref display_value="d31c4298dbe8e340ee685e25ca961908.0.xpath">f8b0d69cdbe8e340ee685e25ca9619dd</action_target_ref>
         <active>false</active>
         <content><![CDATA[In the filter navigator search OnPage Configuration to modify System Properties]]></content>
-        <guide display_value="OnPage Guided Tour">d31c4298dbe8e340ee685e25ca961908</guide>
+        <guide/>
         <implicit>false</implicit>
         <link/>
         <name>Step 0</name>

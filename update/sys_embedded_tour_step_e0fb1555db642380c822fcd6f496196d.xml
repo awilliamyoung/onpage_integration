@@ -7,7 +7,7 @@
         <action_target_ref display_value="7c305268dba42740ee685e25ca961932.13.xpat">64fbd915db642380c822fcd6f49619e2</action_target_ref>
         <active>true</active>
         <content><![CDATA[Indicate how many unprocessed events should be in queue before a notification will alert administrator email]]></content>
-        <guide display_value="OnPage System Properties">7c305268dba42740ee685e25ca961932</guide>
+        <guide/>
         <implicit>false</implicit>
         <link/>
         <name>Step 13</name>

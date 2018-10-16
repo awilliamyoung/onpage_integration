@@ -7,7 +7,7 @@
         <action_target_ref display_value="7c305268dba42740ee685e25ca961932.14.xpat">692c9dd1db642380c822fcd6f49619f3</action_target_ref>
         <active>true</active>
         <content><![CDATA[Indicate the time (in minutes) should pass before an unprocessed event will notify administrator email]]></content>
-        <guide display_value="OnPage System Properties">7c305268dba42740ee685e25ca961932</guide>
+        <guide/>
         <implicit>false</implicit>
         <link/>
         <name>Step 14</name>

@@ -8,7 +8,7 @@
         <active>true</active>
         <content><![CDATA[Any TASK table can be utilized for triggering notifications. Use this list (comma separated, no spaces) to manage which task tables can have subscriptions and generate notifications. The default list is:
 incident,incident_task,incident_alert_task,problem,problem_task,change_request,change_task,sc_task .]]></content>
-        <guide display_value="OnPage Guided Tour">d31c4298dbe8e340ee685e25ca961908</guide>
+        <guide/>
         <implicit>false</implicit>
         <link/>
         <name>Step 2</name>
