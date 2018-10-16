@@ -50,7 +50,7 @@
 		gr.setValue('table', current.getTableName());
 		gr.setValue('document_id', current.sys_id);
 		gr.setValue('status', 'new');
-		gr.setValue('type', 'internal');
+		gr.setValue('type', 'outbound');
 		gr.setValue('current', jsonCurrent);
 		gr.setValue('previous', jsonPrevious);
 		gr.insert();
@@ -62,7 +62,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>d5bf3eaadbc4ab00c822fcd6f4961992</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>Generate Events from Task Updates</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
@@ -71,7 +71,7 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_d5bf3eaadbc4ab00c822fcd6f4961992</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-22 19:43:31</sys_updated_on>
+        <sys_updated_on>2018-10-16 22:31:03</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
