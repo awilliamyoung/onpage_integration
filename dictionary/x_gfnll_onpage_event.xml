@@ -4,7 +4,6 @@
         <element label="Current" max_length="1000" name="current" type="string_full_utf8"/>
         <element dependent="table" dependent_on_field="table" label="Document ID" max_length="40" name="document_id" type="document_id" use_dependent_field="true"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
-        <element label="OnPage ID" max_length="40" name="onpage_id" type="string"/>
         <element label="OPID" max_length="40" name="opid" type="string"/>
         <element label="Previous" max_length="1000" name="previous" type="string_full_utf8"/>
         <element label="Reply Option" max_length="40" name="replyoption" type="string"/>

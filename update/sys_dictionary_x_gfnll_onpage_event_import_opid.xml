@@ -15,7 +15,7 @@
         <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>opid</column_label>
+        <column_label>OPID</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -56,15 +56,15 @@
         <sys_created_on>2018-09-20 02:43:56</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>f23f799bdbac2f40ee685e25ca961921</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>opid</sys_name>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>OPID</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_dictionary_x_gfnll_onpage_event_import_opid</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-20 02:43:56</sys_updated_on>
+        <sys_updated_on>2018-10-18 22:19:41</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

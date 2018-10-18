@@ -161,8 +161,8 @@ workflow.prototype = {
 					nstatus = "send-ready";
 				nshortd = this.findMatch(nshortd,ntable,docID,event);
 				nbody = this.findMatch(nbody,ntable,docID,event);
-				nbody = encodeURI(nbody);
-				nshortd = encodeURI(nshortd);
+				//nbody = encodeURI(nbody);
+				//nshortd = encodeURI(nshortd);
 
 				//generate notification record
 				var notification = new GlideRecord('x_gfnll_onpage_notification');
@@ -298,8 +298,8 @@ workflow.prototype = {
 			nstatus = "send-ready";
 		nshortd = this.findMatch(nshortd,ntable,doc,event);
 		nbody = this.findMatch(nbody,ntable,doc,event);
-		nbody = encodeURI(nbody);
-		nshortd = encodeURI(nshortd);
+		//nbody = encodeURI(nbody);
+		//nshortd = encodeURI(nshortd);
 
 		//generate notification record
 		var notification = new GlideRecord('x_gfnll_onpage_notification');
@@ -411,10 +411,10 @@ workflow.prototype = {
 			r.setStringParameterNoEscape('key', gs.getProperty('x_gfnll_onpage.auth.key'));
 			r.setStringParameterNoEscape('ansArray', this.reformat(reply));
 			r.setStringParameterNoEscape('priority', priority);
-			r.setStringParameterNoEscape('subject', subject);
+			r.setStringParameterNoEscape('subject', encodeURI(subject));
 			r.setStringParameterNoEscape('recipArray', this.reformat(recipients));
 			r.setStringParameterNoEscape('id', id);
-			r.setStringParameterNoEscape('body', body);
+			r.setStringParameterNoEscape('body', encodeURI(body));
 
 			var response = r.execute();
 			var responseBody = response.getBody();
@@ -510,7 +510,7 @@ workflow.prototype = {
         <sys_created_on>2018-09-07 21:57:11</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>48a8831fdb946740c822fcd6f49619bd</sys_id>
-        <sys_mod_count>103</sys_mod_count>
+        <sys_mod_count>105</sys_mod_count>
         <sys_name>workflow</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
@@ -518,6 +518,6 @@ workflow.prototype = {
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_include_48a8831fdb946740c822fcd6f49619bd</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-22 23:05:30</sys_updated_on>
+        <sys_updated_on>2018-10-18 22:53:37</sys_updated_on>
     </sys_script_include>
 </record_update>
