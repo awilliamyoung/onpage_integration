@@ -338,11 +338,13 @@ workflow.prototype = {
 		if(gr.get(origNotif)){
 			//this.error("Notification found",logType,logTable,source);
 			this.info("runReply notification found",logType,logTable,source);
+			
 			//get values from notification
 			var targetTable = gr.getValue('table');
 			var targetRec = gr.getValue('document_id');
 			var template = gr.getValue('template');
 			this.info('runreply template is: '+template,logType,logTable,source);
+			
 			//get reply options from template
 			var tempGR = new GlideRecord('x_gfnll_onpage_onpage_template');
 			if(tempGR.get(template)){
@@ -354,6 +356,7 @@ workflow.prototype = {
 					return;
 				}
 				this.info('runReply template has reply options: '+replies,logType,logTable,source);
+			
 				//check if execute script is enabled
 				var repliesGR = new GlideRecord('x_gfnll_onpage_onpage_reply_options');
 					repliesGR.get(replies);
@@ -364,6 +367,7 @@ workflow.prototype = {
 					return;
 				}
 				this.info('runReply execute scripts is enabled',logType,logTable,source);
+				
 				//check if there is a matching reply and get the script
 				var replyGR = new GlideRecord('x_gfnll_onpage_onpage_reply');
 					replyGR.addQuery('parent',replies);
@@ -376,6 +380,7 @@ workflow.prototype = {
 					if(script!=''&&script!=null){
 						// setup variables to be used by the script
 						var vars = {'targetTable' : targetTable , 'targetRec':targetRec , 'responseUser':user};
+						
 						//evaluate script
 						var evaluator = new GlideScopedEvaluator(); 
 						evaluator.evaluateScript(replyGR,"script", vars);
@@ -510,7 +515,7 @@ workflow.prototype = {
         <sys_created_on>2018-09-07 21:57:11</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>48a8831fdb946740c822fcd6f49619bd</sys_id>
-        <sys_mod_count>105</sys_mod_count>
+        <sys_mod_count>106</sys_mod_count>
         <sys_name>workflow</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
@@ -518,6 +523,6 @@ workflow.prototype = {
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_include_48a8831fdb946740c822fcd6f49619bd</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-10-18 22:53:37</sys_updated_on>
+        <sys_updated_on>2018-10-31 19:13:46</sys_updated_on>
     </sys_script_include>
 </record_update>

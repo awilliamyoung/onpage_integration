@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_embedded_tour_step">
+    <sys_embedded_tour_step action="INSERT_OR_UPDATE">
+        <action>true</action>
+        <action_event>click</action_event>
+        <action_target/>
+        <action_target_ref display_value="sys_user_has_role.list.list_column.user">c30e54b0dba5ebc4c822fcd6f49619c9</action_target_ref>
+        <active>true</active>
+        <content><![CDATA[Click to open the OnPage Integration user record.]]></content>
+        <guide display_value="OnPage Guided Tour (Admin)">9e9911b0dbb027c0c822fcd6f4961977</guide>
+        <implicit>false</implicit>
+        <link/>
+        <name>Step 39</name>
+        <options/>
+        <order>22</order>
+        <placement>bottom</placement>
+        <sys_class_name>sys_embedded_tour_step</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-10-31 18:17:03</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>cf0e58b0dba5ebc4c822fcd6f496196b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Step 39</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_embedded_tour_step_cf0e58b0dba5ebc4c822fcd6f496196b</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-10-31 18:17:14</sys_updated_on>
+        <target/>
+        <target_ref display_value="sys_user_has_role.list.list_column.user">c30e54b0dba5ebc4c822fcd6f49619c9</target_ref>
+        <ui_version>dynamic</ui_version>
+        <view/>
+        <window>sys_user_has_role_list.do</window>
+    </sys_embedded_tour_step>
+</record_update>

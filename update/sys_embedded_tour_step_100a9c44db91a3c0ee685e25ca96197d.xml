@@ -6,7 +6,7 @@
         <action_target/>
         <action_target_ref display_value="9e9911b0dbb027c0c822fcd6f4961977.36.xpat">980a5c44db91a3c0ee685e25ca9619a6</action_target_ref>
         <active>true</active>
-        <content><![CDATA[Enter your OnPage Dispatcher email address associated with your company. Enter your dispatcher password and click Submit. It make take several minutes to synchronize your users and groups before you are taken to the next page. ]]></content>
+        <content><![CDATA[Enter your OnPage Dispatcher email address associated with your company and click Next. Enter your dispatcher password and click Submit. NOTE: It make take several minutes to load the next page while your users and groups are synchronized from OnPage.]]></content>
         <guide display_value="OnPage Guided Tour (Admin)">9e9911b0dbb027c0c822fcd6f4961977</guide>
         <implicit>false</implicit>
         <link/>
@@ -20,7 +20,7 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>100a9c44db91a3c0ee685e25ca96197d</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Step 2</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
@@ -29,7 +29,7 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_embedded_tour_step_100a9c44db91a3c0ee685e25ca96197d</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-10-16 23:49:05</sys_updated_on>
+        <sys_updated_on>2018-10-31 17:47:13</sys_updated_on>
         <target/>
         <target_ref display_value="9e9911b0dbb027c0c822fcd6f4961977.36.xpat">980a5c44db91a3c0ee685e25ca9619a6</target_ref>
         <ui_version>dynamic</ui_version>

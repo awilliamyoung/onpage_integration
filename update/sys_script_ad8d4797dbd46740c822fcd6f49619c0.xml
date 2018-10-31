@@ -21,7 +21,7 @@
         </filter_condition>
         <is_rest>false</is_rest>
         <message/>
-        <name>Generate Notifications from Events</name>
+        <name>Generate Notifications from OB Events</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -53,8 +53,8 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ad8d4797dbd46740c822fcd6f49619c0</sys_id>
-        <sys_mod_count>11</sys_mod_count>
-        <sys_name>Generate Notifications from Events</sys_name>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>Generate Notifications from OB Events</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
@@ -62,7 +62,7 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_ad8d4797dbd46740c822fcd6f49619c0</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-24 13:01:51</sys_updated_on>
+        <sys_updated_on>2018-10-31 18:50:49</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

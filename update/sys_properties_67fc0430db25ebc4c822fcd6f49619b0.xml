@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>[DO NOT CHANGE] The password that should be assigned to the 'onpage' user in this instance so that it can receive OnPage writebacks.</description>
+        <ignore_cache>false</ignore_cache>
+        <is_private>true</is_private>
+        <name>x_gfnll_onpage.auth.user_password</name>
+        <read_roles>x_gfnll_onpage.admin,admin</read_roles>
+        <suffix>auth.user_password</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-10-31 17:04:42</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>67fc0430db25ebc4c822fcd6f49619b0</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>x_gfnll_onpage.auth.user_password</sys_name>
+        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_properties_67fc0430db25ebc4c822fcd6f49619b0</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-10-31 17:12:19</sys_updated_on>
+        <type>string</type>
+        <value>3000ca9bdbd82740c822fcd6f49619ad</value>
+        <write_roles>x_gfnll_onpage.system</write_roles>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=67fc0430db25ebc4c822fcd6f49619b0"/>
+</record_update>

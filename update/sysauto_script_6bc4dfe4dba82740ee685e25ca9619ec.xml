@@ -86,7 +86,7 @@ function sendNotif(){
 				acptd = obj.accepted;
 			if(acptd){
 				gr2.setValue('status',status);
-				gr2.setValue('onpage_id',snID);
+				//gr2.setValue('onpage_id',snID);
 				gr2.setValue('error','');
 			}
 			else{
@@ -123,7 +123,7 @@ function reformat(array){
         <sys_created_on>2018-09-11 19:54:16</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>6bc4dfe4dba82740ee685e25ca9619ec</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>Process Stuck Notifications</sys_name>
         <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
@@ -131,7 +131,7 @@ function reformat(array){
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sysauto_script_6bc4dfe4dba82740ee685e25ca9619ec</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-10-18 23:00:03</sys_updated_on>
+        <sys_updated_on>2018-10-31 18:39:35</sys_updated_on>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_script>
 </record_update>
