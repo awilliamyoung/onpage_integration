@@ -5,26 +5,26 @@
         <description>A comma separated list of tables which currently have subscriptions for them.</description>
         <ignore_cache>false</ignore_cache>
         <is_private>false</is_private>
-        <name>x_gfnll_onpage.subscription.tables</name>
-        <read_roles>x_gfnll_onpage.system</read_roles>
+        <name>x_onpr_onpage.subscription.tables</name>
+        <read_roles>x_onpr_onpage.system</read_roles>
         <suffix>subscription.tables</suffix>
         <sys_class_name>sys_properties</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
         <sys_created_on>2018-09-12 22:45:08</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>d7354d85dbe0a740ee685e25ca961991</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_name>x_gfnll_onpage.subscription.tables</sys_name>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>x_onpr_onpage.subscription.tables</sys_name>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_properties_d7354d85dbe0a740ee685e25ca961991</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-24 14:30:04</sys_updated_on>
+        <sys_updated_on>2018-11-26 19:13:48</sys_updated_on>
         <type>string</type>
-        <value>incident,change_request</value>
-        <write_roles>x_gfnll_onpage.system</write_roles>
+        <value>incident</value>
+        <write_roles>x_onpr_onpage.system</write_roles>
     </sys_properties>
     <sys_translated_text action="delete_multiple" query="documentkey=d7354d85dbe0a740ee685e25ca961991"/>
 </record_update>

@@ -3,8 +3,7 @@
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>package_private</access>
         <active>true</active>
-        <api_name>x_gfnll_onpage.handleErrors</api_name>
-        <caller_access/>
+        <api_name>x_onpr_onpage.handleErrors</api_name>
         <client_callable>false</client_callable>
         <description/>
         <name>handleErrors</name>
@@ -15,7 +14,7 @@ handleErrors.prototype = {
 		this.logType = "outbound";
 		this.logTable = '';
 		this.logID = '';
-		this.log = new x_gfnll_onpage.log();
+		this.log = new x_onpr_onpage.log();
 		this.error = function(message){
 		  this.log.error(message,this.logType,this.logTable,this.logID);
 		};
@@ -27,17 +26,17 @@ handleErrors.prototype = {
 		this.error("REST error processing for request body: \n"+request+"\n\n"+"REST error response: \n"+status+": "+body);
 		//var json = JSON.parse(body);
 		switch(status){
-			case 400 : 
-// 				gs.eventQueue("x_gfnll_onpage.error.notification", param1, param2);
+			case 400 :
+// 				gs.eventQueue("x_onpr_onpage.error.notification", param1, param2);
 				break; //wrong format, notify admin
 			case 401 :
-// 				gs.eventQueue("x_gfnll_onpage.error.notification", param1, param2);
+// 				gs.eventQueue("x_onpr_onpage.error.notification", param1, param2);
 				break; //bad credentials, notify admin
 			case 403 :
-// 				gs.eventQueue("x_gfnll_onpage.error.notification", param1, param2);
+// 				gs.eventQueue("x_onpr_onpage.error.notification", param1, param2);
 				break; //not authorized, notify admin
-			case 500 : 
-// 				gs.eventQueue("x_gfnll_onpage.error.notification", param1, param2);
+			case 500 :
+// 				gs.eventQueue("x_onpr_onpage.error.notification", param1, param2);
 				break; //server error, retry, notify OnPage
 		}
 	},
@@ -51,7 +50,7 @@ handleErrors.prototype = {
         <sys_id>26b47917db982740c822fcd6f49619da</sys_id>
         <sys_mod_count>15</sys_mod_count>
         <sys_name>handleErrors</sys_name>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>

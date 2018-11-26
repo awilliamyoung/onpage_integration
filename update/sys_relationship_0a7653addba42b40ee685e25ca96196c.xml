@@ -4,10 +4,10 @@
         <advanced>false</advanced>
         <apply_to/>
         <basic_apply_to>incident</basic_apply_to>
-        <basic_query_from>x_gfnll_onpage_notification</basic_query_from>
+        <basic_query_from>x_onpr_onpage_notification</basic_query_from>
         <insert_callback/>
         <name>OnPage Notifications</name>
-        <query_from><![CDATA[answer = "x_gfnll_onpage_notification";]]></query_from>
+        <query_from><![CDATA[answer = "x_onpr_onpage_notification";]]></query_from>
         <query_with><![CDATA[(function refineQuery(current, parent) {
 	current.addQuery('document_id',parent.getUniqueValue());
 })(current, parent);]]></query_with>
@@ -21,7 +21,7 @@
         <sys_id>0a7653addba42b40ee685e25ca96196c</sys_id>
         <sys_mod_count>7</sys_mod_count>
         <sys_name>OnPage Notifications</sys_name>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
@@ -30,20 +30,4 @@
         <sys_updated_on>2018-09-14 23:21:39</sys_updated_on>
     </sys_relationship>
     <sys_translated_text action="delete_multiple" query="documentkey=0a7653addba42b40ee685e25ca96196c"/>
-    <sys_ui_related_list_relationship_entry action="INSERT_OR_UPDATE">
-        <filter/>
-        <list_id display_value="Incident - Default view" name="incident" related_list="NULL" sys_domain="global" view="Default view">5b5d4e86c3c103009f93dfdc64d3ae58</list_id>
-        <order_by/>
-        <position>7</position>
-        <related_list>REL:0a7653addba42b40ee685e25ca96196c</related_list>
-        <sys_class_name>sys_ui_related_list_relationship_entry</sys_class_name>
-        <sys_created_by>will.young</sys_created_by>
-        <sys_created_on>2018-09-14 22:41:07</sys_created_on>
-        <sys_id>41c79faddba42b40ee685e25ca961980</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_relationship display_value="OnPage Notifications">0a7653addba42b40ee685e25ca96196c</sys_relationship>
-        <sys_ui_related_list display_value="Incident - Default view" name="incident" related_list="NULL" sys_domain="global" view="Default view">5b5d4e86c3c103009f93dfdc64d3ae58</sys_ui_related_list>
-        <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-14 22:41:07</sys_updated_on>
-    </sys_ui_related_list_relationship_entry>
 </record_update>

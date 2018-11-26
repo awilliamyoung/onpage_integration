@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<record_update sys_domain="global" table="sys_embedded_tour_step">
+<record_update table="sys_embedded_tour_step">
     <sys_embedded_tour_step action="INSERT_OR_UPDATE">
         <action>true</action>
         <action_event>click</action_event>
         <action_target/>
         <action_target_ref display_value=".module-node[id=&quot;ba931187dbd82340ee685e2">59b9519ddb242380c822fcd6f4961990</action_target_ref>
         <active>true</active>
-        <content><![CDATA[Select 'OnPage Configuration' to open basic configuration options.]]></content>
+        <content><![CDATA[Select &#39;OnPage Configuration&#39; to open basic configuration options.]]></content>
         <guide/>
         <implicit>false</implicit>
         <link/>
@@ -18,12 +18,10 @@
         <sys_created_by>lorena.villanueva</sys_created_by>
         <sys_created_on>2018-09-13 18:51:54</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_domain>global</sys_domain>
         <sys_id>adb9991ddb242380c822fcd6f49619ca</sys_id>
         <sys_mod_count>5</sys_mod_count>
         <sys_name>Step 1</sys_name>
-        <sys_overrides/>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>

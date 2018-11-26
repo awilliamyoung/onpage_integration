@@ -15,7 +15,7 @@
         <list_edit_insert_row>false</list_edit_insert_row>
         <list_edit_ref_qual_tag/>
         <list_edit_type/>
-        <name>x_gfnll_onpage_event</name>
+        <name>x_onpr_onpage_event</name>
         <new_condition/>
         <new_roles/>
         <omit_columns_if_empty>false</omit_columns_if_empty>
@@ -25,7 +25,7 @@
         <omit_if_empty>true</omit_if_empty>
         <omit_links>true</omit_links>
         <omit_new_button>true</omit_new_button>
-        <related_list>x_gfnll_onpage_notification.parent</related_list>
+        <related_list>x_onpr_onpage_notification.parent</related_list>
         <sys_class_name>sys_ui_list_control</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
         <sys_created_on>2018-09-07 22:50:38</sys_created_on>
@@ -34,9 +34,9 @@
         <sys_domain_path>/</sys_domain_path>
         <sys_id>5cc69f17db186740c822fcd6f496191d</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>x_gfnll_onpage_event</sys_name>
+        <sys_name>x_onpr_onpage_event</sys_name>
         <sys_overrides display_value="">global</sys_overrides>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>

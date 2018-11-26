@@ -3,20 +3,19 @@
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>package_private</access>
         <active>true</active>
-        <api_name>x_gfnll_onpage.setup</api_name>
-        <caller_access/>
+        <api_name>x_onpr_onpage.setup</api_name>
         <client_callable>false</client_callable>
         <description/>
         <name>setup</name>
         <script><![CDATA[var setup = Class.create();
 setup.prototype = {
     initialize: function() {
-		this.URLsub = gs.getProperty('x_gfnll_onpage.URLsubdomain');
+		this.URLsub = gs.getProperty('x_onpr_onpage.URLsubdomain');
 		//LOGGING/////////
 		this.logType = "outbound";
 		this.logTable = '';
 		this.logID = '';
-		this.log = new x_gfnll_onpage.log();
+		this.log = new x_onpr_onpage.log();
 		this.error = function(message){
 		  this.log.error(message,this.logType,this.logTable,this.logID);
 		};
@@ -24,7 +23,7 @@ setup.prototype = {
 		  this.log.info(message,this.logType,this.logTable,this.logID);
 		};
     },
-	register: function(email,pw){		
+	register: function(email,pw){
 		//register the instance with OnPage and get token/key
 		this.info("Starting registration process");
 		var instance = gs.getProperty('instance_name'),
@@ -32,7 +31,7 @@ setup.prototype = {
 			password = this._createUser();
 		//this.info("integration password is:"+password);
 		//this._setPasswordAgain(password);
-		this._setPassProp(password);		
+		this._setPassProp(password);
 		var rest = new sn_ws.RESTMessageV2("Register with OnPage","Register");
 			rest.setStringParameterNoEscape('URLsub',this.URLsub);
 			rest.setStringParameterNoEscape('dispEmail',email);
@@ -58,26 +57,31 @@ setup.prototype = {
 			var key = json.credentials.secretKey;
 			this.info("New Token: "+token);
 			this.info("New Key: "+key);
+			/*
 			var prop = new GlideRecord('sys_properties');
 				//set token
-				prop.get('name',"x_gfnll_onpage.auth.token");
+				prop.get('name',"x_onpr_onpage.auth.token");
 				prop.setValue('value',token);
 				prop.update();
 				//set key
-				prop.get('name',"x_gfnll_onpage.auth.key");
+				prop.get('name',"x_onpr_onpage.auth.key");
 				prop.setValue('value',key);
 				prop.update();
+				*/
+			gs.setProperty('x_onpr_onpage.auth.token',token);
+			gs.setProperty('x_onpr_onpage.auth.key',key);
 		}
-		
+	
+
 		//Sync all targets(users/groups) after setup done
-		var syncTargets = new x_gfnll_onpage.sync();
+		var syncTargets = new x_onpr_onpage.sync();
 		syncTargets.targetSync();
-		
+
 		this.info("Registration process completed.");
 	},
 	_createUser: function(){
 		this.info("Create User function starting");
-		
+
 		//check for existing account
 		var sys_id;
 		var gr = new GlideRecord('sys_user');
@@ -107,7 +111,7 @@ setup.prototype = {
 		//check for user roles
 		this.info("Checking for user roles.");
 		var role = new GlideRecord('sys_user_role');
-			role.get("name","x_gfnll_onpage.integration_user");
+			role.get("name","x_onpr_onpage.integration_user");
 		var roleGR = new GlideRecord('sys_user_has_role');
 			roleGR.addQuery('user',sys_id);
 			roleGR.addQuery('role',role.getUniqueValue());
@@ -130,18 +134,18 @@ setup.prototype = {
 		return sys_id;
 	},
 	_handleErrors: function(request,status,body){
-		var handle = new x_gfnll_onpage.handleErrors();
+		var handle = new x_onpr_onpage.handleErrors();
 			handle.rest(request,status,body);
 	},
 	_setPassProp: function(password){
 		var prop = new GlideRecord('sys_properties');
-		if(prop.get('name',"x_gfnll_onpage.auth.user_password")){
+		if(prop.get('name',"x_onpr_onpage.auth.user_password")){
 			prop.setValue('value',password);
 			prop.update();
 		}
-		
+
 	},
-	
+
 	//DOES NOT WORK IN SCOPED APP
 	/*
 	_setPasswordAgain: function(password){
@@ -158,14 +162,14 @@ setup.prototype = {
         <sys_created_on>2018-09-07 15:49:22</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>71d07917db982740c822fcd6f49619bf</sys_id>
-        <sys_mod_count>30</sys_mod_count>
+        <sys_mod_count>31</sys_mod_count>
         <sys_name>setup</sys_name>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_include_71d07917db982740c822fcd6f49619bf</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-10-31 17:11:57</sys_updated_on>
+        <sys_updated_on>2018-11-26 18:54:18</sys_updated_on>
     </sys_script_include>
 </record_update>

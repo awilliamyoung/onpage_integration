@@ -3,7 +3,6 @@
     <sys_report action="INSERT_OR_UPDATE">
         <additional_groupby/>
         <aggregate>COUNT</aggregate>
-        <allow_data_label_overlap>false</allow_data_label_overlap>
         <axis_max_color display_value="UI14 Blue Light">b0d449b3d7332100fa6c0c12ce610383</axis_max_color>
         <axis_min_color display_value="White">65b303c7a9fe3dba00629aff95ee3597</axis_min_color>
         <bar_unstack>false</bar_unstack>
@@ -25,10 +24,9 @@
         <column>sys_created_on</column>
         <compute_percent>aggregate</compute_percent>
         <content/>
-        <created_by_user display_value="Will Young">8d536ad0db0c6700c822fcd6f4961928</created_by_user>
+        <created_by_user display_value="Will Young">831e178fdbb9a300c8c656594b961952</created_by_user>
         <custom_chart_size>false</custom_chart_size>
         <custom_chart_title_position>false</custom_chart_title_position>
-        <custom_config/>
         <decimal_precision>2</decimal_precision>
         <description/>
         <direction>minimize</direction>
@@ -36,11 +34,10 @@
         <display_grid>false</display_grid>
         <display_row_lines>false</display_row_lines>
         <donut_width_percent>50</donut_width_percent>
-        <end_time/>
         <exp_report_attrs>true</exp_report_attrs>
         <field>template</field>
         <field_list>number,short_description,error,document_id,recipients,sys_created_on</field_list>
-        <filter table="x_gfnll_onpage_notification">status=cancelled^sys_created_onRELATIVEGE@dayofweek@ago@7^EQ^ORDERBYDESCsys_created_on<item endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value="cancelled"/>
+        <filter table="x_onpr_onpage_notification">status=cancelled^sys_created_onRELATIVEGE@dayofweek@ago@7^EQ^ORDERBYDESCsys_created_on<item endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value="cancelled"/>
             <item endquery="false" field="sys_created_on" goto="false" newquery="false" operator="RELATIVE" or="false" value="GE@dayofweek@ago@7"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
             <item endquery="false" field="" goto="false" newquery="false" operator="ORDERBYDESC" or="false" value="sys_created_on"/>
@@ -79,21 +76,17 @@
         <sc_stackby_item_id/>
         <sc_stackby_variable_id/>
         <score_color display_value="Black">65b30218a9fe3dba0120df8611520d97</score_color>
-        <series_name_text/>
         <set_color/>
         <show_chart_border>false</show_chart_border>
         <show_chart_data_label>false</show_chart_data_label>
         <show_chart_title>report</show_chart_title>
         <show_chart_total>false</show_chart_total>
-        <show_data_label_position_middle>false</show_data_label_position_middle>
         <show_empty>false</show_empty>
         <show_geographical_label>false</show_geographical_label>
         <show_legend>true</show_legend>
         <show_legend_border>false</show_legend_border>
         <show_marker>true</show_marker>
         <show_zero>false</show_zero>
-        <source_type>table</source_type>
-        <start_time/>
         <sumfield>parent...</sumfield>
         <sys_class_name>sys_report</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
@@ -102,14 +95,14 @@
         <sys_id>5fdb6fe8dbe82740ee685e25ca961940</sys_id>
         <sys_mod_count>3</sys_mod_count>
         <sys_name>OP Cancelled Notifications (1 week)</sys_name>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_report_5fdb6fe8dbe82740ee685e25ca961940</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
         <sys_updated_on>2018-09-11 23:41:20</sys_updated_on>
-        <table>x_gfnll_onpage_notification</table>
+        <table>x_onpr_onpage_notification</table>
         <title>OP Cancelled Notifications (1 week)</title>
         <title_horizontal_alignment>center</title_horizontal_alignment>
         <title_vertical_alignment>top</title_vertical_alignment>

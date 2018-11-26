@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_embedded_tour_step">
+    <sys_embedded_tour_step action="INSERT_OR_UPDATE">
+        <action>false</action>
+        <action_event>next</action_event>
+        <action_target/>
+        <action_target_ref display_value="9e9911b0dbb027c0c822fcd6f4961977.42.xpat">c0bb57c5dbc66f0056c524794b961989</action_target_ref>
+        <active>true</active>
+        <content><![CDATA[The integration can send notifications as they are created (single) or in groups (batch). For most use cases, single provides best performance. In larger environments, batch may provide better performance. Batch send occurs every 10 seconds.]]></content>
+        <guide display_value="OnPage Guided Tour (Admin)">9e9911b0dbb027c0c822fcd6f4961977</guide>
+        <implicit>false</implicit>
+        <link/>
+        <name>Step 42</name>
+        <options/>
+        <order>10</order>
+        <placement>right</placement>
+        <sys_class_name>sys_embedded_tour_step</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-11-26 23:15:28</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>84bbd7c5dbc66f0056c524794b96190f</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Step 42</sys_name>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_embedded_tour_step_84bbd7c5dbc66f0056c524794b96190f</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-11-26 23:16:41</sys_updated_on>
+        <target/>
+        <target_ref display_value="9e9911b0dbb027c0c822fcd6f4961977.42.xpat">c0bb57c5dbc66f0056c524794b961989</target_ref>
+        <ui_version>dynamic</ui_version>
+        <view/>
+        <window>system_properties_ui.do</window>
+    </sys_embedded_tour_step>
+</record_update>

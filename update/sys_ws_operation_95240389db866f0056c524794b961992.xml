@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl/>
+        <http_method>POST</http_method>
+        <name>target</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+	var rBody = request.body;
+	var body = rBody.data;
+	try{
+		var id = body.id,
+			opid = body.opid,
+			first_name = body.first_name,
+			last_name = body.last_name,
+			email = body.email,
+			group_name = body.onpage_name,
+			active = body.active,
+			hidden = body.hidden;
+
+		//create import record
+		var gr = new GlideRecord('x_onpr_onpage_target_import');
+			gr.initialize();
+			gr.setValue('id',id);
+			gr.setValue('opid',opid);
+			gr.setValue('first_name',first_name);
+			gr.setValue('last_name',last_name);
+			gr.setValue('email',email);
+			gr.setValue('onpage_name',group_name);
+			gr.setValue('active',active);
+			gr.setValue('hidden',hidden);
+		gr.insert();
+		var sys_id = gr.getUniqueValue();
+		
+		//gather values for response
+		var obj = {},
+			statusCode = 0;
+		if(sys_id!=null && sys_id!=undefined){
+			obj.status = "success";
+			obj.sys_id = sys_id;
+			statusCode = 201;
+		}
+		else{
+			obj.status = "failed";
+			statusCode = 400;
+		}
+
+		//set the response
+		response.setBody(obj);
+		response.setStatus(statusCode);
+
+	}
+	catch(e){
+		var obj = {},
+			statusCode = 400;
+		obj.status = "failed";
+		obj.error = e;
+		obj.originalRequest = body;
+		//set the response
+		response.setBody(obj);
+		response.setStatus(statusCode);
+	}
+ 
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_onpr_onpage/integration/target</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/target</relative_path>
+        <request_example/>
+        <requires_acl_authorization>false</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-11-26 21:44:02</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>95240389db866f0056c524794b961992</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>target</sys_name>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_ws_operation_95240389db866f0056c524794b961992</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-11-26 21:58:54</sys_updated_on>
+        <web_service_definition display_value="OnPage Integration">bbbaaa8ddb466f0056c524794b96198b</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

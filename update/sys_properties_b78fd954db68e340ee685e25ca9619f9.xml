@@ -5,8 +5,8 @@
         <description>Should notifications be sent when triggered (single) or in groups (batch)? [default:single]   NOTE: Using batch may improve performance in larger environments.</description>
         <ignore_cache>false</ignore_cache>
         <is_private>false</is_private>
-        <name>x_gfnll_onpage.send_method</name>
-        <read_roles>x_gfnll_onpage.admin</read_roles>
+        <name>x_onpr_onpage.send_method</name>
+        <read_roles>x_onpr_onpage.admin</read_roles>
         <suffix>send_method</suffix>
         <sys_class_name>sys_properties</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
@@ -14,8 +14,8 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_id>b78fd954db68e340ee685e25ca9619f9</sys_id>
         <sys_mod_count>4</sys_mod_count>
-        <sys_name>x_gfnll_onpage.send_method</sys_name>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_name>x_onpr_onpage.send_method</sys_name>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
@@ -24,7 +24,7 @@
         <sys_updated_on>2018-09-16 16:00:15</sys_updated_on>
         <type>choicelist</type>
         <value>single</value>
-        <write_roles>x_gfnll_onpage.admin</write_roles>
+        <write_roles>x_onpr_onpage.admin</write_roles>
     </sys_properties>
     <sys_translated_text action="delete_multiple" query="documentkey=b78fd954db68e340ee685e25ca9619f9"/>
 </record_update>

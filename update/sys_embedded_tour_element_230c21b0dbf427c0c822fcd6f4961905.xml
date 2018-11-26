@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<record_update sys_domain="global" table="sys_embedded_tour_element">
+<record_update table="sys_embedded_tour_element">
     <sys_embedded_tour_element action="INSERT_OR_UPDATE">
         <cell_edit/>
         <cell_types/>
@@ -16,7 +16,7 @@
         <frameset>nav_filter</frameset>
         <list_element>ui_action</list_element>
         <list_header/>
-        <manual_css>div#element\.x_gfnll_onpage_target\.opid.form-group</manual_css>
+        <manual_css>div#element\.x_onpr_onpage_target\.opid.form-group</manual_css>
         <name>9e9911b0dbb027c0c822fcd6f4961977.19.xpat</name>
         <record_id/>
         <related_field/>
@@ -29,12 +29,10 @@
         <sys_created_by>will.young</sys_created_by>
         <sys_created_on>2018-09-24 17:10:47</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_domain>global</sys_domain>
         <sys_id>230c21b0dbf427c0c822fcd6f4961905</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>9e9911b0dbb027c0c822fcd6f4961977.19.xpat</sys_name>
-        <sys_overrides/>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>

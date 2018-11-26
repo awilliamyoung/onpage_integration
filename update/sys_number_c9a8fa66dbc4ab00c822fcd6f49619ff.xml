@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update table="sys_number">
     <sys_number action="INSERT_OR_UPDATE">
-        <category display_value="" name="x_gfnll_onpage_event">x_gfnll_onpage_event</category>
+        <category display_value="" name="x_onpr_onpage_event">x_onpr_onpage_event</category>
         <maximum_digits>8</maximum_digits>
         <number>1000</number>
         <prefix>OPE</prefix>
@@ -12,7 +12,7 @@
         <sys_id>c9a8fa66dbc4ab00c822fcd6f49619ff</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name>OPE</sys_name>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>

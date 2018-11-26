@@ -5,7 +5,7 @@
         <condition/>
         <conditional>false</conditional>
         <name>Cancel Failed Notifications</name>
-        <run_as display_value="Will Young">8d536ad0db0c6700c822fcd6f4961928</run_as>
+        <run_as display_value="Will Young">831e178fdbb9a300c8c656594b961952</run_as>
         <run_as_tz/>
         <run_dayofmonth>1</run_dayofmonth>
         <run_dayofweek>1</run_dayofweek>
@@ -15,7 +15,7 @@
         <run_type>on_demand</run_type>
         <script><![CDATA[cancel();
 function cancel(){
-	var gr1 = new GlideRecord('x_gfnll_onpage_notification');
+	var gr1 = new GlideRecord('x_onpr_onpage_notification');
 		gr1.addQuery('status',"failed");
 		gr1.query();
 	var count = gr1.getRowCount();
@@ -32,7 +32,7 @@ function info(message){
 	var logType = "outbound";
 	var logTable = 'sysauto_script';
 	var id = "a614bae8db282740ee685e25ca961993"; //this scheduled job
-	var log = new x_gfnll_onpage.log();
+	var log = new x_onpr_onpage.log();
 		log.info(message,logType,logTable,id);
 }]]></script>
         <sys_class_name>sysauto_script</sys_class_name>
@@ -42,7 +42,7 @@ function info(message){
         <sys_id>a614bae8db282740ee685e25ca961993</sys_id>
         <sys_mod_count>2</sys_mod_count>
         <sys_name>Cancel Failed Notifications</sys_name>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update>
-    <sys_ui_form_sections form_id="fe4a0256dbd0ef00ee685e25ca96194a" sys_domain="global" table="x_gfnll_onpage_onpage_subscription" version="3">
+    <sys_ui_form_sections form_id="fe4a0256dbd0ef00ee685e25ca96194a" sys_domain="global" table="x_onpr_onpage_onpage_subscription" version="3">
         <sys_ui_form_section action="INSERT_OR_UPDATE">
             <position>0</position>
             <sys_created_by>lorena.villanueva</sys_created_by>
@@ -10,8 +10,8 @@
             <sys_id>764a0256dbd0ef00ee685e25ca96194d</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_overrides/>
-            <sys_ui_form display_value="x_gfnll_onpage_onpage_subscription" name="x_gfnll_onpage_onpage_subscription" sys_domain="global" view="Default view">fe4a0256dbd0ef00ee685e25ca96194a</sys_ui_form>
-            <sys_ui_section caption="Subscription Information" display_value="Subscription Information" name="x_gfnll_onpage_onpage_subscription" sys_domain="global" view="Default view">4c45ce52dbd0ef00ee685e25ca961940</sys_ui_section>
+            <sys_ui_form display_value="x_onpr_onpage_onpage_subscription" name="x_onpr_onpage_onpage_subscription" sys_domain="global" view="Default view">fe4a0256dbd0ef00ee685e25ca96194a</sys_ui_form>
+            <sys_ui_section caption="Subscription Information" display_value="Subscription Information" name="x_onpr_onpage_onpage_subscription" sys_domain="global" view="Default view">4c45ce52dbd0ef00ee685e25ca961940</sys_ui_section>
             <sys_updated_by>lorena.villanueva</sys_updated_by>
             <sys_updated_on>2018-09-04 14:42:24</sys_updated_on>
         </sys_ui_form_section>
@@ -24,13 +24,13 @@
             <sys_id>724a0256dbd0ef00ee685e25ca96194e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_overrides/>
-            <sys_ui_form display_value="x_gfnll_onpage_onpage_subscription" name="x_gfnll_onpage_onpage_subscription" sys_domain="global" view="Default view">fe4a0256dbd0ef00ee685e25ca96194a</sys_ui_form>
-            <sys_ui_section caption="Conditions" display_value="Conditions" name="x_gfnll_onpage_onpage_subscription" sys_domain="global" view="Default view">3e4a0256dbd0ef00ee685e25ca961949</sys_ui_section>
+            <sys_ui_form display_value="x_onpr_onpage_onpage_subscription" name="x_onpr_onpage_onpage_subscription" sys_domain="global" view="Default view">fe4a0256dbd0ef00ee685e25ca96194a</sys_ui_form>
+            <sys_ui_section caption="Conditions" display_value="Conditions" name="x_onpr_onpage_onpage_subscription" sys_domain="global" view="Default view">3e4a0256dbd0ef00ee685e25ca961949</sys_ui_section>
             <sys_updated_by>lorena.villanueva</sys_updated_by>
             <sys_updated_on>2018-09-04 14:42:24</sys_updated_on>
         </sys_ui_form_section>
         <sys_ui_form action="INSERT_OR_UPDATE">
-            <name>x_gfnll_onpage_onpage_subscription</name>
+            <name>x_onpr_onpage_onpage_subscription</name>
             <roles/>
             <sys_class_name>sys_ui_form</sys_class_name>
             <sys_created_by>lorena.villanueva</sys_created_by>
@@ -40,9 +40,9 @@
             <sys_domain_path>/</sys_domain_path>
             <sys_id>fe4a0256dbd0ef00ee685e25ca96194a</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_name>x_gfnll_onpage_onpage_subscription</sys_name>
+            <sys_name>x_onpr_onpage_onpage_subscription</sys_name>
             <sys_overrides/>
-            <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+            <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
             <sys_policy/>
             <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
             <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>

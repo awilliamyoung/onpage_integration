@@ -5,7 +5,7 @@
         <condition/>
         <conditional>false</conditional>
         <name>Process Ready Notifications</name>
-        <run_as display_value="Will Young">8d536ad0db0c6700c822fcd6f4961928</run_as>
+        <run_as display_value="Will Young">831e178fdbb9a300c8c656594b961952</run_as>
         <run_as_tz/>
         <run_dayofmonth>1</run_dayofmonth>
         <run_dayofweek>1</run_dayofweek>
@@ -16,12 +16,12 @@
         <script><![CDATA[sendNotif();
 
 function sendNotif(){
-	var method = gs.getProperty('x_gfnll_onpage.send_method');
+	var method = gs.getProperty('x_onpr_onpage.send_method');
 	if(method=='batch'){
 		var notifications = [];
 
 		//bulk update to sending
-		var gr1 = new GlideRecord('x_gfnll_onpage_notification');
+		var gr1 = new GlideRecord('x_onpr_onpage_notification');
 			gr1.addQuery('status','send-ready');
 			gr1.setLimit(100);
 			gr1.query();
@@ -39,7 +39,7 @@ function sendNotif(){
 		//collect notification values into array of messages
 		var array = [];
 		for(var i=0;i<notifications.length;i++){
-			var gr = new GlideRecord('x_gfnll_onpage_notification');
+			var gr = new GlideRecord('x_onpr_onpage_notification');
 				gr.get(notifications[i]);
 			var table = gr.getValue('table'),
 				doc = gr.getValue('document_id'),
@@ -58,7 +58,7 @@ function sendNotif(){
 		this.info("Message array: "+array.toString());
 
 		// send bulk message
-		var resp = new x_gfnll_onpage.workflow().sendRestMessages('['+array.toString()+']',"e14129d8db68e340ee685e25ca961903");
+		var resp = new x_onpr_onpage.workflow().sendRestMessages('['+array.toString()+']',"e14129d8db68e340ee685e25ca961903");
 		//process response
 		var ans = resp.split(';'),
 			status = ans[0],
@@ -67,7 +67,7 @@ function sendNotif(){
 
 		//update all records with status
 		for(var k=0;k<notifications.length;k++){
-			var gr2 = new GlideRecord('x_gfnll_onpage_notification');
+			var gr2 = new GlideRecord('x_onpr_onpage_notification');
 				gr2.get(notifications[k]);
 			if(status=="error"){
 				gr2.setValue('status',"error");
@@ -99,7 +99,7 @@ function info(message){
 	var logType = "outbound";
 	var logTable = 'sysauto_script';
 	var id = "e14129d8db68e340ee685e25ca961903"; //this scheduled job
-	var log = new x_gfnll_onpage.log();
+	var log = new x_onpr_onpage.log();
 		log.info(message,logType,logTable,id);
 }
 function reformat(array){
@@ -121,7 +121,7 @@ function reformat(array){
         <sys_id>e14129d8db68e340ee685e25ca961903</sys_id>
         <sys_mod_count>15</sys_mod_count>
         <sys_name>Process Ready Notifications</sys_name>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>

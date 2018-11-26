@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update>
-    <sys_ui_section caption="" section_id="8318e999db60e740ee685e25ca9619c1" sys_domain="global" table="x_gfnll_onpage_event_import" version="3" view="">
+    <sys_ui_section caption="" section_id="8318e999db60e740ee685e25ca9619c1" sys_domain="global" table="x_onpr_onpage_event_import" version="3" view="">
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>number</element>
             <position>0</position>
@@ -9,7 +9,7 @@
             <sys_id>2f1f9a6cdb51e384c822fcd6f49619a8</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_gfnll_onpage_event_import" sys_domain="global" view="Default view">8318e999db60e740ee685e25ca9619c1</sys_ui_section>
+            <sys_ui_section caption="NULL" display_value="" name="x_onpr_onpage_event_import" sys_domain="global" view="Default view">8318e999db60e740ee685e25ca9619c1</sys_ui_section>
             <sys_updated_by>will.young</sys_updated_by>
             <sys_updated_on>2018-10-18 22:46:48</sys_updated_on>
             <sys_user/>
@@ -23,7 +23,7 @@
             <sys_id>a31f9a6cdb51e384c822fcd6f49619a9</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_gfnll_onpage_event_import" sys_domain="global" view="Default view">8318e999db60e740ee685e25ca9619c1</sys_ui_section>
+            <sys_ui_section caption="NULL" display_value="" name="x_onpr_onpage_event_import" sys_domain="global" view="Default view">8318e999db60e740ee685e25ca9619c1</sys_ui_section>
             <sys_updated_by>will.young</sys_updated_by>
             <sys_updated_on>2018-10-18 22:46:48</sys_updated_on>
             <sys_user/>
@@ -37,7 +37,7 @@
             <sys_id>271f9a6cdb51e384c822fcd6f49619a9</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_gfnll_onpage_event_import" sys_domain="global" view="Default view">8318e999db60e740ee685e25ca9619c1</sys_ui_section>
+            <sys_ui_section caption="NULL" display_value="" name="x_onpr_onpage_event_import" sys_domain="global" view="Default view">8318e999db60e740ee685e25ca9619c1</sys_ui_section>
             <sys_updated_by>will.young</sys_updated_by>
             <sys_updated_on>2018-10-18 22:46:48</sys_updated_on>
             <sys_user/>
@@ -51,7 +51,7 @@
             <sys_id>a71f9a6cdb51e384c822fcd6f49619a9</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_gfnll_onpage_event_import" sys_domain="global" view="Default view">8318e999db60e740ee685e25ca9619c1</sys_ui_section>
+            <sys_ui_section caption="NULL" display_value="" name="x_onpr_onpage_event_import" sys_domain="global" view="Default view">8318e999db60e740ee685e25ca9619c1</sys_ui_section>
             <sys_updated_by>will.young</sys_updated_by>
             <sys_updated_on>2018-10-18 22:46:48</sys_updated_on>
             <sys_user/>
@@ -65,7 +65,7 @@
             <sys_id>2b1f9a6cdb51e384c822fcd6f49619a9</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_gfnll_onpage_event_import" sys_domain="global" view="Default view">8318e999db60e740ee685e25ca9619c1</sys_ui_section>
+            <sys_ui_section caption="NULL" display_value="" name="x_onpr_onpage_event_import" sys_domain="global" view="Default view">8318e999db60e740ee685e25ca9619c1</sys_ui_section>
             <sys_updated_by>will.young</sys_updated_by>
             <sys_updated_on>2018-10-18 22:46:48</sys_updated_on>
             <sys_user/>
@@ -79,7 +79,7 @@
             <sys_id>ab1f9a6cdb51e384c822fcd6f49619a9</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_gfnll_onpage_event_import" sys_domain="global" view="Default view">8318e999db60e740ee685e25ca9619c1</sys_ui_section>
+            <sys_ui_section caption="NULL" display_value="" name="x_onpr_onpage_event_import" sys_domain="global" view="Default view">8318e999db60e740ee685e25ca9619c1</sys_ui_section>
             <sys_updated_by>will.young</sys_updated_by>
             <sys_updated_on>2018-10-18 22:46:48</sys_updated_on>
             <sys_user/>
@@ -88,7 +88,7 @@
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption/>
             <header>false</header>
-            <name>x_gfnll_onpage_event_import</name>
+            <name>x_onpr_onpage_event_import</name>
             <roles/>
             <sys_class_name>sys_ui_section</sys_class_name>
             <sys_created_by>will.young</sys_created_by>
@@ -98,9 +98,9 @@
             <sys_domain_path>/</sys_domain_path>
             <sys_id>8318e999db60e740ee685e25ca9619c1</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_name>x_gfnll_onpage_event_import</sys_name>
+            <sys_name>x_onpr_onpage_event_import</sys_name>
             <sys_overrides/>
-            <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+            <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
             <sys_policy/>
             <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
             <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>

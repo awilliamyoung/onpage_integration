@@ -5,23 +5,23 @@
         <map display_value="Onpage Event Transform">789411badb0cab00c822fcd6f49619df</map>
         <order>100</order>
         <script><![CDATA[(function runTransformScript(source, map, log, target /*undefined onStart*/ ) {
-	
+
 	var eventStatus = source.value.toString();
 	var eventTimeStamp = source.timestamp.toString();
 	var eventReply = source.replyoption.toString();
 	var eventOPID = source.opid.toString();
 	//gs.info("Transform variables: "+eventStatus+" "+eventTimeStamp+" "+eventReply+" "+eventOPID);
-	
-	
-	var grActualNotification = new GlideRecord('x_gfnll_onpage_notification');
+
+
+	var grActualNotification = new GlideRecord('x_onpr_onpage_notification');
 	if(grActualNotification.get(source.sn_id.toString())){
 		//gs.info("Transform matched notification");
 		var targetTable = grActualNotification.getValue('table');
 		var targetRec = grActualNotification.getValue('document_id');
-		
+
 		//create notification for work notes
 		gs.info("Transform can update work notes");
-		var grNotification = new GlideRecord('x_gfnll_onpage_notification');
+		var grNotification = new GlideRecord('x_onpr_onpage_notification');
 			grNotification.initialize();
 			grNotification.setValue('status','received');
 			grNotification.setValue('parent','');
@@ -29,7 +29,7 @@
 			grNotification.setValue('document_id',targetRec);
 			grNotification.setValue('short_description','OnPage Response');
 			grNotification.setValue('priority',"LOW");
-		
+
 		var userFullName = getUsername(eventOPID);
 		var message = "";
 		var verb = "";
@@ -40,9 +40,9 @@
 		grNotification.setValue('body',message);
 		grNotification.insert();
 	}
-	
+
 	function getUsername(eventOPID){
-		var gr = new GlideRecord('x_gfnll_onpage_target');
+		var gr = new GlideRecord('x_onpr_onpage_target');
 			gr.get("opid",eventOPID);
 		var first = gr.getValue('first_name'),
 			last = gr.getValue('last_name');
@@ -50,7 +50,7 @@
 			first = "OPID";
 			last = eventOPID;
 		}
-		
+
 		return first + " "+ last;
 	}
 })(source, map, log, target);]]></script>
@@ -61,7 +61,7 @@
         <sys_id>f321ded3dbec2f40ee685e25ca961974</sys_id>
         <sys_mod_count>31</sys_mod_count>
         <sys_name>onBefore</sys_name>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<record_update sys_domain="global" table="sys_embedded_tour_step">
+<record_update table="sys_embedded_tour_step">
     <sys_embedded_tour_step action="INSERT_OR_UPDATE">
         <action>true</action>
         <action_event>change</action_event>
         <action_target/>
-        <action_target_ref display_value="x_gfnll_onpage_target.quick_select">d33ca1b4dbf427c0c822fcd6f49619fa</action_target_ref>
+        <action_target_ref display_value="x_onpr_onpage_target.quick_select">d33ca1b4dbf427c0c822fcd6f49619fa</action_target_ref>
         <active>true</active>
         <content><![CDATA[To match an OnPage target (user or group) to a ServiceNow target, choose User or Group from this Dropdown.]]></content>
         <guide display_value="OnPage Guided Tour (Admin)">9e9911b0dbb027c0c822fcd6f4961977</guide>
@@ -18,22 +18,20 @@
         <sys_created_by>will.young</sys_created_by>
         <sys_created_on>2018-09-24 17:11:37</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_domain>global</sys_domain>
         <sys_id>f33ca1f0dbf427c0c822fcd6f49619b4</sys_id>
-        <sys_mod_count>35</sys_mod_count>
+        <sys_mod_count>61</sys_mod_count>
         <sys_name>Step 20</sys_name>
-        <sys_overrides/>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_embedded_tour_step_f33ca1f0dbf427c0c822fcd6f49619b4</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-11-01 14:13:45</sys_updated_on>
+        <sys_updated_on>2018-11-26 23:25:06</sys_updated_on>
         <target/>
-        <target_ref display_value="x_gfnll_onpage_target.quick_select">d33ca1b4dbf427c0c822fcd6f49619fa</target_ref>
+        <target_ref display_value="x_onpr_onpage_target.quick_select">d33ca1b4dbf427c0c822fcd6f49619fa</target_ref>
         <ui_version>dynamic</ui_version>
         <view/>
-        <window>x_gfnll_onpage_target.do</window>
+        <window>x_onpr_onpage_target.do</window>
     </sys_embedded_tour_step>
 </record_update>

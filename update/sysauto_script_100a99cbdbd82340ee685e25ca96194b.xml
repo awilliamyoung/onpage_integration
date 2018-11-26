@@ -5,7 +5,7 @@
         <condition/>
         <conditional>false</conditional>
         <name>Administrator Alerting</name>
-        <run_as display_value="Lorena Villanueva">6d62b5e0dbcca300ee685e25ca9619cb</run_as>
+        <run_as display_value="">6d62b5e0dbcca300ee685e25ca9619cb</run_as>
         <run_as_tz/>
         <run_dayofmonth>1</run_dayofmonth>
         <run_dayofweek>1</run_dayofweek>
@@ -19,7 +19,7 @@
 //1. Notification queue count more than X (status==send-ready||status==error) [onpage.errors.notification_q]
 var notQueue = gs.getProperty('onpage.errors.notification_q');
 
-var nots = new GlideRecord('x_gfnll_onpage_notification');
+var nots = new GlideRecord('x_onpr_onpage_notification');
 nots.addEncodedQuery('status=send-ready^ORstatus=error');
 nots.query();
 var count = 0;
@@ -28,8 +28,8 @@ while (nots.next()) {
 }
 if(count > notQueue){
 	gs.info('testing');
-// 	gs.eventQueue('x_gfnll_onpage.notification_queue',nots);
-	
+// 	gs.eventQueue('x_onpr_onpage.notification_queue',nots);
+
 	// to be added
 		var id = nots.getUniqueValue();
 		nots.setValue('status',"sending");
@@ -45,13 +45,13 @@ if(count > notQueue){
 			if(options!=''&&options!=null){
 				reply = options.split(",");
 			}
-		var resp = new x_gfnll_onpage.workflow().sendRestMessage(doc,sd,body,recip,priority,reply,id);
+		var resp = new x_onpr_onpage.workflow().sendRestMessage(doc,sd,body,recip,priority,reply,id);
 		var ans = resp.split(';'),
 			status = ans[0];
 // 		if(status=="error"){
 // 			nots.setValue('error',ans[1]);
 // 		}
-	
+
 		nots.setValue('status',status);
 		gs.info('This is the Admin alert');
 		nots.update();
@@ -64,19 +64,19 @@ if(count > notQueue){
 // //2. Oldest send-ready notification > X minutes [onpage.errors.notification_age]
 // var notAge = gs.getProperty('onpage.errors.notification_age');
 
-// var notificationsAge = new GlideRecord('x_gfnll_onpage_notification');
+// var notificationsAge = new GlideRecord('x_onpr_onpage_notification');
 // notificationsAge.addQuery('sys_created_on','<=', gs.daysAgo(notAge)/60); //not sure if daysAgo will work
 // notificationsAge.addQuery('status', 'send-ready');
 // notificationsAge.query();
 // while(notificationsAge.next()){
 // 	gs.info('testing2');
-// 	gs.eventQueue('x_gfnll_onpage.notification_queue', notificationsAge);
+// 	gs.eventQueue('x_onpr_onpage.notification_queue', notificationsAge);
 // }
 
 // //3. Event queue over 100 (status==new) [onpage.errors.event_q]
 // var eventQueue = gs.getProperty('onpage.errors.event_q'); //not sure what to do with this property because it's default is 200
 
-// var events = new GlideRecord('x_gfnll_onpage_event');
+// var events = new GlideRecord('x_onpr_onpage_event');
 // events.addQuery('status', 'new');
 // events.query();
 // var countEvents = 0;
@@ -85,19 +85,19 @@ if(count > notQueue){
 // }
 // if(events > 100){
 // 	gs.info('testing3');
-// 		gs.eventQueue('x_gfnll_onpage.events_queue',events);
+// 		gs.eventQueue('x_onpr_onpage.events_queue',events);
 // }
 
 // //4. Event queue record > X minutes (status==new,error) [onpage.errors.event_age]
 // var eventAge = gs.getProperty('onpage.errors.event_age');
 
-// var eventsAge = new GlideRecord('x_gfnll_onpage_event');
+// var eventsAge = new GlideRecord('x_onpr_onpage_event');
 // eventsAge.addQuery('sys_created_on', '<=', gs.daysAgo(eventAge)/60);
 // eventsAge.addEncodedQuery('status=error^ORstatus=new');
 // eventsAge.query();
 // while(eventsAge.next()){
 // 	gs.info('testing4');
-// 	gs.eventQueue('x_gfnll_onpage.events_queue', eventsAge);
+// 	gs.eventQueue('x_onpr_onpage.events_queue', eventsAge);
 // }
 ]]></script>
         <sys_class_name>sysauto_script</sys_class_name>
@@ -107,7 +107,7 @@ if(count > notQueue){
         <sys_id>100a99cbdbd82340ee685e25ca96194b</sys_id>
         <sys_mod_count>20</sys_mod_count>
         <sys_name>Administrator Alerting</sys_name>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>

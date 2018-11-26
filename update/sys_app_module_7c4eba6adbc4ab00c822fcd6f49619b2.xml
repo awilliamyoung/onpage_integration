@@ -14,12 +14,12 @@
         <map_page/>
         <mobile_title>OnPage Targets</mobile_title>
         <mobile_view_name>Mobile</mobile_view_name>
-        <name>x_gfnll_onpage_target</name>
+        <name>x_onpr_onpage_target</name>
         <order>2300</order>
         <override_menu_roles>false</override_menu_roles>
         <query/>
         <report/>
-        <roles>x_gfnll_onpage.user</roles>
+        <roles>x_onpr_onpage.user</roles>
         <survey/>
         <survey_overwrite>true</survey_overwrite>
         <sys_class_name>sys_app_module</sys_class_name>
@@ -32,7 +32,7 @@
         <sys_mod_count>2</sys_mod_count>
         <sys_name>OnPage Targets</sys_name>
         <sys_overrides/>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>

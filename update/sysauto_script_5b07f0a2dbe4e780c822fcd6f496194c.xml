@@ -5,7 +5,7 @@
         <condition/>
         <conditional>false</conditional>
         <name>OnPage Target Nightly Sync</name>
-        <run_as display_value="David De La Hoz">7f09cd1adb37430087bfa895ca9619ec</run_as>
+        <run_as display_value="">7f09cd1adb37430087bfa895ca9619ec</run_as>
         <run_as_tz/>
         <run_dayofmonth>1</run_dayofmonth>
         <run_dayofweek>1</run_dayofweek>
@@ -13,8 +13,8 @@
         <run_start>2018-09-17 13:32:52</run_start>
         <run_time>1970-01-01 08:00:00</run_time>
         <run_type>daily</run_type>
-        <script><![CDATA[new x_gfnll_onpage.sync().syncGroups();
-new x_gfnll_onpage.sync().syncUsers();]]></script>
+        <script><![CDATA[new x_onpr_onpage.sync().syncGroups();
+new x_onpr_onpage.sync().syncUsers();]]></script>
         <sys_class_name>sysauto_script</sys_class_name>
         <sys_created_by>David.Delahoz</sys_created_by>
         <sys_created_on>2018-09-17 13:35:35</sys_created_on>
@@ -22,7 +22,7 @@ new x_gfnll_onpage.sync().syncUsers();]]></script>
         <sys_id>5b07f0a2dbe4e780c822fcd6f496194c</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name>OnPage Target Nightly Sync</sys_name>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>

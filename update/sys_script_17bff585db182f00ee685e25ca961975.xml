@@ -16,7 +16,7 @@
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="sys_user_has_role">role=a6303520dbcca300ee685e25ca9619c3^EQ<item display_table="sys_user_role" display_value="x_gfnll_onpage.user" endquery="false" field="role" goto="false" newquery="false" operator="=" or="false" value="a6303520dbcca300ee685e25ca9619c3"/>
+        <filter_condition table="sys_user_has_role">role=a6303520dbcca300ee685e25ca9619c3^EQ<item display_table="sys_user_role" display_value="x_onpr_onpage.user" endquery="false" field="role" goto="false" newquery="false" operator="=" or="false" value="a6303520dbcca300ee685e25ca9619c3"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
         <is_rest>false</is_rest>
@@ -34,16 +34,16 @@
 	// 1. User is granted role
 	// 2. Script attempts to match existing onpage user
 	var user = current.user;
-	var onPageUser = new GlideRecord('x_gfnll_onpage_target');
+	var onPageUser = new GlideRecord('x_onpr_onpage_target');
 	onPageUser.addQuery('email', current.user.email); //gets target email from current users emil
 	//onPageUser.addQuery('onpage_name', user.user_name); //is this needed for unique or email suffice?
 	onPageUser.query();
-	
+
 	if(onPageUser.next()) {
 		onPageUser.document_id = current.user; //sys_id of user
 		onPageUser.table = "sys_user";
 		onPageUser.update();
-		
+
 		//Are following lines 16-22 needed for updating ?
 		var u = new GlideRecord('sys_user');
 		u.get(current.user);
@@ -59,23 +59,23 @@
 			// 4. If match, updates onpage record to the sys_user table and user's document_id
 			// 5. After us is create in OnPage, OP will create a new target in SN
 			// 6. Script runs to match up newly created target with user in the system.
-			var r = new sn_ws.RESTMessageV2('x_gfnll_onpage.OnPage Secured', 'createAccount');
+			var r = new sn_ws.RESTMessageV2('x_onpr_onpage.OnPage Secured', 'createAccount');
 			r.setStringParameterNoEscape('opid', '');  //is this needed for creating?
-			r.setStringParameterNoEscape('token',  gs.getProperty('x_gfnll_onpage.auth.token'));
-			r.setStringParameterNoEscape('URLsub', gs.getProperty('x_gfnll_onpage.URLsubdomain'));
+			r.setStringParameterNoEscape('token',  gs.getProperty('x_onpr_onpage.auth.token'));
+			r.setStringParameterNoEscape('URLsub', gs.getProperty('x_onpr_onpage.URLsubdomain'));
 			r.setStringParameterNoEscape('first', current.user.first_name);
 			r.setStringParameterNoEscape('last', current.user.last_name);
 			r.setStringParameterNoEscape('email', current.user.email);
-			r.setStringParameterNoEscape('secondary', ''); //is this needed for creating 
+			r.setStringParameterNoEscape('secondary', ''); //is this needed for creating
 			r.setStringParameterNoEscape('phone', current.user.phone);
-			r.setStringParameterNoEscape('key',  gs.getProperty('x_gfnll_onpage.auth.key'));
-			
+			r.setStringParameterNoEscape('key',  gs.getProperty('x_onpr_onpage.auth.key'));
+
 			var response = r.execute();
 			var responseBody = response.getBody();
 			var httpStatus = response.getStatusCode();
 			var obj = new JSON().decode(responseBody);
-			
-			var target = new GlideRecord('x_gfnll_onpage_target');
+
+			var target = new GlideRecord('x_onpr_onpage_target');
 			target.initialize();
 			target.setValue('email',current.user.email);
 			target.setValue('onpage_name',current.user.user_name);
@@ -103,7 +103,7 @@
         <sys_mod_count>7</sys_mod_count>
         <sys_name>Target Matching Scripts</sys_name>
         <sys_overrides/>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>

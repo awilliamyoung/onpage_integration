@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl/>
+        <http_method>POST</http_method>
+        <name>writeback</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+	//get values from the body
+	var rBody = request.body;
+	var body = rBody.data; //JSON.parse(rBody);
+	try{
+		var status = "new",
+			type = "inbound",
+			id = body.sn_id,
+			opid = body.opid,
+			value = body.value,
+			replyoption = body.replyoption,
+			time = body.timestamp;
+
+		//create import record
+		var gr = new GlideRecord('x_onpr_onpage_event_import');
+			gr.initialize();
+			gr.setValue('status',status);
+			gr.setValue('type',type);
+			gr.setValue('replyoption',replyoption);
+			gr.setValue('sn_id',id);
+			gr.setValue('value',value);
+			gr.setValue('timestamp',time);
+			gr.setValue('opid',opid);
+		gr.insert();
+		var sys_id = gr.getUniqueValue();
+	
+	//gather values for response
+	var obj = {},
+		statusCode = 0;
+	if(sys_id!=null && sys_id!=undefined){
+		obj.status = "success";
+		obj.sys_id = sys_id;
+		statusCode = 201;
+	}
+	else{
+		obj.status = "failed";
+		statusCode = 400;
+	}
+	
+	//set the response
+	response.setBody(obj);
+	response.setStatus(statusCode);
+			
+	}
+	catch(e){
+		var obj = {},
+		statusCode = 400;
+		obj.status = "failed";
+		obj.error = e;
+		obj.originalRequest = body;
+		//set the response
+		response.setBody(obj);
+		response.setStatus(statusCode);
+		
+	}
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_onpr_onpage/integration/writeback</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/writeback</relative_path>
+        <request_example/>
+        <requires_acl_authorization>false</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-11-26 19:54:25</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>ed0b2e8ddb466f0056c524794b9619c2</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>writeback</sys_name>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_ws_operation_ed0b2e8ddb466f0056c524794b9619c2</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-11-26 21:38:41</sys_updated_on>
+        <web_service_definition display_value="OnPage Integration">bbbaaa8ddb466f0056c524794b96198b</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

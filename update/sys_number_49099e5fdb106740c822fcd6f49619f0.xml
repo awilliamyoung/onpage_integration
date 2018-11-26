@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update table="sys_number">
     <sys_number action="INSERT_OR_UPDATE">
-        <category display_value="" name="x_gfnll_onpage_onpage_reply">x_gfnll_onpage_onpage_reply</category>
+        <category display_value="" name="x_onpr_onpage_onpage_reply">x_onpr_onpage_onpage_reply</category>
         <maximum_digits>7</maximum_digits>
         <number>1000</number>
         <prefix>OPR</prefix>
@@ -12,7 +12,7 @@
         <sys_id>49099e5fdb106740c822fcd6f49619f0</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name>OPR</sys_name>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>

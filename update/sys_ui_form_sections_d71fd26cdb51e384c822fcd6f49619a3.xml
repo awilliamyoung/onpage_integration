@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update>
-    <sys_ui_form_sections form_id="d71fd26cdb51e384c822fcd6f49619a3" sys_domain="global" table="x_gfnll_onpage_event_import" version="3">
+    <sys_ui_form_sections form_id="d71fd26cdb51e384c822fcd6f49619a3" sys_domain="global" table="x_onpr_onpage_event_import" version="3">
         <sys_ui_form_section action="INSERT_OR_UPDATE">
             <position>0</position>
             <sys_created_by>will.young</sys_created_by>
@@ -10,8 +10,8 @@
             <sys_id>6f1fd26cdb51e384c822fcd6f49619a5</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_overrides/>
-            <sys_ui_form display_value="x_gfnll_onpage_event_import" name="x_gfnll_onpage_event_import" sys_domain="global" view="Default view">d71fd26cdb51e384c822fcd6f49619a3</sys_ui_form>
-            <sys_ui_section caption="NULL" display_value="" name="x_gfnll_onpage_event_import" sys_domain="global" view="Default view">8318e999db60e740ee685e25ca9619c1</sys_ui_section>
+            <sys_ui_form display_value="x_onpr_onpage_event_import" name="x_onpr_onpage_event_import" sys_domain="global" view="Default view">d71fd26cdb51e384c822fcd6f49619a3</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_onpr_onpage_event_import" sys_domain="global" view="Default view">8318e999db60e740ee685e25ca9619c1</sys_ui_section>
             <sys_updated_by>will.young</sys_updated_by>
             <sys_updated_on>2018-10-18 22:46:47</sys_updated_on>
         </sys_ui_form_section>
@@ -24,8 +24,8 @@
             <sys_id>6b1fd26cdb51e384c822fcd6f49619a6</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_overrides/>
-            <sys_ui_form display_value="x_gfnll_onpage_event_import" name="x_gfnll_onpage_event_import" sys_domain="global" view="Default view">d71fd26cdb51e384c822fcd6f49619a3</sys_ui_form>
-            <sys_ui_section caption="Inbound Values" display_value="Inbound Values" name="x_gfnll_onpage_event_import" sys_domain="global" view="Default view">df1fd26cdb51e384c822fcd6f49619a1</sys_ui_section>
+            <sys_ui_form display_value="x_onpr_onpage_event_import" name="x_onpr_onpage_event_import" sys_domain="global" view="Default view">d71fd26cdb51e384c822fcd6f49619a3</sys_ui_form>
+            <sys_ui_section caption="Inbound Values" display_value="Inbound Values" name="x_onpr_onpage_event_import" sys_domain="global" view="Default view">df1fd26cdb51e384c822fcd6f49619a1</sys_ui_section>
             <sys_updated_by>will.young</sys_updated_by>
             <sys_updated_on>2018-10-18 22:46:47</sys_updated_on>
         </sys_ui_form_section>
@@ -38,13 +38,13 @@
             <sys_id>231f9a6cdb51e384c822fcd6f4961952</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_overrides/>
-            <sys_ui_form display_value="x_gfnll_onpage_event_import" name="x_gfnll_onpage_event_import" sys_domain="global" view="Default view">d71fd26cdb51e384c822fcd6f49619a3</sys_ui_form>
-            <sys_ui_section caption="Originating Notification" display_value="Originating Notification" name="x_gfnll_onpage_event_import" sys_domain="global" view="Default view">1f1fd26cdb51e384c822fcd6f49619a2</sys_ui_section>
+            <sys_ui_form display_value="x_onpr_onpage_event_import" name="x_onpr_onpage_event_import" sys_domain="global" view="Default view">d71fd26cdb51e384c822fcd6f49619a3</sys_ui_form>
+            <sys_ui_section caption="Originating Notification" display_value="Originating Notification" name="x_onpr_onpage_event_import" sys_domain="global" view="Default view">1f1fd26cdb51e384c822fcd6f49619a2</sys_ui_section>
             <sys_updated_by>will.young</sys_updated_by>
             <sys_updated_on>2018-10-18 22:46:47</sys_updated_on>
         </sys_ui_form_section>
         <sys_ui_form action="INSERT_OR_UPDATE">
-            <name>x_gfnll_onpage_event_import</name>
+            <name>x_onpr_onpage_event_import</name>
             <roles/>
             <sys_class_name>sys_ui_form</sys_class_name>
             <sys_created_by>will.young</sys_created_by>
@@ -54,9 +54,9 @@
             <sys_domain_path>/</sys_domain_path>
             <sys_id>d71fd26cdb51e384c822fcd6f49619a3</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_name>x_gfnll_onpage_event_import</sys_name>
+            <sys_name>x_onpr_onpage_event_import</sys_name>
             <sys_overrides/>
-            <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+            <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
             <sys_policy/>
             <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
             <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>

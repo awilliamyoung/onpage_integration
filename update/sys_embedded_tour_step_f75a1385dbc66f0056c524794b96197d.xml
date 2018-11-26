@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_embedded_tour_step">
+    <sys_embedded_tour_step action="INSERT_OR_UPDATE">
+        <action>false</action>
+        <action_event>next</action_event>
+        <action_target/>
+        <action_target_ref display_value=".module-node [data-id=&quot;ba931187dbd82340e">af5a1745dbc66f0056c524794b961902</action_target_ref>
+        <active>true</active>
+        <content><![CDATA[Submit your credentials and wait to be redirected to "OnPage Configuration" before clicking Next. ]]></content>
+        <guide display_value="OnPage Guided Tour (Admin)">9e9911b0dbb027c0c822fcd6f4961977</guide>
+        <implicit>false</implicit>
+        <link/>
+        <name>Step 42</name>
+        <options/>
+        <order>4</order>
+        <placement>top</placement>
+        <sys_class_name>sys_embedded_tour_step</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-11-26 23:09:43</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>f75a1385dbc66f0056c524794b96197d</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Step 42</sys_name>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_embedded_tour_step_f75a1385dbc66f0056c524794b96197d</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-11-26 23:10:05</sys_updated_on>
+        <target/>
+        <target_ref display_value=".module-node [data-id=&quot;ba931187dbd82340e">af5a1745dbc66f0056c524794b961902</target_ref>
+        <ui_version>dynamic</ui_version>
+        <view/>
+        <window>nav_to.do</window>
+    </sys_embedded_tour_step>
+</record_update>

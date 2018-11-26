@@ -3,8 +3,7 @@
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>public</access>
         <active>true</active>
-        <api_name>x_gfnll_onpage.cleanup</api_name>
-        <caller_access/>
+        <api_name>x_onpr_onpage.cleanup</api_name>
         <client_callable>false</client_callable>
         <description/>
         <name>cleanup</name>
@@ -15,7 +14,7 @@ cleanup.prototype = {
 		this.logType = "internal";
 		this.logTable = 'sysauto_script';
 		this.logID = 'e7098e24dba42740ee685e25ca961937';
-		this.log = new x_gfnll_onpage.log();
+		this.log = new x_onpr_onpage.log();
 		this.error = function(message){
 		  this.log.error(message,this.logType,this.logTable,this.logID);
 		};
@@ -28,14 +27,14 @@ cleanup.prototype = {
 		this.info("Starting default log cleanup.");
 		//number of days
 		var days = 90;
-		var gr = new GlideRecord('x_gfnll_onpage_event');
+		var gr = new GlideRecord('x_onpr_onpage_event');
 			gr.addEncodedQuery('sys_created_onRELATIVELE@dayofweek@ago@'+days);
 			gr.query();
 		var count = gr.getRowCount();
 		this.info('Deleting '+count+' info messages older than '+days+' days.');
 		gr.deleteMultiple();
-		
-		var gr2 = new GlideRecord('x_gfnll_onpage_notification');
+
+		var gr2 = new GlideRecord('x_onpr_onpage_notification');
 			gr2.addEncodedQuery('sys_created_onRELATIVELE@dayofweek@ago@'+days);
 			gr2.query();
 		var count2 = gr.getRowCount();
@@ -48,7 +47,7 @@ cleanup.prototype = {
 		this.info("Starting info log cleanup.");
 		//number of days
 		var days = 14;
-		var gr = new GlideRecord('x_gfnll_onpage_event');
+		var gr = new GlideRecord('x_onpr_onpage_event');
 			gr.addQuery('status','info');
 			gr.addEncodedQuery('sys_created_onRELATIVELE@dayofweek@ago@'+days);
 			gr.query();
@@ -61,7 +60,7 @@ cleanup.prototype = {
 		this.info("Starting error log cleanup.");
 		//number of days
 		var days = 30;
-		var gr = new GlideRecord('x_gfnll_onpage_event');
+		var gr = new GlideRecord('x_onpr_onpage_event');
 			gr.addQuery('status','error');
 			gr.addEncodedQuery('sys_created_onRELATIVELE@dayofweek@ago@'+days);
 			gr.query();
@@ -79,7 +78,7 @@ cleanup.prototype = {
         <sys_id>50b3562cdba42740ee685e25ca961961</sys_id>
         <sys_mod_count>10</sys_mod_count>
         <sys_name>cleanup</sys_name>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>

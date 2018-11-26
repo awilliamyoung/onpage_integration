@@ -55,7 +55,7 @@
         <sys_mod_count>1</sys_mod_count>
         <sys_name>On-Call: Escalations using OnPage</sys_name>
         <sys_overrides/>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
@@ -387,7 +387,7 @@ function ifScript() {&#13;
 	var currentEscalatee = new GlideRecord("sys_user");&#13;
 	currentEscalatee.get(workflow.scratchpad.currentEscalateeId);&#13;
 	workflow.scratchpad.escalateeName = currentEscalatee.name;&#13;
-	var op = new GlideRecord('x_gfnll_onpage_target');&#13;
+	var op = new GlideRecord('x_onpr_onpage_target');&#13;
 		op.addQuery('document_id',workflow.scratchpad.currentEscalateeId);&#13;
 		op.addActiveQuery();&#13;
 		op.query();&#13;
@@ -500,7 +500,7 @@ function ifScript() {&#13;
 	var currentEscalatee = new GlideRecord("sys_user");&#13;
 	currentEscalatee.get(workflow.scratchpad.currentEscalateeId);&#13;
 	workflow.scratchpad.escalateeName = currentEscalatee.name;&#13;
-	var op = new GlideRecord('x_gfnll_onpage_target');&#13;
+	var op = new GlideRecord('x_onpr_onpage_target');&#13;
 		op.addQuery('document_id',workflow.scratchpad.currentEscalateeId);&#13;
 		op.addActiveQuery();&#13;
 		op.query();&#13;
@@ -1386,7 +1386,7 @@ if(template!=null &amp;&amp; template!='' &amp;&amp; recip!=null &amp;&amp; reci
 }&#13;
 &#13;
 function getTemplateID(templateNumber){&#13;
-	var gr = new GlideRecord('x_gfnll_onpage_template');&#13;
+	var gr = new GlideRecord('x_onpr_onpage_template');&#13;
 	if(gr.get("number",templateNumber)){&#13;
 		return gr.getUniqueValue();&#13;
 	}&#13;
@@ -1396,7 +1396,7 @@ function getTemplateID(templateNumber){&#13;
 }&#13;
 &#13;
 function newEvent(template,recip,table,doc){&#13;
-	var wf = new x_gfnll_onpage.workflow();&#13;
+	var wf = new x_onpr_onpage.workflow();&#13;
 		wf.notification(template,recip,table,doc);&#13;
 }</value>
         <variable display_value="">c35ddef20a0a0ba96248a7090eccd518</variable>
@@ -1425,7 +1425,7 @@ if(template!=null &amp;&amp; template!='' &amp;&amp; recip!=null &amp;&amp; reci
 }&#13;
 &#13;
 function getTemplateID(templateNumber){&#13;
-	var gr = new GlideRecord('x_gfnll_onpage_template');&#13;
+	var gr = new GlideRecord('x_onpr_onpage_template');&#13;
 	if(gr.get("number",templateNumber)){&#13;
 		return gr.getUniqueValue();&#13;
 	}&#13;
@@ -1435,7 +1435,7 @@ function getTemplateID(templateNumber){&#13;
 }&#13;
 &#13;
 function newEvent(template,recip,table,doc){&#13;
-	var wf = new x_gfnll_onpage.workflow();&#13;
+	var wf = new x_onpr_onpage.workflow();&#13;
 		wf.notification(template,recip,table,doc);&#13;
 }</value>
         <variable display_value="">c35ddef20a0a0ba96248a7090eccd518</variable>
@@ -1514,7 +1514,7 @@ if(template!=null &amp;&amp; template!='' &amp;&amp; recip!=null &amp;&amp; reci
 }&#13;
 &#13;
 function getTemplateID(templateNumber){&#13;
-	var gr = new GlideRecord('x_gfnll_onpage_template');&#13;
+	var gr = new GlideRecord('x_onpr_onpage_template');&#13;
 	if(gr.get("number",templateNumber)){&#13;
 		return gr.getUniqueValue();&#13;
 	}&#13;
@@ -1524,7 +1524,7 @@ function getTemplateID(templateNumber){&#13;
 }&#13;
 &#13;
 function newEvent(template,recip,table,doc){&#13;
-	var wf = new x_gfnll_onpage.workflow();&#13;
+	var wf = new x_onpr_onpage.workflow();&#13;
 		wf.notification(template,recip,table,doc);&#13;
 }</value>
         <variable display_value="">c35ddef20a0a0ba96248a7090eccd518</variable>
@@ -1553,7 +1553,7 @@ if(template!=null &amp;&amp; template!='' &amp;&amp; recip!=null &amp;&amp; reci
 }&#13;
 &#13;
 function getTemplateID(templateNumber){&#13;
-	var gr = new GlideRecord('x_gfnll_onpage_template');&#13;
+	var gr = new GlideRecord('x_onpr_onpage_template');&#13;
 	if(gr.get("number",templateNumber)){&#13;
 		return gr.getUniqueValue();&#13;
 	}&#13;
@@ -1563,7 +1563,7 @@ function getTemplateID(templateNumber){&#13;
 }&#13;
 &#13;
 function newEvent(template,recip,table,doc){&#13;
-	var wf = new x_gfnll_onpage.workflow();&#13;
+	var wf = new x_onpr_onpage.workflow();&#13;
 		wf.notification(template,recip,table,doc);&#13;
 }</value>
         <variable display_value="">c35ddef20a0a0ba96248a7090eccd518</variable>
@@ -2347,12 +2347,12 @@ answer = workflow.scratchpad.timeBetweenReminders;&#13;
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
         <sys_created_on>2018-09-13 18:17:31</sys_created_on>
-        <sys_id>fdd155d5db20e740ee685e25ca9619c0</sys_id>
+        <sys_id>3dd155d5db20e740ee685e25ca9619c0</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>will.young</sys_updated_by>
         <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
-        <value/>
-        <variable display_value="">21fd462c0a0a0b211c997276d7806c03</variable>
+        <value>3bf802c20a0a0b52008e2859cd8abcf2</value>
+        <variable display_value="">220cd53d0a0a0b214103bdc2ec5c7ab4</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
@@ -2375,12 +2375,12 @@ answer = workflow.scratchpad.timeBetweenReminders;&#13;
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
         <sys_created_on>2018-09-13 18:17:31</sys_created_on>
-        <sys_id>3dd155d5db20e740ee685e25ca9619c0</sys_id>
+        <sys_id>fdd155d5db20e740ee685e25ca9619c0</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>will.young</sys_updated_by>
         <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
-        <value>3bf802c20a0a0b52008e2859cd8abcf2</value>
-        <variable display_value="">220cd53d0a0a0b214103bdc2ec5c7ab4</variable>
+        <value/>
+        <variable display_value="">21fd462c0a0a0b211c997276d7806c03</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
@@ -2417,12 +2417,12 @@ answer = workflow.scratchpad.timeBetweenReminders;&#13;
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
         <sys_created_on>2018-09-13 18:17:31</sys_created_on>
-        <sys_id>35d155d5db20e740ee685e25ca9619c2</sys_id>
+        <sys_id>31d155d5db20e740ee685e25ca9619c0</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>will.young</sys_updated_by>
         <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
         <value/>
-        <variable display_value="">4cc740fe0a0a0b520025dcf8e2ff78e7</variable>
+        <variable display_value="">4cc836da0a0a0b520083ebc07da2f47c</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>
@@ -2431,12 +2431,12 @@ answer = workflow.scratchpad.timeBetweenReminders;&#13;
         <sys_class_name>sys_variable_value</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
         <sys_created_on>2018-09-13 18:17:31</sys_created_on>
-        <sys_id>31d155d5db20e740ee685e25ca9619c0</sys_id>
+        <sys_id>35d155d5db20e740ee685e25ca9619c2</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>will.young</sys_updated_by>
         <sys_updated_on>2018-09-13 18:17:31</sys_updated_on>
         <value/>
-        <variable display_value="">4cc836da0a0a0b520083ebc07da2f47c</variable>
+        <variable display_value="">4cc740fe0a0a0b520025dcf8e2ff78e7</variable>
     </sys_variable_value>
     <sys_variable_value action="INSERT_OR_UPDATE">
         <document>wf_activity</document>

@@ -12,7 +12,7 @@
         <advanced>true</advanced>
         <change_fields>false</change_fields>
         <client_callable>false</client_callable>
-        <collection>x_gfnll_onpage_event</collection>
+        <collection>x_onpr_onpage_event</collection>
         <condition/>
         <description/>
         <execute_function>false</execute_function>
@@ -32,17 +32,17 @@
 	var type = current.getValue('type');
 	var status = current.getValue('status');
 	//gs.info('runReply: business rule running with type '+type+" and status "+status);
-	
+
 	if(type!='inbound' || status !='new'){
 		return;
 	}
-	
+
 	var eventStatus = current.getValue('value');
 	var eventTimeStamp = current.getValue('timestamp');
 	var eventReply = current.getValue('replyoption');
 	var eventOPID = current.getValue('opid');
-	
-	var grActualNotification = new GlideRecord('x_gfnll_onpage_notification');
+
+	var grActualNotification = new GlideRecord('x_onpr_onpage_notification');
 	if(grActualNotification.get(current.getValue('document_id'))){
 		var targetTable = grActualNotification.getValue('table');
 		var targetRec = grActualNotification.getValue('document_id');
@@ -50,7 +50,7 @@
 		if(eventReply!=''&&eventReply!=null){
 			//gs.info("runReply : Running event reply from business rule");
 			try{
-				var wf = new x_gfnll_onpage.workflow();
+				var wf = new x_onpr_onpage.workflow();
 				wf.runReply(eventReply,grActualNotification.getUniqueValue(),current.getUniqueValue(),eventOPID);
 			} catch(e){
 				gs.error(e);
@@ -69,7 +69,7 @@
         <sys_mod_count>14</sys_mod_count>
         <sys_name>Run Reply Scripts</sys_name>
         <sys_overrides/>
-        <sys_package display_value="OnPage Integration" source="x_gfnll_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
