@@ -49,18 +49,19 @@ sync.prototype = {
 			this.info("Looking for existing group: "+JSON.stringify(group),"internal");
 			var name = group.name.toString(),
 				opid = group.opid.toString(),
-				grpID = group.id.toString(),
-				grpActive = group.active.toString();
+				grpID = group.id.toString();
+				//grpActive = group.active.toString();
 			//check for existing records
 			var gr = new GlideRecord('x_onpr_onpage_target');
 				gr.addQuery('opid',opid);
 				gr.query();
 			if(gr.next()){
 				//if inactivated, delete record
-				if(grpActive=="false"){
-					gr.deleteRecord();
-					this.info("Group target record deleted via sync","internal");
-				}
+				//if(grpActive=="false"){
+				//	gr.deleteRecord();
+				//	this.info("Group target record deleted via sync","internal");
+				//return;
+				//}
 				//if existing, check for value changes
 				this.info("Existing group found","internal");
 				var fields = ["onpage_name"];
@@ -111,18 +112,19 @@ sync.prototype = {
 				last = account.lastName.toString(),
 				email = account.email.toString(),
 				opid = account.opid.toString(),
-				id = account.id.toString(),
-				usrActive = account.active.toString();
+				id = account.id.toString();
+				//usrActive = account.active.toString();
 			//check for existing records
 			var gr = new GlideRecord('x_onpr_onpage_target');
 				gr.addQuery('opid',opid);
 				gr.query();
 			if(gr.next()){
 				//if inactivated, delete record
-				if(usrActive=="false"){
-					gr.deleteRecord();
-					this.info("Group target record deleted via sync","internal");
-				}
+				//if(usrActive=="false"){
+				//	gr.deleteRecord();
+				//	this.info("User target record deleted via sync","internal");
+				//return;
+				//}
 				//if existing, check for value changes
 				this.info("Existing user found","internal");
 				var fields = ["first_name","last_name","email"];
@@ -235,7 +237,7 @@ sync.prototype = {
         <sys_created_on>2018-09-07 15:18:33</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>6793a19fdb182740c822fcd6f49619e8</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_name>sync</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
@@ -243,6 +245,6 @@ sync.prototype = {
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_include_6793a19fdb182740c822fcd6f49619e8</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-11-26 19:07:20</sys_updated_on>
+        <sys_updated_on>2018-11-26 23:57:14</sys_updated_on>
     </sys_script_include>
 </record_update>

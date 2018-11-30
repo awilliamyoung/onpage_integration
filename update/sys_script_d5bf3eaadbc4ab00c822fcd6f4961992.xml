@@ -33,27 +33,67 @@
 	if(updatedBy=='onpage'){
 		return;
 	}
-
+	
 	//check if there is are subscriptions for this table
 	var prop = gs.getProperty('x_onpr_onpage.subscription.tables'),
-		tables = prop.split(","),
-		table = current.getTableName();
+	tables = prop.split(","),
+	table = current.getTableName();
 	if(tables.indexOf(table)==-1){
 		return;
 	}
-
-	var jsonCurrent = new global.JSON().encode(current);
-	var jsonPrevious = new global.JSON().encode(previous);
-
+	
+	var jsonCurrent = getFields(current,table);
+	var jsonPrevious = getFields(previous,table);
+	
 	var gr = new GlideRecord('x_onpr_onpage_event');
-		gr.initialize();
-		gr.setValue('table', current.getTableName());
-		gr.setValue('document_id', current.sys_id);
-		gr.setValue('status', 'new');
-		gr.setValue('type', 'outbound');
-		gr.setValue('current', jsonCurrent);
-		gr.setValue('previous', jsonPrevious);
-		gr.insert();
+	gr.initialize();
+	gr.setValue('table', table);
+	gr.setValue('document_id', current.sys_id);
+	gr.setValue('status', 'new');
+	gr.setValue('type', 'outbound');
+	gr.setValue('current', jsonCurrent);
+	gr.setValue('previous', jsonPrevious);
+	gr.insert();
+	
+	var parents = this.getParentTables(table);
+	function getFields(gr,parents){
+		var tables = parents.split(',');
+		var obj = {};
+		for(var j=0;j<tables.length;j++){
+			var fieldgr = new GlideRecord('sys_dictionary');
+				fieldgr.addQuery('name',tables[j]);
+				fieldgr.query();
+			while(fieldgr.next()){
+				var name = fieldgr.getValue('element'),
+					value = gr.getValue(name);
+				if(name!=null && value!=null){
+					obj[name] = value;
+				}
+			}
+		}
+		return JSON.stringify(obj);
+	}
+	
+	function getParentTables(table){
+		var tables = [];
+		tables.push(table);
+		var tableGR = new GlideRecord('sys_db_object');
+		if(tableGR.get('name',table)){
+			var parent = tableGR.getValue('super_class');
+			if(parent!=null&&parent!=undefined){
+				tables.push(tableGR.getDisplayValue('super_class'));
+				var tableGR2 = new GlideRecord('sys_db_object');
+					tableGR2.get('name',parent);
+				if(tableGR2.next()){
+					var parent2 = tableGR2.getValue('super_class');
+					if(parent2!=null&&parent2!=undefined){
+						tables.push(tableGR2.getDisplayValue('super_class'));
+					}
+				}
+			}
+		}
+		return tables.toString();
+	}
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>David.Delahoz</sys_created_by>
@@ -62,7 +102,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>d5bf3eaadbc4ab00c822fcd6f4961992</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>53</sys_mod_count>
         <sys_name>Generate Events from Task Updates</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
@@ -71,7 +111,7 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_d5bf3eaadbc4ab00c822fcd6f4961992</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-10-16 22:31:03</sys_updated_on>
+        <sys_updated_on>2018-11-27 02:37:40</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

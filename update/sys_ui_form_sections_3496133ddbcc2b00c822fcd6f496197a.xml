@@ -29,6 +29,20 @@
             <sys_updated_by>will.young</sys_updated_by>
             <sys_updated_on>2018-09-07 20:09:11</sys_updated_on>
         </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>will.young</sys_created_by>
+            <sys_created_on>2018-11-27 00:49:01</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>96113385db0a6f0056c524794b9619fc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_onpr_onpage_notification" name="x_onpr_onpage_notification" sys_domain="global" view="Default view">3496133ddbcc2b00c822fcd6f496197a</sys_ui_form>
+            <sys_ui_section caption="History" display_value="History" name="x_onpr_onpage_notification" sys_domain="global" view="Default view">96117745db0a6f0056c524794b961937</sys_ui_section>
+            <sys_updated_by>will.young</sys_updated_by>
+            <sys_updated_on>2018-11-27 00:49:01</sys_updated_on>
+        </sys_ui_form_section>
         <sys_ui_form action="INSERT_OR_UPDATE">
             <name>x_onpr_onpage_notification</name>
             <roles/>

@@ -15,7 +15,7 @@
         <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>Document ID</column_label>
+        <column_label>Target Record</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -54,15 +54,15 @@
         <sys_created_on>2018-08-21 19:31:03</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>bba20f7ddb8c2b00c822fcd6f4961904</sys_id>
-        <sys_mod_count>4</sys_mod_count>
-        <sys_name>Document ID</sys_name>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Target Record</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_dictionary_x_onpr_onpage_notification_document_id</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-11-26 19:16:04</sys_updated_on>
+        <sys_updated_on>2018-11-27 00:49:01</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

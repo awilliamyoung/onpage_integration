@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element label="Onpage Event" max_length="40" name="x_onpr_onpage_event" type="collection">
+    <element audit="true" label="Onpage Event" max_length="40" name="x_onpr_onpage_event" type="collection">
         <element label="Current" max_length="1000" name="current" type="string_full_utf8"/>
         <element dependent="table" dependent_on_field="table" label="Document ID" max_length="40" name="document_id" type="document_id" use_dependent_field="true"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>

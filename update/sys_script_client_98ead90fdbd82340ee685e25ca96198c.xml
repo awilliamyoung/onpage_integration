@@ -11,7 +11,11 @@
         <name>Get Field Names</name>
         <order/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+	if(isLoading){
+		return;
+	}
    if (newValue === '') {
+	   g_form.setValue('template_values',"   Please select a table.");
       return;
    }
 	g_form.setValue('template_values',"   Loading...");
@@ -36,7 +40,7 @@ function display(answer){
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>98ead90fdbd82340ee685e25ca96198c</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Get Field Names</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
@@ -45,7 +49,7 @@ function display(answer){
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_client_98ead90fdbd82340ee685e25ca96198c</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-13 19:42:22</sys_updated_on>
+        <sys_updated_on>2018-11-27 00:40:49</sys_updated_on>
         <table>x_onpr_onpage_onpage_template</table>
         <type>onChange</type>
         <ui_type>10</ui_type>

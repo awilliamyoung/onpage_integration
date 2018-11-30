@@ -14,7 +14,7 @@
 	var helper = 'To add values from the record to the subject or body, use the field name. For example: to get "INC0123456" you would add "${number}" to the body. The system will automatically fill in the values when the message is sent.';
 	g_form.addInfoMessage(helper);
    var recipHelper = "These recipients will be included in every message that uses this template. This is in addition to the recipients specified by the subscription.";
-	g_form.showFieldMsg('recipients',recipHelper,"info",false);
+	//g_form.showFieldMsg('recipients',recipHelper,"info",false);
 }]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
@@ -23,7 +23,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>6735ad83db1c2340ee685e25ca9619b8</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Helpers</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
@@ -32,7 +32,7 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_client_6735ad83db1c2340ee685e25ca9619b8</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-06 20:09:26</sys_updated_on>
+        <sys_updated_on>2018-11-27 00:38:42</sys_updated_on>
         <table>x_onpr_onpage_onpage_template</table>
         <type>onLoad</type>
         <ui_type>10</ui_type>

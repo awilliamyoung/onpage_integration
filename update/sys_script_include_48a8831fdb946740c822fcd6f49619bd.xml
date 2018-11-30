@@ -112,10 +112,10 @@ workflow.prototype = {
 				}
 				this.info("Recipient sys IDs: "+recips.toString(),logType,logTable,event);
 				if(recips.length==0){
-					this.error("No recipients specified in subscription or template. Message cannot be sent.",logType,logTable,event);
+					this.error("No recipients specified in template. Message cannot be sent.",logType,logTable,event);
 					var curr = grEvent.getValue('current');
 					grEvent.setValue('previous',curr);
-					grEvent.setValue('current',"No recipients specified in subscription or template. Message cannot be sent.");
+					grEvent.setValue('current',"No recipients specified in template. Message cannot be sent.");
 					grEvent.setValue('status',"ignored");
 					grEvent.setValue('type',"outbound");
 					grEvent.update();
@@ -514,7 +514,7 @@ workflow.prototype = {
         <sys_created_on>2018-09-07 21:57:11</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>48a8831fdb946740c822fcd6f49619bd</sys_id>
-        <sys_mod_count>106</sys_mod_count>
+        <sys_mod_count>107</sys_mod_count>
         <sys_name>workflow</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
@@ -522,6 +522,6 @@ workflow.prototype = {
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_include_48a8831fdb946740c822fcd6f49619bd</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-10-31 19:13:46</sys_updated_on>
+        <sys_updated_on>2018-11-27 00:44:20</sys_updated_on>
     </sys_script_include>
 </record_update>

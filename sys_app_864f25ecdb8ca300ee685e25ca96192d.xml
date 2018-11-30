@@ -23,14 +23,14 @@
         <sys_created_by>will.young</sys_created_by>
         <sys_created_on>2018-08-17 15:59:19</sys_created_on>
         <sys_id>864f25ecdb8ca300ee685e25ca96192d</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-11-26 18:41:30</sys_updated_on>
+        <sys_updated_on>2018-11-30 15:52:17</sys_updated_on>
         <template/>
         <trackable>true</trackable>
         <user_role display_value="x_onpr_onpage.user" name="x_onpr_onpage.user">a6303520dbcca300ee685e25ca9619c3</user_role>
         <vendor/>
         <vendor_prefix/>
-        <version>1.0.9</version>
+        <version>1.1.0</version>
     </sys_app>
 </record_update>
