@@ -2,7 +2,7 @@
 <record_update table="sys_embedded_tour_guide">
     <sys_embedded_tour_guide action="INSERT_OR_UPDATE">
         <active>true</active>
-        <context>home</context>
+        <context>home.do?sysparm_view=default_view&amp;sysparm_userpref_homepage=6da31be4dba82740ee685e25ca9619b2</context>
         <description/>
         <name>OnPage Guided Tour (Admin)</name>
         <options/>
@@ -12,7 +12,7 @@
         <sys_created_on>2018-09-24 15:50:09</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>9e9911b0dbb027c0c822fcd6f4961977</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>OnPage Guided Tour (Admin)</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
@@ -20,6 +20,6 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_embedded_tour_guide_9e9911b0dbb027c0c822fcd6f4961977</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-10-16 22:42:28</sys_updated_on>
+        <sys_updated_on>2018-12-26 22:31:46</sys_updated_on>
     </sys_embedded_tour_guide>
 </record_update>

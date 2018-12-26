@@ -5,7 +5,7 @@
         <condition/>
         <conditional>false</conditional>
         <name>Cancel Failed Notifications</name>
-        <run_as display_value="Will Young">831e178fdbb9a300c8c656594b961952</run_as>
+        <run_as/>
         <run_as_tz/>
         <run_dayofmonth>1</run_dayofmonth>
         <run_dayofweek>1</run_dayofweek>
@@ -40,7 +40,7 @@ function info(message){
         <sys_created_on>2018-09-11 17:31:23</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>a614bae8db282740ee685e25ca961993</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Cancel Failed Notifications</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
@@ -48,7 +48,7 @@ function info(message){
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sysauto_script_a614bae8db282740ee685e25ca961993</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-11 20:16:25</sys_updated_on>
+        <sys_updated_on>2018-12-26 22:08:27</sys_updated_on>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_script>
 </record_update>
