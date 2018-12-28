@@ -25,9 +25,7 @@ function sendNotif(){
 			gr1.addQuery('status','send-ready');
 			gr1.setLimit(100);
 			gr1.query();
-		var count = gr1.getRowCount();
-		this.info("Ready notifications to process: "+count);
-		if(count==0){
+		if(!gr1.hasNext()){
 			return;
 		}
 		while(gr1.next()){
@@ -40,8 +38,8 @@ function sendNotif(){
 		var array = [];
 		for(var i=0;i<notifications.length;i++){
 			var gr = new GlideRecord('x_onpr_onpage_notification');
-				gr.get(notifications[i]);
-			var table = gr.getValue('table'),
+			if(gr.get(notifications[i])){
+				var table = gr.getValue('table'),
 				doc = gr.getValue('document_id'),
 				sd = encodeURI(gr.getValue('short_description')),
 				body = encodeURI(gr.getValue('body')),
@@ -51,9 +49,10 @@ function sendNotif(){
 				reply = '';
 				if(options!=''&&options!=null){
 					reply = options.split(",");
-				}
-			var template = '{"id": "'+doc+'","subject":"'+sd+'","body":"'+body+'","recipients":'+this.reformat(recip)+',"priority":"'+priority+'","possibleAnswers":'+this.reformat(reply)+'}';
-			array.push(template);
+					}
+				var template = '{"id": "'+doc+'","subject":"'+sd+'","body":"'+body+'","recipients":'+this.reformat(recip)+',"priority":"'+priority+'","possibleAnswers":'+this.reformat(reply)+'}';
+				array.push(template);
+			}
 		}
 		this.info("Message array: "+array.toString());
 
@@ -68,27 +67,28 @@ function sendNotif(){
 		//update all records with status
 		for(var k=0;k<notifications.length;k++){
 			var gr2 = new GlideRecord('x_onpr_onpage_notification');
-				gr2.get(notifications[k]);
-			if(status=="error"){
-				gr2.setValue('status',"error");
-				gr2.setValue('error',respBdy);
-				gr2.update();
-			}
-			else{
-				var json = JSON.parse(respBdy);
-				var obj = json[k];
-				var snID = obj.id,
-					acptd = obj.accepted;
-				if(acptd){
-					gr2.setValue('status',status);
-					//gr2.setValue('onpage_id',snID);
-					gr2.setValue('error','');
+			if(gr2.get(notifications[k])){
+				if(status=="error"){
+					gr2.setValue('status',"error");
+					gr2.setValue('error',respBdy);
+					gr2.update();
 				}
 				else{
-					gr2.setValue('status',"error");
-					gr2.setValue('error',obj.errorDescription);
+					var json = JSON.parse(respBdy);
+					var obj = json[k];
+					var snID = obj.id,
+						acptd = obj.accepted;
+					if(acptd){
+						gr2.setValue('status',status);
+						//gr2.setValue('onpage_id',snID);
+						gr2.setValue('error','');
+					}
+					else{
+						gr2.setValue('status',"error");
+						gr2.setValue('error',obj.errorDescription);
+					}
+					gr2.update();
 				}
-				gr2.update();
 			}
 		}
 	}
@@ -119,7 +119,7 @@ function reformat(array){
         <sys_created_on>2018-09-10 16:57:16</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>e14129d8db68e340ee685e25ca961903</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>Process Ready Notifications</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
@@ -127,7 +127,7 @@ function reformat(array){
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sysauto_script_e14129d8db68e340ee685e25ca961903</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-12-26 22:08:29</sys_updated_on>
+        <sys_updated_on>2018-12-26 23:38:24</sys_updated_on>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_script>
 </record_update>

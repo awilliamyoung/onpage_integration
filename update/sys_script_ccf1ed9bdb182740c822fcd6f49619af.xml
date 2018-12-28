@@ -30,11 +30,10 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 	var id = current.getValue('opid');
-	var gr = new GlideRecord('x_onpr_onpage_target');
+	var gr = new GlideRecordSecure('x_onpr_onpage_target');
 		gr.addQuery('opid',id);
 		gr.query();
-	var count = gr.getRowCount();
-	if(count>0){
+	if(gr.hasNext()){
 		return false;
 	}
 
@@ -46,7 +45,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ccf1ed9bdb182740c822fcd6f49619af</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Don't allow duplicate OPID</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
@@ -55,7 +54,7 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_ccf1ed9bdb182740c822fcd6f49619af</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-07 14:21:38</sys_updated_on>
+        <sys_updated_on>2018-12-26 23:46:01</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

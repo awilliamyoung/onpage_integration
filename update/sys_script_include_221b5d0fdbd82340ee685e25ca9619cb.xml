@@ -26,12 +26,13 @@ getFields.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 	},
 	_getParent: function(table){
 		var gr = new GlideRecord('sys_db_object');
-			gr.get('name',table);
-		var parent = gr.super_class.name;
-		if(parent==null){
-			parent = '';
+		if(gr.get('name',table)){
+			var parent = gr.super_class.name;
+			if(parent==null){
+				parent = '';
+			}
+			return parent;
 		}
-		return parent;
 	},
 	_getTemplate: function(table){
 		var array = [];
@@ -54,7 +55,7 @@ getFields.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_on>2018-09-06 19:31:12</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>221b5d0fdbd82340ee685e25ca9619cb</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>getFields</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
@@ -62,6 +63,6 @@ getFields.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_include_221b5d0fdbd82340ee685e25ca9619cb</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-13 19:45:06</sys_updated_on>
+        <sys_updated_on>2018-12-26 22:53:42</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -46,12 +46,13 @@
 
 		//Are following lines 16-22 needed for updating ?
 		var u = new GlideRecord('sys_user');
-		u.get(current.user);
-		u.email = onPageUser.email;
-		u.user_name = onPageUser.onpage_name;
-		u.first_name = onPageUser.first_name;
-		u.last_name = onPageUser.last_name;
-		u.update();
+		if(u.get(current.user)){
+			u.email = onPageUser.email;
+			u.user_name = onPageUser.onpage_name;
+			u.first_name = onPageUser.first_name;
+			u.last_name = onPageUser.last_name;
+			u.update();
+		}
 	}
 	else{
 		// 3. If no match, creates a user in OnPage using integration
@@ -100,7 +101,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>17bff585db182f00ee685e25ca961975</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>Target Matching Scripts</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
@@ -108,8 +109,8 @@
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_17bff585db182f00ee685e25ca961975</sys_update_name>
-        <sys_updated_by>lorena.villanueva</sys_updated_by>
-        <sys_updated_on>2018-09-13 15:59:02</sys_updated_on>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-12-26 23:24:34</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

@@ -30,16 +30,18 @@ cleanup.prototype = {
 		var gr = new GlideRecord('x_onpr_onpage_event');
 			gr.addEncodedQuery('sys_created_onRELATIVELE@dayofweek@ago@'+days);
 			gr.query();
-		var count = gr.getRowCount();
-		this.info('Deleting '+count+' info messages older than '+days+' days.');
-		gr.deleteMultiple();
+		if(gr.hasNext()){
+			this.info('Deleting info messages older than '+days+' days.');
+			gr.deleteMultiple();
+		}
 
 		var gr2 = new GlideRecord('x_onpr_onpage_notification');
 			gr2.addEncodedQuery('sys_created_onRELATIVELE@dayofweek@ago@'+days);
 			gr2.query();
-		var count2 = gr.getRowCount();
-		this.info('Deleting '+coun2t+' info messages older than '+days+' days.');
-		gr2.deleteMultiple();
+		if(gr2.hasNext()){
+			this.info('Deleting info messages older than '+days+' days.');
+			gr2.deleteMultiple();
+		}
 	},
 
 	infoLog: function(){
@@ -51,9 +53,10 @@ cleanup.prototype = {
 			gr.addQuery('status','info');
 			gr.addEncodedQuery('sys_created_onRELATIVELE@dayofweek@ago@'+days);
 			gr.query();
-		var count = gr.getRowCount();
-		this.info('Deleting '+count+' info messages older than '+days+' days.');
-		gr.deleteMultiple();
+		if(gr.hasNext()){
+			this.info('Deleting info messages older than '+days+' days.');
+			gr.deleteMultiple();
+		}
 	},
 
 	errorLog: function(){
@@ -64,9 +67,10 @@ cleanup.prototype = {
 			gr.addQuery('status','error');
 			gr.addEncodedQuery('sys_created_onRELATIVELE@dayofweek@ago@'+days);
 			gr.query();
-		var count = gr.getRowCount();
-		this.error('Deleting '+count+' error messages older than '+days+' days.');
-		gr.deleteMultiple();
+		if(gr.hasNext()){
+			this.error('Deleting error messages older than '+days+' days.');
+			gr.deleteMultiple();
+		}
 	},
 
     type: 'cleanup'
@@ -76,7 +80,7 @@ cleanup.prototype = {
         <sys_created_on>2018-09-11 15:14:09</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>50b3562cdba42740ee685e25ca961961</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>cleanup</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
@@ -84,6 +88,6 @@ cleanup.prototype = {
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_include_50b3562cdba42740ee685e25ca961961</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-14 18:54:33</sys_updated_on>
+        <sys_updated_on>2018-12-26 23:09:08</sys_updated_on>
     </sys_script_include>
 </record_update>

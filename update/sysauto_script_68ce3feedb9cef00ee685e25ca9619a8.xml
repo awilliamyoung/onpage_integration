@@ -16,15 +16,13 @@
         <script><![CDATA[process();
 function process(){
 	var notifications = [];
-
+	
 	//bulk update to sending
 	var gr1 = new GlideRecord('x_onpr_onpage_notification');
-		gr1.addQuery('status','error');
-		gr1.setLimit(100);
-		gr1.query();
-	var count = gr1.getRowCount();
-	this.info("Error notifications to process: "+count,'','');
-	if(count==0){
+	gr1.addQuery('status','error');
+	gr1.setLimit(100);
+	gr1.query();
+	if(!gr1.hasNext()){
 		return;
 	}
 	while(gr1.next()){
@@ -35,13 +33,13 @@ function process(){
 		gr1.setValue('retries',retries);
 		gr1.update();
 	}
-
+	
 	//collect notification values into array of messages
 	var array = [];
 	for(var i=0;i<notifications.length;i++){
 		var gr = new GlideRecord('x_onpr_onpage_notification');
-			gr.get(notifications[i]);
-		var table = gr.getValue('table'),
+		if(gr.get(notifications[i])){
+			var table = gr.getValue('table'),
 			doc = gr.getValue('document_id'),
 			sd = encodeURI(gr.getValue('short_description')),
 			body = encodeURI(gr.getValue('body')),
@@ -52,88 +50,90 @@ function process(){
 			if(options!=''&&options!=null){
 				reply = options.split(",");
 			}
-		var template = '{"id": "'+doc+'","subject":"'+sd+'","body":"'+body+'","recipients":'+this.reformat(recip)+',"priority":"'+priority+'","possibleAnswers":'+this.reformat(reply)+'}';
-		array.push(template);
-	}
-	this.info("Message array: "+array.toString(),'','');
-
-	// send bulk message
-	var resp = new x_onpr_onpage.workflow().sendRestMessages('['+array.toString()+']',"68ce3feedb9cef00ee685e25ca9619a8");
-	//process response
-	var ans = resp.split(';'),
+			var template = '{"id": "'+doc+'","subject":"'+sd+'","body":"'+body+'","recipients":'+this.reformat(recip)+',"priority":"'+priority+'","possibleAnswers":'+this.reformat(reply)+'}';
+				array.push(template);
+			}
+		}
+		this.info("Message array: "+array.toString(),'','');
+		
+		// send bulk message
+		var resp = new x_onpr_onpage.workflow().sendRestMessages('['+array.toString()+']',"68ce3feedb9cef00ee685e25ca9619a8");
+		//process response
+		var ans = resp.split(';'),
 		status = ans[0],
 		respBdy = ans[1];
-	this.info("Response body is: "+respBdy,'','');
-
-	//update all records with status
-	for(var k=0;k<notifications.length;k++){
-		var gr2 = new GlideRecord('x_onpr_onpage_notification');
-			gr2.get(notifications[k]);
-		if(status=="error"){
-			gr2.setValue('status',"error");
-			gr2.setValue('error',respBdy);
-			gr2.update();
-			this.error('Error sending notification: '+respBdy,'x_onpr_onpage_notification',gr2.getUniqueValue());
-		}
-		else{
-			var json = JSON.parse(respBdy);
-			var obj = json[k];
-			var snID = obj.id,
-				acptd = obj.accepted;
-			if(acptd){
-				gr2.setValue('status',status);
-				//gr2.setValue('onpage_id',snID);
-				gr2.setValue('error','');
-				this.info("OnPage accepted the message.",'x_onpr_onpage_notification',gr2.getUniqueValue());
+		this.info("Response body is: "+respBdy,'','');
+		
+		//update all records with status
+		for(var k=0;k<notifications.length;k++){
+			var gr2 = new GlideRecord('x_onpr_onpage_notification');
+			if(gr2.get(notifications[k])){
+				if(status=="error"){
+					gr2.setValue('status',"error");
+					gr2.setValue('error',respBdy);
+					gr2.update();
+					this.error('Error sending notification: '+respBdy,'x_onpr_onpage_notification',gr2.getUniqueValue());
+				}
+				else{
+					var json = JSON.parse(respBdy);
+					var obj = json[k];
+					var snID = obj.id,
+					acptd = obj.accepted;
+					if(acptd){
+						gr2.setValue('status',status);
+						//gr2.setValue('onpage_id',snID);
+						gr2.setValue('error','');
+						this.info("OnPage accepted the message.",'x_onpr_onpage_notification',gr2.getUniqueValue());
+					}
+					else{
+						gr2.setValue('status',"error");
+						gr2.setValue('error',obj.errorDescription);
+						this.error('OnPage was not able to accept this notification. '+obj.errorDescription,'x_onpr_onpage_notification',gr2.getUniqueValue());
+					}
+					gr2.update();
+				}
 			}
-			else{
-				gr2.setValue('status',"error");
-				gr2.setValue('error',obj.errorDescription);
-				this.error('OnPage was not able to accept this notification. '+obj.errorDescription,'x_onpr_onpage_notification',gr2.getUniqueValue());
-			}
-			gr2.update();
 		}
 	}
-}
-
-function error(message,table,id){
-	//LOGGING/////////
-	var logType = "outbound";
-	if(id==''){
-		table = 'sysauto_script';
-		id = '68ce3feedb9cef00ee685e25ca9619a8'; //scheduled job
-	}
-	var log = new x_onpr_onpage.log();
+	
+	function error(message,table,id){
+		//LOGGING/////////
+		var logType = "outbound";
+		if(id==''){
+			table = 'sysauto_script';
+			id = '68ce3feedb9cef00ee685e25ca9619a8'; //scheduled job
+		}
+		var log = new x_onpr_onpage.log();
 		log.error(message,logType,table,id);
-}
-function info(message,table,id){
-	//LOGGING/////////
-	var logType = "outbound";
-	if(id==''){
-		table = 'sysauto_script';
-		id = '68ce3feedb9cef00ee685e25ca9619a8'; //scheduled job
 	}
-	var log = new x_onpr_onpage.log();
+	function info(message,table,id){
+		//LOGGING/////////
+		var logType = "outbound";
+		if(id==''){
+			table = 'sysauto_script';
+			id = '68ce3feedb9cef00ee685e25ca9619a8'; //scheduled job
+		}
+		var log = new x_onpr_onpage.log();
 		log.info(message,logType,table,id);
-}
-function reformat(array){
-	if(array==''){
-		return '[]';
 	}
-	var string,
+	function reformat(array){
+		if(array==''){
+			return '[]';
+		}
+		var string,
 		quotes = [];
-	for(var i=0;i<array.length;i++){
-		quotes.push('"'+array[i]+'"');
-	}
-	string = '['+quotes.toString()+']';
-	return string;
-}]]></script>
+		for(var i=0;i<array.length;i++){
+			quotes.push('"'+array[i]+'"');
+		}
+		string = '['+quotes.toString()+']';
+		return string;
+	}]]></script>
         <sys_class_name>sysauto_script</sys_class_name>
         <sys_created_by>lorena.villanueva</sys_created_by>
         <sys_created_on>2018-09-05 17:51:27</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>68ce3feedb9cef00ee685e25ca9619a8</sys_id>
-        <sys_mod_count>48</sys_mod_count>
+        <sys_mod_count>49</sys_mod_count>
         <sys_name>Process Error Notifications</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
@@ -141,7 +141,7 @@ function reformat(array){
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sysauto_script_68ce3feedb9cef00ee685e25ca9619a8</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-12-26 22:08:27</sys_updated_on>
+        <sys_updated_on>2018-12-26 23:28:41</sys_updated_on>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_script>
 </record_update>
