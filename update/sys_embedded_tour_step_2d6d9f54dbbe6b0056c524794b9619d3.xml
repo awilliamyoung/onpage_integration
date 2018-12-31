@@ -4,34 +4,34 @@
         <action>true</action>
         <action_event>click</action_event>
         <action_target/>
-        <action_target_ref display_value="x_onpr_onpage_target.list.ui_action">52db6db4dbb427c0c822fcd6f49619e4</action_target_ref>
+        <action_target_ref display_value=".module-node[id=&quot;e2d25d58db28e340ee685e2">a16d1358dbbe6b0056c524794b9619bd</action_target_ref>
         <active>true</active>
-        <content><![CDATA[You will never create a target in this manner. This is the only way to review the form for the guided tour.]]></content>
+        <content><![CDATA[You can launch this tour again by running setup again. Click Run Setup now. ]]></content>
         <guide display_value="OnPage Guided Tour (Admin)">9e9911b0dbb027c0c822fcd6f4961977</guide>
         <implicit>false</implicit>
         <link/>
-        <name>Step 18</name>
+        <name>Step 41</name>
         <options/>
-        <order>25</order>
-        <placement>bottom</placement>
+        <order>37</order>
+        <placement>right</placement>
         <sys_class_name>sys_embedded_tour_step</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
-        <sys_created_on>2018-09-24 17:09:54</sys_created_on>
+        <sys_created_on>2018-12-31 22:14:36</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>66dbe1f0dbf427c0c822fcd6f4961927</sys_id>
-        <sys_mod_count>65</sys_mod_count>
-        <sys_name>Step 18</sys_name>
+        <sys_id>2d6d9f54dbbe6b0056c524794b9619d3</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Step 41</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
-        <sys_update_name>sys_embedded_tour_step_66dbe1f0dbf427c0c822fcd6f4961927</sys_update_name>
+        <sys_update_name>sys_embedded_tour_step_2d6d9f54dbbe6b0056c524794b9619d3</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-12-31 19:31:39</sys_updated_on>
+        <sys_updated_on>2018-12-31 22:22:13</sys_updated_on>
         <target/>
-        <target_ref display_value="x_onpr_onpage_target.list.ui_action">52db6db4dbb427c0c822fcd6f49619e4</target_ref>
+        <target_ref display_value=".module-node[id=&quot;e2d25d58db28e340ee685e2">a16d1358dbbe6b0056c524794b9619bd</target_ref>
         <ui_version>dynamic</ui_version>
         <view/>
-        <window>x_onpr_onpage_target_list.do</window>
+        <window>nav_to.do</window>
     </sys_embedded_tour_step>
 </record_update>

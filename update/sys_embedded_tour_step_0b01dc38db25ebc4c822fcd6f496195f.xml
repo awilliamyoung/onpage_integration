@@ -6,11 +6,11 @@
         <action_target/>
         <action_target_ref display_value=".module-node[id=&quot;10706f2fdbdca740c822fcd">cf01d438db25ebc4c822fcd6f496199c</action_target_ref>
         <active>true</active>
-        <content><![CDATA[Click to return to the Integration Status homepage now.]]></content>
+        <content><![CDATA[Click here now to go to the Integration Status homepage.]]></content>
         <guide display_value="OnPage Guided Tour (Admin)">9e9911b0dbb027c0c822fcd6f4961977</guide>
         <implicit>false</implicit>
         <link/>
-        <name>Step 36</name>
+        <name>Step 17</name>
         <options/>
         <order>17</order>
         <placement>top</placement>
@@ -19,15 +19,15 @@
         <sys_created_on>2018-10-31 17:20:16</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>0b01dc38db25ebc4c822fcd6f496195f</sys_id>
-        <sys_mod_count>34</sys_mod_count>
-        <sys_name>Step 36</sys_name>
+        <sys_mod_count>35</sys_mod_count>
+        <sys_name>Step 17</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_embedded_tour_step_0b01dc38db25ebc4c822fcd6f496195f</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-12-31 19:31:39</sys_updated_on>
+        <sys_updated_on>2018-12-31 22:13:41</sys_updated_on>
         <target/>
         <target_ref display_value=".module-node[id=&quot;10706f2fdbdca740c822fcd">cf01d438db25ebc4c822fcd6f496199c</target_ref>
         <ui_version>dynamic</ui_version>

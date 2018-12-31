@@ -5,7 +5,7 @@
         <cell_types/>
         <col/>
         <cxs_results/>
-        <element_type>button</element_type>
+        <element_type>link</element_type>
         <field/>
         <field_action/>
         <field_header/>
@@ -16,8 +16,8 @@
         <frameset>nav_filter</frameset>
         <list_element>ui_action</list_element>
         <list_header/>
-        <manual_css/>
-        <name>x_onpr_onpage_target.list.ui_action</name>
+        <manual_css>.module-node[id="7c4eba6adbc4ab00c822fcd6f49619b2"]</manual_css>
+        <name>.module-node[id="7c4eba6adbc4ab00c822fcd</name>
         <record_id/>
         <related_field/>
         <related_links/>
@@ -27,20 +27,20 @@
         <row/>
         <sys_class_name>sys_embedded_tour_element</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
-        <sys_created_on>2018-09-24 17:09:53</sys_created_on>
+        <sys_created_on>2018-12-31 22:21:56</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>52db6db4dbb427c0c822fcd6f49619e4</sys_id>
+        <sys_id>b81f9798dbbe6b0056c524794b961931</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>x_onpr_onpage_target.list.ui_action</sys_name>
+        <sys_name>.module-node[id="7c4eba6adbc4ab00c822fcd</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
-        <sys_update_name>sys_embedded_tour_element_52db6db4dbb427c0c822fcd6f49619e4</sys_update_name>
+        <sys_update_name>sys_embedded_tour_element_b81f9798dbbe6b0056c524794b961931</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-24 17:09:53</sys_updated_on>
-        <table>x_onpr_onpage_target</table>
-        <type>list</type>
-        <ui_action display_value="New">80c8c3a60a0a0b34003364513f7d9d27</ui_action>
+        <sys_updated_on>2018-12-31 22:21:56</sys_updated_on>
+        <table/>
+        <type>manual_css</type>
+        <ui_action/>
     </sys_embedded_tour_element>
 </record_update>

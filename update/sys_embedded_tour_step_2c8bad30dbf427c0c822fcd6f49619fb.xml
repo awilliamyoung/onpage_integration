@@ -6,11 +6,11 @@
         <action_target/>
         <action_target_ref display_value="x_onpr_onpage_target.list.list_header.o">848be1f0dbf427c0c822fcd6f4961924</action_target_ref>
         <active>true</active>
-        <content><![CDATA[Users which already exist in your OnPage environment should already be loaded here. You can manage existing relationships by clicking on the OPID. For now, let&#39;s create a new target record.]]></content>
+        <content><![CDATA[Users which already exist in your OnPage environment should already be loaded here. You can manage existing records by clicking on the OPID. If you don't have any records, click New to review the form for this tour.]]></content>
         <guide display_value="OnPage Guided Tour (Admin)">9e9911b0dbb027c0c822fcd6f4961977</guide>
         <implicit>false</implicit>
         <link/>
-        <name>Step 17</name>
+        <name>Step 24</name>
         <options/>
         <order>24</order>
         <placement>bottom</placement>
@@ -19,15 +19,15 @@
         <sys_created_on>2018-09-24 17:08:24</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>2c8bad30dbf427c0c822fcd6f49619fb</sys_id>
-        <sys_mod_count>65</sys_mod_count>
-        <sys_name>Step 17</sys_name>
+        <sys_mod_count>66</sys_mod_count>
+        <sys_name>Step 24</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_embedded_tour_step_2c8bad30dbf427c0c822fcd6f49619fb</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-12-31 19:31:39</sys_updated_on>
+        <sys_updated_on>2018-12-31 22:20:04</sys_updated_on>
         <target/>
         <target_ref display_value="x_onpr_onpage_target.list.list_header.o">848be1f0dbf427c0c822fcd6f4961924</target_ref>
         <ui_version>dynamic</ui_version>

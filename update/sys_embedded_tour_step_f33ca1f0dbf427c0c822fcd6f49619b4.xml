@@ -6,11 +6,11 @@
         <action_target/>
         <action_target_ref display_value="x_onpr_onpage_target.quick_select">d33ca1b4dbf427c0c822fcd6f49619fa</action_target_ref>
         <active>true</active>
-        <content><![CDATA[To match an OnPage target (user or group) to a ServiceNow target, choose User or Group from this Dropdown.]]></content>
+        <content><![CDATA[To match an OnPage target to a ServiceNow User or Group, use the Quick Select field to jump to the right table.]]></content>
         <guide display_value="OnPage Guided Tour (Admin)">9e9911b0dbb027c0c822fcd6f4961977</guide>
         <implicit>false</implicit>
         <link/>
-        <name>Step 20</name>
+        <name>Step 27</name>
         <options/>
         <order>27</order>
         <placement>top</placement>
@@ -19,15 +19,15 @@
         <sys_created_on>2018-09-24 17:11:37</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>f33ca1f0dbf427c0c822fcd6f49619b4</sys_id>
-        <sys_mod_count>65</sys_mod_count>
-        <sys_name>Step 20</sys_name>
+        <sys_mod_count>68</sys_mod_count>
+        <sys_name>Step 27</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_embedded_tour_step_f33ca1f0dbf427c0c822fcd6f49619b4</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-12-31 19:31:40</sys_updated_on>
+        <sys_updated_on>2018-12-31 22:23:55</sys_updated_on>
         <target/>
         <target_ref display_value="x_onpr_onpage_target.quick_select">d33ca1b4dbf427c0c822fcd6f49619fa</target_ref>
         <ui_version>dynamic</ui_version>
