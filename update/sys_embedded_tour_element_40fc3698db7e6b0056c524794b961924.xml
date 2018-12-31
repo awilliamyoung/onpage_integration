@@ -16,8 +16,8 @@
         <frameset>nav_filter</frameset>
         <list_element>ui_action</list_element>
         <list_header/>
-        <manual_css>input#filter.form-control.form-control-search</manual_css>
-        <name>Filter Navigator</name>
+        <manual_css>input#home_title.home_title</manual_css>
+        <name>9e9911b0dbb027c0c822fcd6f4961977.40.xpat</name>
         <record_id/>
         <related_field/>
         <related_links/>
@@ -27,18 +27,18 @@
         <row/>
         <sys_class_name>sys_embedded_tour_element</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
-        <sys_created_on>2018-11-26 22:40:51</sys_created_on>
+        <sys_created_on>2018-12-31 19:52:47</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>f0c3d381dbc66f0056c524794b9619ec</sys_id>
+        <sys_id>40fc3698db7e6b0056c524794b961924</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>Filter Navigator</sys_name>
+        <sys_name>9e9911b0dbb027c0c822fcd6f4961977.40.xpat</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
-        <sys_update_name>sys_embedded_tour_element_f0c3d381dbc66f0056c524794b9619ec</sys_update_name>
+        <sys_update_name>sys_embedded_tour_element_40fc3698db7e6b0056c524794b961924</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-11-26 22:40:51</sys_updated_on>
+        <sys_updated_on>2018-12-31 19:52:47</sys_updated_on>
         <table/>
         <type>manual_css</type>
         <ui_action/>

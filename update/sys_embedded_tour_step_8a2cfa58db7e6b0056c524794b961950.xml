@@ -4,32 +4,32 @@
         <action>false</action>
         <action_event>next</action_event>
         <action_target/>
-        <action_target_ref display_value="Filter Navigator">f0c3d381dbc66f0056c524794b9619ec</action_target_ref>
+        <action_target_ref display_value=".module-node [data-id=&quot;e2d25d58db28e340e">8a2c3a58db7e6b0056c524794b96197f</action_target_ref>
         <active>true</active>
-        <content><![CDATA[Welcome to the OnPage Integration app guided tour. To get started, search for OnPage in the application menu and click Next.]]></content>
+        <content><![CDATA[You can launch this tour again by running setup again. Start by clicking Run Setup. ]]></content>
         <guide display_value="OnPage Guided Tour (Admin)">9e9911b0dbb027c0c822fcd6f4961977</guide>
         <implicit>false</implicit>
         <link/>
-        <name>Step 0</name>
+        <name>Step 37</name>
         <options/>
-        <order>0</order>
-        <placement>right</placement>
+        <order>37</order>
+        <placement>top</placement>
         <sys_class_name>sys_embedded_tour_step</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
-        <sys_created_on>2018-11-26 22:40:51</sys_created_on>
+        <sys_created_on>2018-12-31 19:49:22</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>09c31381dbc66f0056c524794b9619ae</sys_id>
-        <sys_mod_count>9</sys_mod_count>
-        <sys_name>Step 0</sys_name>
+        <sys_id>8a2cfa58db7e6b0056c524794b961950</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Step 37</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
-        <sys_update_name>sys_embedded_tour_step_09c31381dbc66f0056c524794b9619ae</sys_update_name>
+        <sys_update_name>sys_embedded_tour_step_8a2cfa58db7e6b0056c524794b961950</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-12-26 22:32:44</sys_updated_on>
+        <sys_updated_on>2018-12-31 19:53:10</sys_updated_on>
         <target/>
-        <target_ref display_value="Filter Navigator">f0c3d381dbc66f0056c524794b9619ec</target_ref>
+        <target_ref display_value=".module-node [data-id=&quot;e2d25d58db28e340e">8a2c3a58db7e6b0056c524794b96197f</target_ref>
         <ui_version>dynamic</ui_version>
         <view/>
         <window>nav_to.do</window>

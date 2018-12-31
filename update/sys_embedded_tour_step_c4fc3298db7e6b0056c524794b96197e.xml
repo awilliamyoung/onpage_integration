@@ -4,34 +4,34 @@
         <action>false</action>
         <action_event>next</action_event>
         <action_target/>
-        <action_target_ref display_value=".module-node [data-id=&quot;542fc983dbd82340e">09ede9f8dbf427c0c822fcd6f49619d7</action_target_ref>
+        <action_target_ref display_value="9e9911b0dbb027c0c822fcd6f4961977.40.xpat">40fc3698db7e6b0056c524794b961924</action_target_ref>
         <active>true</active>
-        <content><![CDATA[Users can define Subscriptions, which are rules to determine when to create notifications. Subscriptions only process for tables which have been enabled by the app admin. Subscriptions use associated templates to generate notification contents and recipients.]]></content>
+        <content><![CDATA[This is the end of the tour, but you can browse this page to get better acquainted with the integration.]]></content>
         <guide display_value="OnPage Guided Tour (Admin)">9e9911b0dbb027c0c822fcd6f4961977</guide>
         <implicit>false</implicit>
         <link/>
-        <name>Step 24</name>
+        <name>Step 40</name>
         <options/>
-        <order>30</order>
-        <placement>top</placement>
+        <order>40</order>
+        <placement>bottom</placement>
         <sys_class_name>sys_embedded_tour_step</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
-        <sys_created_on>2018-09-24 17:18:49</sys_created_on>
+        <sys_created_on>2018-12-31 19:52:47</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>95ededf4dbf427c0c822fcd6f49619db</sys_id>
-        <sys_mod_count>66</sys_mod_count>
-        <sys_name>Step 24</sys_name>
+        <sys_id>c4fc3298db7e6b0056c524794b96197e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Step 40</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
-        <sys_update_name>sys_embedded_tour_step_95ededf4dbf427c0c822fcd6f49619db</sys_update_name>
+        <sys_update_name>sys_embedded_tour_step_c4fc3298db7e6b0056c524794b96197e</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-12-31 19:31:40</sys_updated_on>
+        <sys_updated_on>2018-12-31 19:52:47</sys_updated_on>
         <target/>
-        <target_ref display_value=".module-node [data-id=&quot;542fc983dbd82340e">09ede9f8dbf427c0c822fcd6f49619d7</target_ref>
+        <target_ref display_value="9e9911b0dbb027c0c822fcd6f4961977.40.xpat">40fc3698db7e6b0056c524794b961924</target_ref>
         <ui_version>dynamic</ui_version>
         <view/>
-        <window>nav_to.do</window>
+        <window>home.do</window>
     </sys_embedded_tour_step>
 </record_update>
