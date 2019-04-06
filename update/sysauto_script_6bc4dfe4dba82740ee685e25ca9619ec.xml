@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sysauto_script">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
     <sysauto_script action="INSERT_OR_UPDATE">
         <active>true</active>
         <condition><![CDATA[var answer = evaluate();
@@ -61,7 +60,7 @@ function sendNotif(){
 		this.info("Message array: "+array.toString());
 
 		// send bulk message
-		var resp = new x_onpr_onpage.workflow().sendRestMessages('['+array.toString()+']',"6bc4dfe4dba82740ee685e25ca9619ec");
+		var resp = new x_onpr_onpage.workflow().sendRestMessages('['+array.toString()+']',gs.getProperty('x_onpr_onpage.scripts.stuck_notifications'));
 		//process response
 		var ans = resp.split(';'),
 			status = ans[0],
@@ -102,7 +101,7 @@ function info(message){
 	//LOGGING/////////
 	var logType = "outbound";
 	var logTable = 'sysauto_script';
-	var id = "6bc4dfe4dba82740ee685e25ca9619ec"; //this scheduled job
+	var id = gs.getProperty('x_onpr_onpage.scripts.stuck_notifications');
 	var log = new x_onpr_onpage.log();
 		log.info(message,logType,logTable,id);
 }
@@ -123,7 +122,7 @@ function reformat(array){
         <sys_created_on>2018-09-11 19:54:16</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>6bc4dfe4dba82740ee685e25ca9619ec</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>Process Stuck Notifications</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
@@ -131,7 +130,7 @@ function reformat(array){
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sysauto_script_6bc4dfe4dba82740ee685e25ca9619ec</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-12-26 23:26:27</sys_updated_on>
+        <sys_updated_on>2019-03-21 21:54:13</sys_updated_on>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_script>
 </record_update>

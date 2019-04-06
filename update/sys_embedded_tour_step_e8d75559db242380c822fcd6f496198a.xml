@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sys_embedded_tour_step">
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_embedded_tour_step">
     <sys_embedded_tour_step action="INSERT_OR_UPDATE">
         <action>false</action>
         <action_event>next</action_event>
@@ -14,13 +13,16 @@
         <options/>
         <order>2</order>
         <placement>right</placement>
+        <step_type>step</step_type>
         <sys_class_name>sys_embedded_tour_step</sys_class_name>
         <sys_created_by>lorena.villanueva</sys_created_by>
         <sys_created_on>2018-09-13 18:43:39</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
         <sys_id>e8d75559db242380c822fcd6f496198a</sys_id>
         <sys_mod_count>6</sys_mod_count>
         <sys_name>Step 2</sys_name>
+        <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
@@ -30,6 +32,7 @@
         <sys_updated_on>2018-09-24 15:47:19</sys_updated_on>
         <target/>
         <target_ref display_value="7c305268dba42740ee685e25ca961932.11.xpat">80d751d9db242380c822fcd6f496199c</target_ref>
+        <title/>
         <ui_version>dynamic</ui_version>
         <view/>
         <window>system_properties_ui.do</window>

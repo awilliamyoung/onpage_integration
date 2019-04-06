@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sys_script_include">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>package_private</access>
         <active>true</active>
@@ -28,10 +27,7 @@ setup.prototype = {
 		this.info("Starting registration process");
 		var instance = gs.getProperty('instance_name'),
 			username = "onpage",
-			password = this._createUser();
-		//this.info("integration password is:"+password);
-		//this._setPasswordAgain(password);
-		this._setPassProp(password);
+			password = pw;
 		var rest = new sn_ws.RESTMessageV2("Register with OnPage","Register");
 			rest.setStringParameterNoEscape('URLsub',this.URLsub);
 			rest.setStringParameterNoEscape('dispEmail',email);
@@ -67,6 +63,44 @@ setup.prototype = {
 		syncTargets.targetSync();
 
 		this.info("Registration process completed.");
+	},
+	setupIA: function(){
+		var script = (function executeRule(current, previous /*null when async*/) {
+	var updatedBy = current.getValue('sys_updated_by');
+	if(updatedBy=='onpage'){
+		return;
+	}
+	//check if there is are subscriptions for this table
+	var prop = gs.getProperty('x_onpr_onpage.subscription.tables'),
+		tables = prop.split(","),
+		table = current.getTableName();
+	if(tables.indexOf(table)==-1){
+		return;
+	}
+	var jsonCurrent = new global.JSON().encode(current);
+	var jsonPrevious = new global.JSON().encode(previous);
+	var gr = new GlideRecord('x_onpr_onpage_event');
+		gr.initialize();
+		gr.setValue('table', current.getTableName());
+		gr.setValue('document_id', current.sys_id);
+		gr.setValue('status', 'new');
+		gr.setValue('type', 'outbound');
+		gr.setValue('current', jsonCurrent);
+		gr.setValue('previous', jsonPrevious);
+		gr.insert();
+
+})(current, previous);
+		
+		
+		var gr = new GlideRecord('sys_script');
+		gr.initialize();
+		gr.setValue('collection',"incident_alert");
+		gr.setValue('name',"Generate OnPage events from IA Updates");
+		gr.setValue('action_insert','true');
+		gr.setValue('action_update','true');
+		gr.setValue('advanced','true');
+		gr.setValue('script',script);
+		gr.insert();
 	},
 	_createUser: function(){
 		this.info("Create User function starting");
@@ -121,14 +155,6 @@ setup.prototype = {
 		var handle = new x_onpr_onpage.handleErrors();
 			handle.rest(request,status,body);
 	},
-	_setPassProp: function(password){
-		var prop = new GlideRecord('sys_properties');
-		if(prop.get('name',"x_onpr_onpage.auth.user_password")){
-			prop.setValue('value',password);
-			prop.update();
-		}
-
-	},
     type: 'setup'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
@@ -136,7 +162,7 @@ setup.prototype = {
         <sys_created_on>2018-09-07 15:49:22</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>71d07917db982740c822fcd6f49619bf</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>38</sys_mod_count>
         <sys_name>setup</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
@@ -144,6 +170,6 @@ setup.prototype = {
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_include_71d07917db982740c822fcd6f49619bf</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-12-26 23:34:20</sys_updated_on>
+        <sys_updated_on>2019-04-06 21:01:53</sys_updated_on>
     </sys_script_include>
 </record_update>

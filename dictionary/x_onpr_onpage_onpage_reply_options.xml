@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<database>
+<?xml version="1.0" encoding="UTF-8"?><database>
     <element label="OnPage Reply Options" max_length="40" name="x_onpr_onpage_onpage_reply_options" type="collection">
         <element label="Description" max_length="1000" name="description" type="string"/>
         <element hint="Can only be modified by administrators" label="Execute Scripts" max_length="40" name="execute_scripts" type="boolean"/>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_embedded_tour_step">
+    <sys_embedded_tour_step action="INSERT_OR_UPDATE">
+        <action>false</action>
+        <action_event>next</action_event>
+        <action_target/>
+        <action_target_ref display_value="9e9911b0dbb027c0c822fcd6f4961977.43.xpat">79fc4306dbd4bf40c8c656594b9619c3</action_target_ref>
+        <active>true</active>
+        <content><![CDATA[Type &#34;rest&#34; and select &#34;rest_service&#34; from the list below.]]></content>
+        <guide display_value="OnPage Guided Tour (Admin)">9e9911b0dbb027c0c822fcd6f4961977</guide>
+        <implicit>false</implicit>
+        <link/>
+        <name>Step 43</name>
+        <options/>
+        <order>23</order>
+        <placement>bottom</placement>
+        <step_type>step</step_type>
+        <sys_class_name>sys_embedded_tour_step</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2019-03-21 21:06:21</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>b1fc8306dbd4bf40c8c656594b96199f</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Step 43</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_embedded_tour_step_b1fc8306dbd4bf40c8c656594b96199f</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2019-04-06 21:29:29</sys_updated_on>
+        <target/>
+        <target_ref display_value="9e9911b0dbb027c0c822fcd6f4961977.43.xpat">79fc4306dbd4bf40c8c656594b9619c3</target_ref>
+        <title/>
+        <ui_version>dynamic</ui_version>
+        <view/>
+        <window>sys_m2m_template.do</window>
+    </sys_embedded_tour_step>
+</record_update>

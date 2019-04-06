@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<database>
-    <element extends="sys_import_set_row" label="Onpage Event Import" max_length="40" name="x_onpr_onpage_event_import" type="collection">
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="sys_import_set_row" label="Onpage Event Import" max_length="40" name="x_onpr_onpage_event_import" sizeclass="37183" type="collection">
         <element label="Current" max_length="1000" name="current" type="string_full_utf8"/>
         <element dependent="table" dependent_on_field="table" label="Document ID" max_length="32" name="document_id" type="document_id" use_dependent_field="true"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" display="true" label="Number" max_length="40" name="number" read_only="true" type="string"/>
@@ -10,20 +9,20 @@
         <element label="ServiceNow ID" max_length="40" name="sn_id" type="string"/>
         <element choice="1" label="Status" max_length="40" name="status" type="choice">
             <choice>
-                <element label="Error" value="error"/>
-                <element label="Ignored" value="ignored"/>
-                <element label="New" value="new"/>
-                <element label="Processed" value="processed"/>
-                <element label="Retry" value="retry"/>
+                <element inactive_on_update="false" label="Error" value="error"/>
+                <element inactive_on_update="false" label="Ignored" value="ignored"/>
+                <element inactive_on_update="false" label="New" value="new"/>
+                <element inactive_on_update="false" label="Processed" value="processed"/>
+                <element inactive_on_update="false" label="Retry" value="retry"/>
             </choice>
         </element>
         <element label="Table" max_length="80" name="table" type="table_name"/>
         <element label="Timestamp" max_length="40" name="timestamp" type="glide_date_time"/>
         <element choice="1" label="Type" max_length="40" name="type" type="choice">
             <choice>
-                <element label="Inbound" value="inbound"/>
-                <element label="Internal" value="internal"/>
-                <element label="Outbound" value="outbound"/>
+                <element inactive_on_update="false" label="Inbound" value="inbound"/>
+                <element inactive_on_update="false" label="Internal" value="internal"/>
+                <element inactive_on_update="false" label="Outbound" value="outbound"/>
             </choice>
         </element>
         <element label="Value" max_length="40" name="value" type="string"/>

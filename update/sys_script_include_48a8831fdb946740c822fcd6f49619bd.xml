@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sys_script_include">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>public</access>
         <active>true</active>
@@ -422,7 +421,7 @@ workflow.prototype = {
 			r.setStringParameterNoEscape('priority', priority);
 			r.setStringParameterNoEscape('subject', encodeURI(subject));
 			r.setStringParameterNoEscape('recipArray', this.reformat(recipients));
-			r.setStringParameterNoEscape('id', id);
+			r.setStringParameterNoEscape('id', notif);
 			r.setStringParameterNoEscape('body', encodeURI(body));
 
 			var response = r.execute();
@@ -491,11 +490,9 @@ workflow.prototype = {
 		return string;
 	},
 	_convertOPID: function(opid){
-		gs.info("_convertOPID: opid: "+opid);
 		var target = new GlideRecord('x_onpr_onpage_target');
 		if(target.get('opid',opid)){
 			var gr = target.getValue('document_id');
-			gs.info("_convertOPID: document_id: "+gr);
 			var obj = {};
 				obj.table = target.getValue('table');
 			if(obj.table=='sys_user'){
@@ -507,7 +504,6 @@ workflow.prototype = {
 				obj.user='';
 			}
 			var string = JSON.stringify(obj);
-			gs.info("_convertOPID: string: "+string);
 			return string;
 		}
 		return false;
@@ -519,7 +515,7 @@ workflow.prototype = {
         <sys_created_on>2018-09-07 21:57:11</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>48a8831fdb946740c822fcd6f49619bd</sys_id>
-        <sys_mod_count>109</sys_mod_count>
+        <sys_mod_count>111</sys_mod_count>
         <sys_name>workflow</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
@@ -527,6 +523,6 @@ workflow.prototype = {
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_include_48a8831fdb946740c822fcd6f49619bd</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-12-26 23:04:50</sys_updated_on>
+        <sys_updated_on>2019-03-21 20:28:40</sys_updated_on>
     </sys_script_include>
 </record_update>

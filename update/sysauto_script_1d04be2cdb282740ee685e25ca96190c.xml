@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sysauto_script">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
     <sysauto_script action="INSERT_OR_UPDATE">
         <active>true</active>
         <condition/>
@@ -14,7 +13,21 @@
         <run_time>1970-01-01 05:00:00</run_time>
         <run_type>on_demand</run_type>
         <script><![CDATA[// gs.info('ran');
-sendNotif();
+while(haveFailed()){
+	sendNotif();
+}
+function haveFailed(){
+	var gr = new GlideRecord('x_onpr_onpage_notification');
+	gr.addQuery('status',"failed");
+	gr.query();
+	if(gr.hasNext()){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
 
 function sendNotif(){
 	var notifications = [];
@@ -22,6 +35,7 @@ function sendNotif(){
 	//bulk update to sending
 	var gr1 = new GlideRecord('x_onpr_onpage_notification');
 		gr1.addQuery('status',"failed");
+		gr1.setLimit(25);
 		gr1.query();
 	if(!gr1.hasNext()){
 		return;
@@ -56,7 +70,7 @@ function sendNotif(){
 	this.info("Message array: "+array.toString());
 
 	// send bulk message
-	var resp = new x_onpr_onpage.workflow().sendRestMessages('['+array.toString()+']',"1d04be2cdb282740ee685e25ca96190c");
+	var resp = new x_onpr_onpage.workflow().sendRestMessages('['+array.toString()+']',gs.getProperty('x_onpr_onpage.scripts.process_failed_notifs'));
 	//process response
 	var ans = resp.split(';'),
 		status = ans[0],
@@ -96,7 +110,7 @@ function info(message){
 	//LOGGING/////////
 	var logType = "outbound";
 	var logTable = 'sysauto_script';
-	var id = "1d04be2cdb282740ee685e25ca96190c"; //this scheduled job
+	var id = gs.getProperty('x_onpr_onpage.scripts.process_failed_notifs');
 	var log = new x_onpr_onpage.log();
 		log.info(message,logType,logTable,id);
 }
@@ -117,7 +131,7 @@ function reformat(array){
         <sys_created_on>2018-09-11 17:31:13</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>1d04be2cdb282740ee685e25ca96190c</sys_id>
-        <sys_mod_count>15</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>Process Failed Notifications</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
@@ -125,7 +139,7 @@ function reformat(array){
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sysauto_script_1d04be2cdb282740ee685e25ca96190c</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-12-26 23:32:35</sys_updated_on>
+        <sys_updated_on>2019-03-21 21:57:33</sys_updated_on>
         <upgrade_safe>false</upgrade_safe>
     </sysauto_script>
 </record_update>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update sys_domain="global" table="sys_app_module">
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
     <sys_app_module action="INSERT_OR_UPDATE">
         <active>true</active>
         <application display_value="OnPage Administration">eb4e19fadb0cab00c822fcd6f49619d0</application>
@@ -17,7 +16,7 @@
         <name/>
         <order>3400</order>
         <override_menu_roles>false</override_menu_roles>
-        <query>https://www.onpage.com/contact-support/</query>
+        <query>nav_to.do?uri=x_onpr_onpage_OnPage Support.do</query>
         <report/>
         <roles>x_onpr_onpage.admin</roles>
         <survey/>
@@ -29,7 +28,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>9b635598db28e340ee685e25ca96197b</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Contact OnPage Support</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
@@ -38,11 +37,11 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_app_module_9b635598db28e340ee685e25ca96197b</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-14 18:03:50</sys_updated_on>
+        <sys_updated_on>2019-03-21 21:36:07</sys_updated_on>
         <timeline_page/>
         <title>Contact OnPage Support</title>
         <uncancelable>false</uncancelable>
         <view_name/>
-        <window_name>_blank</window_name>
+        <window_name>_self</window_name>
     </sys_app_module>
 </record_update>

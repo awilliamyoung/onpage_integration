@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sys_script_include">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>package_private</access>
         <active>true</active>
@@ -23,7 +22,7 @@ sync.prototype = {
 		};
 		//LOGGING/////////
 		this.logTable = 'sysauto_script';
-		this.logID = '6c64762cdb282740ee685e25ca96195d'; //scheduled job Sync Targets
+		this.logID = gs.getProperty('x_onpr_onpage.scripts.sync');
 		this.log = new x_onpr_onpage.log();
 		this.error = function(message,type){
 		  this.log.error(message,type,this.logTable,this.logID);
@@ -238,7 +237,7 @@ sync.prototype = {
         <sys_created_on>2018-09-07 15:18:33</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>6793a19fdb182740c822fcd6f49619e8</sys_id>
-        <sys_mod_count>26</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_name>sync</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
@@ -246,6 +245,6 @@ sync.prototype = {
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_include_6793a19fdb182740c822fcd6f49619e8</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-12-26 22:51:01</sys_updated_on>
+        <sys_updated_on>2019-03-22 13:19:22</sys_updated_on>
     </sys_script_include>
 </record_update>

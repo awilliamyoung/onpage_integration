@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update>
+<?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="OnPage Details" section_id="195c0d8edb946340c822fcd6f49619e0" sys_domain="global" table="x_onpr_onpage_target" version="3" view="">
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>id</element>

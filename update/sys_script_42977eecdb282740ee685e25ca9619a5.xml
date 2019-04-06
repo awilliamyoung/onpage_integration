@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update sys_domain="global" table="sys_script">
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
     <sys_script action="INSERT_OR_UPDATE">
         <abort_action>false</abort_action>
         <access>package_private</access>
@@ -35,8 +34,8 @@
 	var type = '',
 		status = current.getValue('status'),
 		now = new GlideDateTime(),
-		sendRdy = "52226aa4dbe42740ee685e25ca9619fc",
-		error = '89ed2c74db606740ee685e25ca9619d0',
+		sendRdy = gs.getProperty('x_onpr_onpage.metric.definition.send_ready'),
+		error = gs.getProperty('x_onpr_onpage.metric.definition.error'),
 		definition = '',
 		retries = current.getValue('retries'),
 		table = "x_onpr_onpage_notification",
@@ -107,7 +106,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>42977eecdb282740ee685e25ca9619a5</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>Create/Update Metrics</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
@@ -116,7 +115,7 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_42977eecdb282740ee685e25ca9619a5</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2018-09-13 00:06:08</sys_updated_on>
+        <sys_updated_on>2019-03-21 21:56:30</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>
