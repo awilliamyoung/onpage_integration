@@ -5,7 +5,7 @@
         <action_target/>
         <action_target_ref display_value="9e9911b0dbb027c0c822fcd6f4961977.43.xpat">79fc4306dbd4bf40c8c656594b9619c3</action_target_ref>
         <active>true</active>
-        <content><![CDATA[Type &#34;rest&#34; and select &#34;rest_service&#34; from the list below.]]></content>
+        <content><![CDATA[Search and select &#34;snc_platform_rest_api_access&#34;.]]></content>
         <guide display_value="OnPage Guided Tour (Admin)">9e9911b0dbb027c0c822fcd6f4961977</guide>
         <implicit>false</implicit>
         <link/>
@@ -20,7 +20,7 @@
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_id>b1fc8306dbd4bf40c8c656594b96199f</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>Step 43</sys_name>
         <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
@@ -29,7 +29,7 @@
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_embedded_tour_step_b1fc8306dbd4bf40c8c656594b96199f</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2019-04-06 21:29:29</sys_updated_on>
+        <sys_updated_on>2019-04-10 13:26:16</sys_updated_on>
         <target/>
         <target_ref display_value="9e9911b0dbb027c0c822fcd6f4961977.43.xpat">79fc4306dbd4bf40c8c656594b9619c3</target_ref>
         <title/>
