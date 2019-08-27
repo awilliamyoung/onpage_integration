@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_embedded_tour_element">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_embedded_tour_element">
     <sys_embedded_tour_element action="INSERT_OR_UPDATE">
         <cell_edit/>
         <cell_types/>
@@ -28,11 +29,9 @@
         <sys_created_by>lorena.villanueva</sys_created_by>
         <sys_created_on>2018-09-13 18:43:37</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_domain>global</sys_domain>
         <sys_id>80d751d9db242380c822fcd6f496199c</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>7c305268dba42740ee685e25ca961932.11.xpat</sys_name>
-        <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>

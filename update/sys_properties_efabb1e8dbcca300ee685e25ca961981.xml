@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_properties">
     <sys_properties action="INSERT_OR_UPDATE">
         <choices/>
         <description>Should responses from OnPage be able to execute response scripts against the target record? [default:Yes]</description>

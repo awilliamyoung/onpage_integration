@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>false</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>incident_alert_task</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>//Generate OnPage events from IAT Update</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	var enabled = gs.getProperty('x_onpr_onpage.incident_alert.enabled');
+	if(enabled=="false"){
+		return;
+	}
+	//check if there is are subscriptions for this table
+	var prop = gs.getProperty('x_onpr_onpage.subscription.tables'),
+		tables = prop.split(","),
+		table = current.getTableName();
+	if(tables.indexOf(table)==-1){
+		return;
+	}
+	var jsonCurrent = new global.JSON().encode(current);
+	var jsonPrevious = new global.JSON().encode(previous);
+	var gr = new GlideRecord('x_onpr_onpage_event');
+		gr.initialize();
+		gr.setValue('table', current.getTableName());
+		gr.setValue('document_id', current.sys_id);
+		gr.setValue('status', 'new');
+		gr.setValue('type', 'internal');
+		gr.setValue('current', jsonCurrent);
+		gr.setValue('previous', jsonPrevious);
+		gr.insert();
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>will.young</sys_created_by>
+        <sys_created_on>2018-09-12 22:38:39</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>99044505dbe0a740ee685e25ca9619cb</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>//Generate OnPage events from IAT Update</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
+        <sys_update_name>sys_script_99044505dbe0a740ee685e25ca9619cb</sys_update_name>
+        <sys_updated_by>will.young</sys_updated_by>
+        <sys_updated_on>2018-09-14 03:17:56</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=99044505dbe0a740ee685e25ca9619cb"/>
+</record_update>

@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="metric_definition">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="metric_definition">
     <metric_definition action="INSERT_OR_UPDATE">
         <active>true</active>
         <description>Calculates the time between error and failure or successful send.</description>

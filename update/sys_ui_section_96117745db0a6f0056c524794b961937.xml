@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update>
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
     <sys_ui_section caption="History" section_id="96117745db0a6f0056c524794b961937" sys_domain="global" table="x_onpr_onpage_notification" version="3" view="">
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>activity.xml</element>

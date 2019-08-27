@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update>
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
     <sys_dictionary action="INSERT_OR_UPDATE" element="current" table="x_onpr_onpage_event_import">
         <active>true</active>
         <array>false</array>
@@ -30,8 +31,6 @@
         <element>current</element>
         <element_reference>false</element_reference>
         <foreign_database/>
-        <function_definition/>
-        <function_field>false</function_field>
         <internal_type display_value="">string_full_utf8</internal_type>
         <mandatory>false</mandatory>
         <max_length>1000</max_length>

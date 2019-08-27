@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update>
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
     <sys_ui_section caption="Matched Record" section_id="027060c7db582340ee685e25ca96191b" sys_domain="global" table="x_onpr_onpage_target" version="3" view="">
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>quick_select</element>

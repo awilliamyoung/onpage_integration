@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_index">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_index">
     <sys_index action="INSERT_OR_UPDATE">
         <col_name_string>id</col_name_string>
         <index_col_name element="id" name="x_onpr_onpage_target">6a2df15bdbac2f40ee685e25ca961910</index_col_name>

@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_embedded_tour_step">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_embedded_tour_step">
     <sys_embedded_tour_step action="INSERT_OR_UPDATE">
         <action>true</action>
         <action_event>click</action_event>
@@ -11,28 +12,24 @@
         <link/>
         <name>Step 31</name>
         <options/>
-        <order>45</order>
+        <order>39</order>
         <placement>top</placement>
-        <step_type>step</step_type>
         <sys_class_name>sys_embedded_tour_step</sys_class_name>
         <sys_created_by>will.young</sys_created_by>
         <sys_created_on>2018-09-24 17:26:12</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_domain>global</sys_domain>
         <sys_id>9d9fedf4dbf427c0c822fcd6f49619e0</sys_id>
-        <sys_mod_count>81</sys_mod_count>
+        <sys_mod_count>71</sys_mod_count>
         <sys_name>Step 31</sys_name>
-        <sys_overrides/>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_embedded_tour_step_9d9fedf4dbf427c0c822fcd6f49619e0</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2019-04-06 21:09:48</sys_updated_on>
+        <sys_updated_on>2018-12-31 22:22:13</sys_updated_on>
         <target/>
         <target_ref display_value=".module-node[id=&quot;10706f2fdbdca740c822fcd">119f21b0db3827c0c822fcd6f49619ca</target_ref>
-        <title/>
         <ui_version>dynamic</ui_version>
         <view/>
         <window>nav_to.do</window>

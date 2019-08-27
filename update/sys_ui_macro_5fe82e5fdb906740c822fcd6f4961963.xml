@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_macro">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_macro">
     <sys_ui_macro action="INSERT_OR_UPDATE">
         <active>true</active>
         <category>general</category>

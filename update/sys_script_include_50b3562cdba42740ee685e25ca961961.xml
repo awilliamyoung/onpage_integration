@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
     <sys_script_include action="INSERT_OR_UPDATE">
         <access>public</access>
         <active>true</active>
@@ -12,7 +13,7 @@ cleanup.prototype = {
 		//LOGGING/////////
 		this.logType = "internal";
 		this.logTable = 'sysauto_script';
-		this.logID = gs.getProperty('x_onpr_onpage.scripts.cleanup');
+		this.logID = 'e7098e24dba42740ee685e25ca961937';
 		this.log = new x_onpr_onpage.log();
 		this.error = function(message){
 		  this.log.error(message,this.logType,this.logTable,this.logID);
@@ -79,7 +80,7 @@ cleanup.prototype = {
         <sys_created_on>2018-09-11 15:14:09</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>50b3562cdba42740ee685e25ca961961</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>cleanup</sys_name>
         <sys_package display_value="OnPage Integration" source="x_onpr_onpage">864f25ecdb8ca300ee685e25ca96192d</sys_package>
         <sys_policy>read</sys_policy>
@@ -87,6 +88,6 @@ cleanup.prototype = {
         <sys_scope display_value="OnPage Integration">864f25ecdb8ca300ee685e25ca96192d</sys_scope>
         <sys_update_name>sys_script_include_50b3562cdba42740ee685e25ca961961</sys_update_name>
         <sys_updated_by>will.young</sys_updated_by>
-        <sys_updated_on>2019-03-21 21:55:46</sys_updated_on>
+        <sys_updated_on>2018-12-26 23:09:08</sys_updated_on>
     </sys_script_include>
 </record_update>

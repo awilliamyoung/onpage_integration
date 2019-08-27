@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_headers">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_rest_message_headers">
     <sys_rest_message_headers action="INSERT_OR_UPDATE">
         <name>Content-Type</name>
         <rest_message display_value="OnPage Secured">b880854bdb982340ee685e25ca9619e6</rest_message>

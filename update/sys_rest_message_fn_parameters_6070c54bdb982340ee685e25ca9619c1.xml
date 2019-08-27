@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters">
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_rest_message_fn_parameters">
     <sys_rest_message_fn_parameters action="INSERT_OR_UPDATE">
         <name>dispEmail</name>
         <rest_message_function display_value="Register">fa20c54bdb982340ee685e25ca96199f</rest_message_function>
